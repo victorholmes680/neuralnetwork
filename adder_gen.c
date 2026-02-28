@@ -36,17 +36,15 @@ int main(void)
 	}
 
 	MAT_AT(to, i, BITS) = z >= n; // check the overflow
-
-	const char *out_file_path = "adder.mat";
-	FILE *out = fopen(out_file_path, "wb");
-	if(out == NULL) {
-	    fprintf(stderr, "ERROR: could not open file %s\n", out_file_path);
-	    return 1; // not zero represent error
-	}
-
-	mat_save(out, t);
-	fclose(out);
-	printf("Generated %s\n", out_file_path);
-	return 0;
     }
+    const char *out_file_path = "adder.mat";
+    FILE *out = fopen(out_file_path, "wb");
+    if(out == NULL) {
+	fprintf(stderr, "ERROR: could not open file %s\n", out_file_path);
+	return 1; // not zero represent error
+    }
+    mat_save(out, t);
+    fclose(out);
+    printf("Generated %s\n", out_file_path);
+    return 0;
 }

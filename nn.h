@@ -5,7 +5,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
-
+#include <stdint.h>
+#include <string.h>
 #ifndef NN_MALLOC
 #include <stdlib.h>
 #define NN_MALLOC malloc
@@ -194,13 +195,15 @@ void mat_save(FILE *out, Mat m)
     }
 }
 
-void mat_load(FILE *in) {
+Mat mat_load(FILE *in) {
     uint64_t magic;
-    fread(&magic, sizeof(magic), 1, in);
+    size_t _;
+    _ = fread(&magic, sizeof(magic), 1, in);
     // todo assert
     size_t rows, cols;
-    fread(&rows, sizeof(rows), 1, in);
-    fread(&cols, sizeof(cols), 1, in);
+    _ = fread(&rows, sizeof(rows), 1, in);
+    _ = fread(&cols, sizeof(cols), 1, in);
+    (void)_;
     Mat m = mat_alloc(rows, cols);
 
     size_t n = fread(m.es, sizeof(*m.es), rows*cols, in);
@@ -218,7 +221,7 @@ NN nn_alloc(size_t *arch, size_t arch_count)
     NN nn;
     nn.count = arch_count - 1;
 
-    nn.ws = (sizeof(*nn.ws)*nn.count);
+    nn.ws = NN_MALLOC(sizeof(*nn.ws)*nn.count);
     NN_ASSERT(nn.ws != NULL);
 
     nn.bs = NN_MALLOC(sizeof(*nn.bs)*nn.count);

@@ -1,5 +1,7 @@
 #!/bin/sh
 set -xe
-cc -o xor xor.c -lm && ./xor
-#cc -o adder adder.c -lm && ./adder
+CFLAGS="-O3 -Wall -Wextra `pkg-config --cflags raylib`"
+LIBS="`pkg-config --libs raylib` -lm"
+
+cc $CFLAGS -o adder_gen adder_gen.c $LIBS
 
