@@ -125,9 +125,9 @@ void plot_cost(Cost_Plot plot, int rx, int ry, int rw, int rh)
 
     for(size_t i =0; i+1 < plot.count; ++i) {
 	float x1 = rx + (float)rw/n*i;
-	float y1 = ry + (1 - (plot.items[i] - min)/(max-min))*rh;
+	float y1 = ry + (1 - (plot.items[i] - min)/(max - min))*rh;
 	float x2 = rx + (float)rw/n*(i+1);
-	float y2 = ry + (1 - (plot.items[i+1] - min)/(max-min))*rh;
+	float y2 = ry + (1 - (plot.items[i+1] - min)/(max - min))*rh;
 	DrawLineEx((Vector2){x1, y1}, (Vector2){x2, y2}, rh*0.005, RED);
     }
 }
@@ -135,7 +135,142 @@ void plot_cost(Cost_Plot plot, int rx, int ry, int rw, int rh)
 
 
 
-int main()
+int main(int argc, char **argv)
 {
+    const char *program_name = args_shift(&argc, &argv);
+
+    if(argc <= 0) {
+	fprintf(stderr, "Usage: %s <model.arch> <model.mat>\n", program_name);
+	fprintf(stderr, "ERROR: no architecture file was provided\n");
+	return 1;
+    }
+
+    const char *arch_file_path = args_shift(&argc, &argv);
+    if(argc <= 0) {
+	fprintf(stderr, "Usage: %s <model.arch> <model.mat>\n", program_name);
+	fprintf(stderr, "ERROR: no data file was provided\n");
+	return 1;
+    }
+
+
+    // region: deal with arch file <model.arch>
+    const char *data_file_path = args_shift(&argc, &argv);
+
+    unsigned int buffer_len = 0;
+    unsigned char *buffer = LoadFileData(arch_file_path, &buffer_len);
+
+    if(buffer == NULL) {
+	return 1;
+    }
+
+
+    // load data from buffer and construct it to String_View type named content
+    String_View content = sv_from_parts((const char*)buffer, buffer_len);
+    Arch arch = {0};
+    content = sv_trim_left(content);
+
+    while(content.count > 0 && isdigit(content.data[0])) {
+	size_t x = sv_chop_u64(&content); // get the number
+	da_append(&arch, x); // fill it to the arch
+	content = sv_trim_left(content); // delete the space 
+    }
+
+    // endregion
+
+
+
+    // region: deal with data file <model.mat>
+    FILE *in = fopen(data_file_path, "rb");
+    if(in == NULL) {
+	fprintf(stderr, "ERROR: could not read file %s\n");
+	return 1;
+    }
+
+    Mat t = mat_load(in); // input matrix
+    fclose(in);
+    // endregion
+
+    // region:do the training operation and draw the picture
+    NN_ASSERT(arch.count > 1); // make sure there exist input parameter
+    size_t ins_sz = arch.items[0];
+    size_t outs_sz = arch.items[arch.count-1];
+    NN_ASSERT(t.cols == ins_sz + outs_sz); // make sure the training matrix has the correct format
+    
+
+    Mat ti = {
+	.rows = t.rows,
+	.cols = ins_sz, // this is different
+	.stride = t.stride,
+	.es = &MAT_AT(t, 0, 0)
+    };
+
+    Mat to = {
+	.rows = t.rows,
+	.cols = outs_sz,
+	.stride = t.stride,
+	.es = &MAT_AT(t, 0, ins_sz)
+    };
+
+
+    NN nn = nn_alloc(arch.items, arch.count);
+    NN g = nn_alloc(arch.items, arch.count);
+
+    nn_rand(nn, 0, 1);
+    NN_PRINT(nn);
+
+    float rate = 0.5;
+
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+    InitWindow(INIT_WIDTH, IMG_HEIGHT, "gym");
+    SetTargetFPS(60);
+
+    Cost_Plot plot = {0};
+
+    size_t epoch = 0;
+    size_t max_epoch = 5000;
+
+    while(!WindowShouldClose()) {
+	for(size_t i = 0; i < 10 && epoch < max_epoch; ++i) {
+	    if(epoch < max_epoch) {
+		nn_backprop(nn, g, ti, to);
+		nn_learn(nn, g, rate);
+		epoch += 1;
+		da_append(&plot, nn_cost(nn, ti, to));
+	    }
+	}
+
+	BeginDrawing();
+	Color background_color = {0x18, 0x18, 0x18, 0xFF};
+	ClearBackground(background_color);
+
+	{
+	    int rw, rh, rx, ry;
+	    int w = GetRenderWidth();
+	    int h = GetRenderHeight();
+
+	    // cost curve line
+	    rw = w/2;
+	    rh = h*2/3;
+	    rx = 0;
+	    ry = h/2 - rh/2;
+	    plot_cost(plot, rx, ry, rw, rh);
+
+
+	    // neural network curve line
+	    rw = w/2;
+	    rh = h*2/3;
+	    rx = w - rw;
+	    ry = h/2 - rh/2;
+	    nn_render_raylib(nn, rx, ry, rw, rh);
+
+
+	    char buffer[256];
+	    snprintf(buffer, sizeof(buffer), "Epoch: %zu/%zu, Rate: %f", epoch, max_epoch, rate);
+	    DrawText(buffer, 0, 0, h* 0.04, WHITE);
+	}
+	EndDrawing();
+    }
+    // endregion
+
     return 0;
 }
