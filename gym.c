@@ -156,7 +156,7 @@ int main(int argc, char **argv)
     // region: deal with arch file <model.arch>
     const char *data_file_path = args_shift(&argc, &argv);
 
-    unsigned int buffer_len = 0;
+    int buffer_len = 0;
     unsigned char *buffer = LoadFileData(arch_file_path, &buffer_len);
 
     if(buffer == NULL) {
