@@ -182,7 +182,7 @@ int main(int argc, char **argv)
     // region: deal with data file <model.mat>
     FILE *in = fopen(data_file_path, "rb");
     if(in == NULL) {
-	fprintf(stderr, "ERROR: could not read file %s\n");
+	fprintf(stderr, "ERROR: could not read file %s\n", data_file_path);
 	return 1;
     }
 
