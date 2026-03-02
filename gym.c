@@ -5,7 +5,7 @@
 #include "raylib.h"
 #define SV_IMPLEMENTATION
 #include "sv.h"
-#define nn_implementation
+#define NN_IMPLEMENTATION
 #include "nn.h"
 
 typedef int Errno;
@@ -56,7 +56,7 @@ char *args_shift(int *argc, char ***argv)
 void nn_render_raylib(NN nn, int rx, int ry, int rw, int rh)
 {
     Color low_color = {0xFF, 0x00, 0xFF, 0xFF};
-    Color high_color = {0x00, 0xFF, 0x00，0xFF};
+    Color high_color = {0x00, 0xFF, 0x00, 0xFF};
 
     float neuron_radius = rh*0.04;
     int layer_border_vpad = 50; // horizon pad
@@ -221,7 +221,7 @@ int main(int argc, char **argv)
     float rate = 0.5;
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    InitWindow(INIT_WIDTH, IMG_HEIGHT, "gym");
+    InitWindow(IMG_WIDTH, IMG_HEIGHT, "gym");
     SetTargetFPS(60);
 
     Cost_Plot plot = {0};
