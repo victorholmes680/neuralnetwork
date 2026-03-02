@@ -1,4 +1,4 @@
-##define NN_IMPLEMENTION
+#define NN_IMPLEMENTION
 #include "nn.h"
 
 int main(void)
