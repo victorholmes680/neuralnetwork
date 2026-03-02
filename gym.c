@@ -60,7 +60,7 @@ void nn_render_raylib(NN nn, int rx, int ry, int rw, int rh)
 
     float neuron_radius = rh*0.04;
     int layer_border_vpad = 50; // horizon pad
-    int layer_border_hpad = 50; // vertical pad 
+    int layer_border_hpad = 50; // vertical pad
 
     int nn_width = rw - 2*layer_border_hpad; // minus left and right pad
     int nn_height = rh - 2*layer_border_vpad; // minus top and bottom pad
@@ -245,8 +245,8 @@ int main(int argc, char **argv)
 
 	{
 	    int rw, rh, rx, ry;
-	    int w = GetRenderWidth();
-	    int h = GetRenderHeight();
+	    int w = GetScreenWidth();
+	    int h = GetScreenHeight();
 
 	    // cost curve line
 	    rw = w/2;
@@ -255,14 +255,12 @@ int main(int argc, char **argv)
 	    ry = h/2 - rh/2;
 	    plot_cost(plot, rx, ry, rw, rh);
 
-
 	    // neural network curve line
 	    rw = w/2;
 	    rh = h*2/3;
 	    rx = w - rw;
 	    ry = h/2 - rh/2;
 	    nn_render_raylib(nn, rx, ry, rw, rh);
-
 
 	    char buffer[256];
 	    snprintf(buffer, sizeof(buffer), "Epoch: %zu/%zu, Rate: %f", epoch, max_epoch, rate);
