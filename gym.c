@@ -245,7 +245,7 @@ int main(int argc, char **argv)
 
 	{
 	    int rw, rh, rx, ry;
-	    int w = GetScreenWidth();
+	    int w = GetScreenWidth();  // mac should use GetScreenWidth and GetscreenHeight while windows could use GetRenderWidtd and GetRenderHeight
 	    int h = GetScreenHeight();
 
 	    // cost curve line
