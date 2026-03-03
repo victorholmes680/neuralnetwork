@@ -231,7 +231,7 @@ int main(int argc, char **argv)
 
     bool paused = false;
     while(!WindowShouldClose()) {
-	if(IsKeyPressed(key_space)) {
+	if(IsKeyPressed(KEY_SPACE)) {
 	    paused = !paused;
 	}
 	
