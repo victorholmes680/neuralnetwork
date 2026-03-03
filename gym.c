@@ -235,7 +235,7 @@ int main(int argc, char **argv)
 	    paused = !paused;
 	}
 	
-	for(size_t i = 0; i < 10 && epoch < max_epoch; ++i) {
+	for(size_t i = 0; i < 10 && !paused && epoch < max_epoch; ++i) {
 	    if(epoch < max_epoch) {
 		nn_backprop(nn, g, ti, to);
 		nn_learn(nn, g, rate);
