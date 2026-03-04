@@ -158,7 +158,7 @@ int main(int argc, char **argv)
     };
 
     Mat to = {
-	.rows = to.rows,
+	.rows = t.rows,
 	.cols = 1,
 	.stride = t.stride,
 	.es = &MAT_AT(t, 0, ti.cols),
