@@ -59,8 +59,8 @@ void nn_render_raylib(NN nn, int rx, int ry, int rw, int rh)
     Color high_color = {0x00, 0xFF, 0x00, 0xFF};
 
     float neuron_radius = rh*0.03;
-    int layer_border_vpad = 50; // horizon pad
-    int layer_border_hpad = 50; // vertical pad
+    int layer_border_vpad = rh*0.08; // horizon pad
+    int layer_border_hpad = rh*0.06; // vertical pad
 
     int nn_width = rw - 2*layer_border_hpad; // minus left and right pad
     int nn_height = rh - 2*layer_border_vpad; // minus top and bottom pad
@@ -69,18 +69,18 @@ void nn_render_raylib(NN nn, int rx, int ry, int rw, int rh)
     int nn_y = ry + rh/2 - nn_height/2; // ry + layer_border_vpad
 
     size_t arch_count = nn.count + 1;
-    int layer_hpad = nn_width / arch_count; // the average width of each layer could occupy
+    float layer_hpad = nn_width / arch_count; // the average width of each layer could occupy
 
     for(size_t l = 0; l < arch_count; ++l) {
-	int layer_vpad1 = nn_height / nn.as[l].cols; // the average height of each neural plot of each layer
+	float layer_vpad1 = nn_height / nn.as[l].cols; // the average height of each neural plot of each layer
 	for(size_t i = 0; i < nn.as[l].cols; ++i) {
-	    int cx1 = nn_x + l*layer_hpad + layer_hpad/2;
-	    int cy1 = nn_y + i*layer_vpad1 + layer_vpad1/2;
+	    float cx1 = nn_x + l*layer_hpad + layer_hpad/2;
+	    float cy1 = nn_y + i*layer_vpad1 + layer_vpad1/2;
 	    if(l+1 < arch_count) { // draw line to next neural plot if not the last layer
-		int layer_vpad2 = nn_height / nn.as[l+1].cols; 
+		float layer_vpad2 = nn_height / nn.as[l+1].cols; 
 		for(size_t j = 0; j < nn.as[l+1].cols; ++j) {
-		    int cx2 = nn_x + (l+1)*layer_hpad + layer_hpad/2;
-		    int cy2 = nn_y + j*layer_vpad2 + layer_vpad2/2;
+		    float cx2 = nn_x + (l+1)*layer_hpad + layer_hpad/2;
+		    float cy2 = nn_y + j*layer_vpad2 + layer_vpad2/2;
 		    float value = sigmoidf(MAT_AT(nn.ws[l], i, j));
 		    high_color.a = floorf(255.f*value);
 		    float thick = rh*0.004f;
@@ -115,9 +115,9 @@ void cost_plot_minmax(Cost_Plot plot, float *min, float *max)
 void plot_cost(Cost_Plot plot, int rx, int ry, int rw, int rh)
 {
     float min, max;
-    cost_plot_minmax(plot, &min, &max);
+    cost_plot_minmax(plot, &min, &max); // get the min and max value of the cost_plot
 
-    if(min > 0) min = 0;
+    if(min > 0) min = 0; // make sure the start position is always from zero
 
     size_t n = plot.count;
 
@@ -215,10 +215,10 @@ int main(int argc, char **argv)
     NN nn = nn_alloc(arch.items, arch.count);
     NN g = nn_alloc(arch.items, arch.count);
 
-    nn_rand(nn, 0, 1);
+    nn_rand(nn, -1, 1);
     NN_PRINT(nn);
 
-    float rate = 0.5;
+    float rate = 1;
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "gym");
@@ -236,7 +236,7 @@ int main(int argc, char **argv)
 	}
 	if(IsKeyPressed(KEY_R)) {
 	    epoch = 0;
-	    nn_rand(nn, 0, 1);
+	    nn_rand(nn, -1, 1);
 	    plot.count = 0;
 	}
 	
@@ -262,14 +262,14 @@ int main(int argc, char **argv)
 	    rw = w/2;
 	    rh = h*2/3;
 	    rx = 0;
-	    ry = h/2 - rh/2;
+	    ry = h/2 - rh/2; // h/6 center at the vertical direction
 	    plot_cost(plot, rx, ry, rw, rh);
 
 	    // neural network curve line
 	    rw = w/2;
 	    rh = h*2/3;
 	    rx = w - rw;
-	    ry = h/2 - rh/2;
+	    ry = h/2 - rh/2; // h/6 center at the vertical direction
 	    nn_render_raylib(nn, rx, ry, rw, rh);
 
 	    char buffer[256];
