@@ -140,8 +140,8 @@ int main(int argc, char **argv)
     Mat t = mat_alloc(img_width*img_height, 3);
 
     // row-major
-    for(size_t y = 0; y < img_height; ++y) { // row 
-	for(size_t x = 0; x < img_width; ++x) { // col
+    for(size_t y = 0; y < (size_t)img_height; ++y) { // row 
+	for(size_t x = 0; x < (size_t)img_width; ++x) { // col
 	    size_t i = y*img_width + x;
 	    MAT_AT(t, i, 0) = (float)x/(img_width - 1);
 	    MAT_AT(t, i, 1) = (float)y/(img_height - 1);
@@ -175,7 +175,7 @@ int main(int argc, char **argv)
     size_t WINDOW_HEIGHT = (9*WINDOW_FACTOR);
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT);
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT,"img2mat");
     SetTargetFPS(60);
 
     Cost_Plot plot = {0};
@@ -186,7 +186,7 @@ int main(int argc, char **argv)
     size_t epoch = 0;
     size_t max_epoch = 100*1000;
     size_t epochs_per_frame = 103;
-    float = 1.0f;
+    float rate = 1.0f;
     bool paused = true;
 
     while(!WindowShouldClose()) {
@@ -233,7 +233,7 @@ int main(int argc, char **argv)
 		    MAT_AT(NN_INPUT(nn), 0, 1) = (float)y/(img_height - 1);
 		    nn_forward(nn);
 		    uint8_t pixel = MAT_AT(NN_OUTPUT(nn), 0, 0)*255.f;
-		    ImageDrawPixel(&preview_image, x, y， CLITERAL(Color) { pixel, pixel, pixel, 255});
+		    ImageDrawPixel(&preview_image, x, y, CLITERAL(Color) { pixel, pixel, pixel, 255});
 		}
 	    }
 
@@ -257,7 +257,7 @@ int main(int argc, char **argv)
 
 
     for(size_t y = 0; y < (size_t) img_height; ++y) {
-	for(size_t x = 0; x < (size_t) img_width; +x) {
+	for(size_t x = 0; x < (size_t) img_width; ++x) {
 	    MAT_AT(NN_INPUT(nn), 0, 0) = (float)x/(img_width - 1);
 	    MAT_AT(NN_INPUT(nn), 0, 1) = (float)y/(img_height - 1);
 	    nn_forward(nn);
@@ -272,7 +272,7 @@ int main(int argc, char **argv)
     size_t out_width = 512;
     size_t out_height = 512;
     uint8_t *out_pixels = malloc(sizeof(*out_pixels)*out_width*out_height);
-    assertr(out_pixels != NULL);
+    assert(out_pixels != NULL);
 
     for(size_t y = 0; y < out_height; ++y) {
 	for(size_t x = 0; x < out_width; ++x) {
