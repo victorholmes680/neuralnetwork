@@ -228,7 +228,8 @@ int main(int argc, char **argv)
 
     size_t epoch = 0;
     size_t max_epoch = 10000;
-
+    size_t epochs_per_frame = 103;
+    
     bool paused = true;
     while(!WindowShouldClose()) {
 	if(IsKeyPressed(KEY_SPACE)) {
@@ -240,13 +241,11 @@ int main(int argc, char **argv)
 	    plot.count = 0;
 	}
 	
-	for(size_t i = 0; i < 10 && !paused && epoch < max_epoch; ++i) {
-	    if(epoch < max_epoch) {
-		nn_backprop(nn, g, ti, to);
-		nn_learn(nn, g, rate);
-		epoch += 1;
-		da_append(&plot, nn_cost(nn, ti, to));
-	    }
+	for(size_t i = 0; i < epochs_per_frame && !paused && epoch < max_epoch; ++i) {
+	    nn_backprop(nn, g, ti, to);
+	    nn_learn(nn, g, rate);
+	    epoch += 1;
+	    da_append(&plot, nn_cost(nn, ti, to));
 	}
 
 	BeginDrawing();
