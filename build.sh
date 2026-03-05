@@ -1,6 +1,6 @@
 #!/bin/sh
 set -xe
-CFLAGS="-O3 -Wall -Wextra `pkg-config --cflags raylib`"
+CFLAGS="-O3 -Wall -Wextra `pkg-config --cflags raylib` -I./thirdparty/"
 LIBS="`pkg-config --libs raylib` -lm"
 
 cc $CFLAGS -o adder_gen adder_gen.c $LIBS
