@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 	    }
 
 	    Mat batch_ti = {
-		.rows = size;
+		.rows = size,
 		.cols = 2,
 		.stride = t.stride,
 		.es = &MAT_AT(t, batch_begin, 0),
