@@ -6,6 +6,7 @@
 #include <time.h>
 #include <math.h>
 #include <stdint.h>
+#include <float.h>
 #include <string.h>
 #ifndef NN_MALLOC
 #include <stdlib.h>
@@ -66,6 +67,8 @@ void nn_learn(NN nn, NN g, float rate);
 
 
 #ifdef NN_ENABLE_GYM
+#include <float.h>
+#include "raylib.h"
 
 typedef struct {
     float *items;
