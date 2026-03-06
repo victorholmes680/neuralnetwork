@@ -8,6 +8,7 @@ $ ./build.sh
 $ ./adder_gen
 $ ./gym ./adder.arch ./adder.mat
 $ ./img2nn ./mnist/training/8/10057.png
+$ ./img2nn ./mnist/training/8/10057.png ./mnist/training/6/10032.png
 ```
 
 ## Gym
