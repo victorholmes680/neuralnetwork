@@ -5,14 +5,22 @@
 #include <raylib.h>
 #include <raymath.h>
 
-#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-#define STB_IMAGE_WRITE_IMPLEMENTATION
+//#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
 #define NN_IMPLEMENTATION
 #define NN_ENABLE_GYM
 #include "nn.h"
+
+size_t arch[] = {3, 11, 11, 9, 1};
+size_t epoch = 0;
+size_t max_epoch = 100*1000;
+size_t batches_per_frame = 200;
+size_t batch_size = 28;
+float rate = 1.0f;
+bool paused = true;
 
 char *args_shift(int *argc, char ***argv)
 {
@@ -23,7 +31,6 @@ char *args_shift(int *argc, char ***argv)
     return result;
 }
 
-size_t arch[] = {3, 9, 9, 5, 1};
 
 int main(int argc, char **argv)
 {
@@ -155,18 +162,8 @@ int main(int argc, char **argv)
     }
     Texture2D original_texture2 = LoadTextureFromImage(original_image2);
 
-    
-    size_t epoch = 0;
-    size_t max_epoch = 100*1000;
-    size_t batch_per_frame = 200;
-    size_t batch_size = 28;
-    size_t batch_count = (t.rows + batch_size - 1)/batch_size; // rounded up division
-    size_t batch_begin = 0;
-    float average_cost = 0.0f;
-    
-    float rate = 1.0f;
-    bool paused = true;
 
+    Gym_Batch gb = {0};
     float scroll = 0.5f;
     bool scroll_dragging = false;
 
@@ -180,37 +177,11 @@ int main(int argc, char **argv)
 	    plot.count = 0;
 	}    
 
-	for(size_t i = 0; i < batch_per_frame && !paused && epoch < max_epoch; ++i) {
-	    size_t size = batch_size;
-	    if(batch_begin + batch_size >= t.rows) {
-		size = t.rows - batch_begin;
-	    }
-
-	    Mat batch_ti = {
-		.rows = size,
-		.cols = 3, // from 2 to 3, add one more flag to distinguish the different image
-		.stride = t.stride,
-		.es = &MAT_AT(t, batch_begin, 0),
-	    };
-
-	    Mat batch_to = {
-		.rows = size,
-		.cols = 1,
-		.stride = t.stride,
-		.es = &MAT_AT(t, batch_begin, batch_ti.cols),
-	    };
-	    
-	    nn_backprop(nn, g, batch_ti, batch_to);
-	    nn_learn(nn, g, rate);
-
-	    average_cost += nn_cost(nn, batch_ti, batch_to);
-	    batch_begin += batch_size;
-
-	    if(batch_begin >= t.rows) {
+	for(size_t i = 0; i < batches_per_frame && !paused && epoch < max_epoch; ++i) {
+	    gym_process_batch(&gb, batch_size, nn, g, t, rate);
+	    if(gb.finished) {
 		epoch += 1;
-		da_append(&plot, average_cost/batch_count);
-		average_cost = 0.0f;
-		batch_begin = 0;
+		da_append(&plot, gb.cost);
 		mat_shuffle_rows(t);
 	    }
 	}
