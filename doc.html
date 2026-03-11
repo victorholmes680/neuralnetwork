@@ -1,0 +1,3950 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-03-11 Wed 16:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="YFZX-WZX" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#nn.h---neural-network-library-explained">1. nn.h - Neural Network Library Explained</a>
+<ul>
+<li><a href="#table-of-contents">1.1. Table of Contents</a></li>
+<li><a href="#overview">1.2. Overview</a>
+<ul>
+<li><a href="#key-features">1.2.1. Key Features</a></li>
+</ul>
+</li>
+<li><a href="#interactive-learning-guide">1.3. Interactive Learning Guide</a>
+<ul>
+<li><a href="#learning-path">1.3.1. Learning Path</a></li>
+<li><a href="#step-1-understanding-the-matrix">1.3.2. Step 1: Understanding the Matrix</a></li>
+<li><a href="#step-2-matrix-access-macro">1.3.3. Step 2: Matrix Access Macro</a></li>
+<li><a href="#step-3-matrix-operations">1.3.4. Step 3: Matrix Operations</a></li>
+<li><a href="#step-4-activation-functions">1.3.5. Step 4: Activation Functions</a></li>
+<li><a href="#step-5-neural-network">1.3.6. Step 5: Neural Network</a></li>
+<li><a href="#step-6-training---the-cost-function">1.3.7. Step 6: Training - The Cost Function</a></li>
+<li><a href="#step-7-backpropagation">1.3.8. Step 7: Backpropagation</a></li>
+<li><a href="#step-8-putting-it-all-together">1.3.9. Step 8: Putting It All Together</a></li>
+<li><a href="#congratulations">1.3.10. 🎓 Congratulations!</a></li>
+<li><a href="#quick-reference">1.3.11. 📚 Quick Reference</a></li>
+</ul>
+</li>
+<li><a href="#header-guards">1.4. Header Guards</a>
+<ul>
+<li><a href="#what-are-header-guards">1.4.1. What are header guards?</a></li>
+<li><a href="#how-they-work">1.4.2. How they work:</a></li>
+</ul>
+</li>
+<li><a href="#includes-and-dependencies">1.5. Includes and Dependencies</a></li>
+<li><a href="#configurable-macros">1.6. Configurable Macros</a>
+<ul>
+<li><a href="#memory-allocation-customization">1.6.1. Memory Allocation Customization</a></li>
+<li><a href="#why-this-is-useful">1.6.2. Why this is useful:</a></li>
+<li><a href="#assertion-customization">1.6.3. Assertion Customization</a></li>
+<li><a href="#array-length-macro">1.6.4. Array Length Macro</a></li>
+</ul>
+</li>
+<li><a href="#data-structures">1.7. Data Structures</a>
+<ul>
+<li><a href="#gym_batch---batch-processing-state">1.7.1. 1. Gym<sub>Batch</sub> - Batch Processing State</a></li>
+<li><a href="#mat---matrix-structure">1.7.2. 2. Mat - Matrix Structure</a></li>
+<li><a href="#matrix-access-macro">1.7.3. Matrix Access Macro</a></li>
+</ul>
+</li>
+<li><a href="#matrix-operations">1.8. Matrix Operations</a>
+<ul>
+<li><a href="#mat_alloc---create-a-matrix">1.8.1. 1. mat<sub>alloc</sub>() - Create a Matrix</a></li>
+<li><a href="#what-it-does">1.8.2. What it does:</a></li>
+<li><a href="#mat_fill---fill-matrix-with-value">1.8.3. 2. mat<sub>fill</sub>() - Fill Matrix with Value</a></li>
+<li><a href="#mat_dot---matrix-multiplication">1.8.4. 3. mat<sub>dot</sub>() - Matrix Multiplication</a></li>
+<li><a href="#understanding-matrix-multiplication">1.8.5. Understanding Matrix Multiplication:</a></li>
+<li><a href="#mat_row---create-a-row-view">1.8.6. 4. mat<sub>row</sub>() - Create a Row View</a></li>
+<li><a href="#mat_sig---apply-sigmoid-activation">1.8.7. 5. mat<sub>sig</sub>() - Apply Sigmoid Activation</a></li>
+<li><a href="#the-sigmoid-function-1">1.8.8. The Sigmoid Function:</a></li>
+<li><a href="#mat_sum---element-wise-addition">1.8.9. 6. mat<sub>sum</sub>() - Element-wise Addition</a></li>
+<li><a href="#mat_copy---copy-matrix-data">1.8.10. 7. mat<sub>copy</sub>() - Copy Matrix Data</a></li>
+<li><a href="#mat_rand---random-initialization">1.8.11. 8. mat<sub>rand</sub>() - Random Initialization</a></li>
+<li><a href="#mat_save-and-mat_load---persistence">1.8.12. 9. mat<sub>save</sub>() and mat<sub>load</sub>() - Persistence</a></li>
+<li><a href="#mat_print---debug-output">1.8.13. 10. mat<sub>print</sub>() - Debug Output</a></li>
+<li><a href="#mat_shuffle_rows---random-row-shuffling">1.8.14. 11. mat<sub>shuffle</sub><sub>rows</sub>() - Random Row Shuffling</a></li>
+</ul>
+</li>
+<li><a href="#neural-network-structure">1.9. Neural Network Structure</a>
+<ul>
+<li><a href="#the-nn-structure">1.9.1. The NN Structure</a></li>
+<li><a href="#understanding-the-structure">1.9.2. Understanding the Structure:</a></li>
+<li><a href="#helper-macros">1.9.3. Helper Macros</a></li>
+<li><a href="#nn_alloc---create-network">1.9.4. nn<sub>alloc</sub>() - Create Network</a></li>
+<li><a href="#how-it-works">1.9.5. How it works:</a></li>
+<li><a href="#nn_forward---forward-pass">1.9.6. nn<sub>forward</sub>() - Forward Pass</a></li>
+<li><a href="#the-forward-pass">1.9.7. The Forward Pass:</a></li>
+<li><a href="#nn_cost---calculate-loss">1.9.8. nn<sub>cost</sub>() - Calculate Loss</a></li>
+<li><a href="#understanding-cost-function">1.9.9. Understanding Cost Function:</a></li>
+</ul>
+</li>
+<li><a href="#training-algorithm">1.10. Training Algorithm</a>
+<ul>
+<li><a href="#nn_backprop---backpropagation">1.10.1. nn<sub>backprop</sub>() - Backpropagation</a></li>
+<li><a href="#understanding-backpropagation">1.10.2. Understanding Backpropagation:</a></li>
+<li><a href="#nn_learn---update-weights">1.10.3. nn<sub>learn</sub>() - Update Weights</a></li>
+<li><a href="#gradient-descent">1.10.4. Gradient Descent:</a></li>
+<li><a href="#nn_rand---random-initialization">1.10.5. nn<sub>rand</sub>() - Random Initialization</a></li>
+</ul>
+</li>
+<li><a href="#visualization-system-gym">1.11. Visualization System (Gym)</a>
+<ul>
+<li><a href="#plot-structure">1.11.1. Plot Structure</a></li>
+<li><a href="#dynamic-array-macro">1.11.2. Dynamic Array Macro</a></li>
+<li><a href="#gym_render_nn---visualize-network">1.11.3. gym<sub>render</sub><sub>nn</sub>() - Visualize Network</a></li>
+<li><a href="#gym_plot---draw-cost-graph">1.11.4. gym<sub>plot</sub>() - Draw Cost Graph</a></li>
+<li><a href="#gym_process_batch---batch-training">1.11.5. gym<sub>process</sub><sub>batch</sub>() - Batch Training</a></li>
+</ul>
+</li>
+<li><a href="#complete-usage-example">1.12. Complete Usage Example</a></li>
+<li><a href="#learning-checklist">1.13. Learning Checklist</a>
+<ul>
+<li><a href="#foundation-skills">1.13.1. 🟢 Foundation Skills</a></li>
+<li><a href="#matrix-operations-1">1.13.2. 🟡 Matrix Operations</a></li>
+<li><a href="#neural-network">1.13.3. 🔴 Neural Network</a></li>
+<li><a href="#complete-project">1.13.4. 🏆 Complete Project</a></li>
+</ul>
+</li>
+<li><a href="#common-pitfalls-debugging-tips">1.14. Common Pitfalls &amp; Debugging Tips</a>
+<ul>
+<li><a href="#common-mistakes-beginners-make">1.14.1. ⚠️ Common Mistakes Beginners Make</a></li>
+<li><a href="#debugging-techniques">1.14.2. 🔍 Debugging Techniques</a></li>
+</ul>
+</li>
+<li><a href="#key-takeaways">1.15. Key Takeaways</a></li>
+<li><a href="#practice-problems">1.16. Practice Problems</a>
+<ul>
+<li><a href="#beginner-problems">1.16.1. 📝 Beginner Problems</a></li>
+<li><a href="#intermediate-problems">1.16.2. 📝 Intermediate Problems</a></li>
+<li><a href="#advanced-problems">1.16.3. 📝 Advanced Problems</a></li>
+</ul>
+</li>
+<li><a href="#further-learning">1.17. Further Learning</a></li>
+<li><a href="#summary-table">1.18. Summary Table</a></li>
+<li><a href="#references">1.19. References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-nn.h---neural-network-library-explained" class="outline-2">
+<h2 id="nn.h---neural-network-library-explained"><span class="section-number-2">1.</span> nn.h - Neural Network Library Explained</h2>
+<div class="outline-text-2" id="text-nn.h---neural-network-library-explained">
+</div>
+<div id="outline-container-table-of-contents" class="outline-3">
+<h3 id="table-of-contents"><span class="section-number-3">1.1.</span> Table of Contents</h3>
+<div class="outline-text-3" id="text-table-of-contents">
+<ol class="org-ol">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#interactive-learning-guide">Interactive Learning Guide</a> ⭐ <b>START
+HERE</b></li>
+<li><a href="#header-guards">Header Guards</a></li>
+<li><a href="#includes-and-dependencies">Includes and Dependencies</a></li>
+<li><a href="#configurable-macros">Configurable Macros</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#matrix-operations">Matrix Operations</a></li>
+<li><a href="#neural-network-structure">Neural Network Structure</a></li>
+<li><a href="#training-algorithm">Training Algorithm</a></li>
+<li><a href="#visualization-system-gym">Visualization System (Gym)</a></li>
+</ol>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-overview" class="outline-3">
+<h3 id="overview"><span class="section-number-3">1.2.</span> Overview</h3>
+<div class="outline-text-3" id="text-overview">
+<p>
+<code>nn.h</code> is a <b>header-only C library</b> that implements a simple feedforward
+neural network with backpropagation training. It's designed to be
+educational and easy to understand.
+</p>
+</div>
+
+<div id="outline-container-key-features" class="outline-4">
+<h4 id="key-features"><span class="section-number-4">1.2.1.</span> Key Features</h4>
+<div class="outline-text-4" id="text-key-features">
+<ul class="org-ul">
+<li><b>Matrix operations</b> for mathematical computations</li>
+<li><b>Multi-layer perceptron</b> neural network</li>
+<li><b>Backpropagation</b> training algorithm</li>
+<li><b>Optional visualization</b> using Raylib library</li>
+</ul>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-interactive-learning-guide" class="outline-3">
+<h3 id="interactive-learning-guide"><span class="section-number-3">1.3.</span> Interactive Learning Guide</h3>
+<div class="outline-text-3" id="text-interactive-learning-guide">
+<blockquote>
+<p>
+🎯 <b>This section is designed to help you rewrite nn.h from scratch!</b>
+Follow these guided exercises to deeply understand how the library
+works.
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-learning-path" class="outline-4">
+<h4 id="learning-path"><span class="section-number-4">1.3.1.</span> Learning Path</h4>
+<div class="outline-text-4" id="text-learning-path">
+<p>
+Choose your path based on your experience level:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Level</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Where to Start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">🟢 <b>Beginner</b></td>
+<td class="org-left">New to C and neural networks? Start here</td>
+<td class="org-left"><a href="#step-1-understanding-the-matrix">Step 1: Understanding the Matrix</a></td>
+</tr>
+
+<tr>
+<td class="org-left">🟡 <b>Intermediate</b></td>
+<td class="org-left">Know C but new to NNs?</td>
+<td class="org-left"><a href="#step-3-matrix-operations">Step 3: Matrix Operations</a></td>
+</tr>
+
+<tr>
+<td class="org-left">🔴 <b>Advanced</b></td>
+<td class="org-left">Understand the concepts, want practice?</td>
+<td class="org-left"><a href="#step-5-neural-network">Step 5: Neural Network</a></td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-step-1-understanding-the-matrix" class="outline-4">
+<h4 id="step-1-understanding-the-matrix"><span class="section-number-4">1.3.2.</span> Step 1: Understanding the Matrix</h4>
+<div class="outline-text-4" id="text-step-1-understanding-the-matrix">
+</div>
+<ol class="org-ol">
+<li><a id="think-about-it"></a>🤔 Think About It<br />
+<div class="outline-text-5" id="text-think-about-it">
+<p>
+Before writing any code, answer these questions:
+</p>
+
+<p>
+<b>Q1: What is a matrix?</b>
+</p>
+
+<div class="html" id="org712bd73">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org044484c">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="org41f8400">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+A matrix is a 2-dimensional grid of numbers. In C, we represent it as: -
+Number of rows - Number of columns - A pointer to the actual data
+</p>
+
+<div class="html" id="org526b07f">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<p>
+<b>Q2: How do we store a 2D array in C memory?</b>
+</p>
+
+<div class="html" id="orge0cb08e">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org863caf4">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="org448584d">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+We store it in <b>row-major order</b> - all elements of row 0 first, then row
+1, etc.
+</p>
+
+<p>
+Example for a 2×3 matrix:
+</p>
+
+<pre class="example" id="org6168ec5">
+[1, 2, 3]     Memory: [1, 2, 3, 4, 5, 6]
+[4, 5, 6]
+</pre>
+
+<div class="html" id="org3932088">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<p>
+<b>Q3: How do we access element at row i, column j?</b>
+</p>
+
+<div class="html" id="orgf23f598">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org7998032">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="orgc560215">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<pre class="example" id="orgc0ec5d3">
+index = i * columns + j
+</pre>
+
+<p>
+For a 3×4 matrix, element [1][2] is at index:
+</p>
+
+<pre class="example" id="org998c1c7">
+index = 1 * 4 + 2 = 6
+</pre>
+
+<div class="html" id="orgcbd3ec6">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="your-turn-write-the-matrix-structure"></a>✍️ Your Turn: Write the Matrix Structure<br />
+<div class="outline-text-5" id="text-your-turn-write-the-matrix-structure">
+<p>
+Now try to write the structure yourself before looking at the answer:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Write the Mat structure
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">It should have:
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">- rows (number of rows)
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">- cols (number of columns)
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">- stride (why do we need this?)
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">- es (pointer to elements)
+</span>
+<span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Your code here
+</span>} <span style="color: #95a99f;">Mat</span>;
+</pre>
+</div>
+
+<div class="html" id="org6ea596a">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org3c7cdd6">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="org2cd6b6f">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">rows</span>;    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of rows
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">cols</span>;    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of columns
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">stride</span>;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Elements per row in memory
+</span>    <span style="color: #95a99f;">float</span> *<span style="color: #f4f4ff;">es</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Pointer to matrix elements
+</span>} <span style="color: #95a99f;">Mat</span>;
+</pre>
+</div>
+
+<div class="html" id="org03d95ee">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="what-is-stride-and-why-do-we-need-it"></a>🤔 What is <code>stride</code> and why do we need it?<br />
+<div class="outline-text-5" id="text-what-is-stride-and-why-do-we-need-it">
+<div class="html" id="orgf2d98c8">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org75d007b">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for explanation
+</p>
+
+<div class="html" id="org2d23e29">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+Stride is the number of elements to skip to get to the next row. For
+most matrices, <code>stride =</code> cols=.
+</p>
+
+<p>
+<b>But stride enables a powerful feature:</b> row views that share memory!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Parent matrix: 3&#215;4
+</span><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">parent</span> = {
+    .rows = 3,
+    .cols = 4,
+    .stride = 4,
+    .es = [1,2,3,4, 5,6,7,8, 9,10,11,12]
+};
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Row view: 1&#215;4 (shares memory with parent!)
+</span><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">row</span> = {
+    .rows = 1,
+    .cols = 4,
+    .stride = 4,  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Same as parent!
+</span>    .es = &amp;parent.es[4]  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Points to row 1
+</span>};
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Modifying row modifies parent!
+</span><span style="color: #96a6c8;">MAT_AT</span>(row, 0, 0) = 99;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Changes parent[1][0] to 99</span>
+</pre>
+</div>
+
+<p>
+This avoids expensive memory copies!
+</p>
+
+<div class="html" id="orge0a2663">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-2-matrix-access-macro" class="outline-4">
+<h4 id="step-2-matrix-access-macro"><span class="section-number-4">1.3.3.</span> Step 2: Matrix Access Macro</h4>
+<div class="outline-text-4" id="text-step-2-matrix-access-macro">
+</div>
+<ol class="org-ol">
+<li><a id="think-about-it-1"></a>🤔 Think About It<br />
+<div class="outline-text-5" id="text-think-about-it-1">
+<p>
+Given what you learned about stride, how do we access element [i][j]?
+</p>
+
+<p>
+<b>Hint:</b> Remember the memory is laid out as rows, and stride tells us how
+far apart rows are.
+</p>
+
+<div class="html" id="orgcada52c">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org27a26f4">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="orgde9ac3f">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">MAT_AT</span>(<span style="color: #f4f4ff;">m</span>, <span style="color: #f4f4ff;">i</span>, <span style="color: #f4f4ff;">j</span>) (m).es[(i) * (m).stride + (j)]
+</pre>
+</div>
+
+<p>
+<b>Breakdown:</b> - <code>(i) * (m).stride</code> - skip i rows - <code>+ (j)</code> - move j
+columns into the current row
+</p>
+
+<div class="html" id="org60ebba4">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="practice-trace-through-an-example"></a>✍️ Practice: Trace Through an Example<br />
+<div class="outline-text-5" id="text-practice-trace-through-an-example">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span> = {
+    .rows = 2,
+    .cols = 3,
+    .stride = 3,
+    .es = {1, 2, 3, 4, 5, 6}
+};
+</pre>
+</div>
+
+<p>
+<b>What is MAT<sub>AT</sub>(m, 1, 2)?</b>
+</p>
+
+<div class="html" id="org0707116">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orgb03d39e">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="org000d090">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #96a6c8;">MAT_AT</span>(m, 1, 2) = m.es[1 * 3 + 2] = m.es[5] = 6
+</pre>
+</div>
+
+<div class="html" id="orgcb5f9ad">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<p>
+<b>What if stride = 4 (larger than cols)?</b>
+</p>
+
+<div class="html" id="orgf5bc66a">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org35d18b9">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="org391d004">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #96a6c8;">MAT_AT</span>(m, 1, 2) = m.es[1 * 4 + 2] = m.es[6]
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">The extra element in stride is "padding" or unused</span>
+</pre>
+</div>
+
+<div class="html" id="org90263cf">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-3-matrix-operations" class="outline-4">
+<h4 id="step-3-matrix-operations"><span class="section-number-4">1.3.4.</span> Step 3: Matrix Operations</h4>
+<div class="outline-text-4" id="text-step-3-matrix-operations">
+</div>
+<ol class="org-ol">
+<li><a id="exercise-implement-mat_alloc"></a>✍️ Exercise: Implement mat<sub>alloc</sub>()<br />
+<div class="outline-text-5" id="text-exercise-implement-mat_alloc">
+<p>
+Before looking at the answer, try to write <code>mat_alloc()</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Allocate a matrix with given dimensions
+</span><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_alloc</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">rows</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">cols</span>)
+{
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>;
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Your code here:
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">1. Set the dimensions
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">2. Allocate memory
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">3. Return the matrix
+</span>
+    <span style="color: #ffdd33; font-weight: bold;">return</span> m;
+}
+</pre>
+</div>
+
+<div class="html" id="org7aecb53">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orgce8d2c7">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="org6c8c118">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_alloc</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">rows</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">cols</span>)
+{
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>;
+    m.rows = rows;
+    m.cols = cols;
+    m.stride = cols;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For new matrices, stride = cols
+</span>    m.es = NN_MALLOC(<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*m.es) * rows * cols);
+    NN_ASSERT(m.es != <span style="color: #95a99f;">NULL</span> &amp;&amp; <span style="color: #73c936;">"Memory allocation failed"</span>);
+    <span style="color: #ffdd33; font-weight: bold;">return</span> m;
+}
+</pre>
+</div>
+
+<div class="html" id="orgc2cd003">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="exercise-implement-mat_fill"></a>✍️ Exercise: Implement mat<sub>fill</sub>()<br />
+<div class="outline-text-5" id="text-exercise-implement-mat_fill">
+<p>
+Try to write a function that fills every element with a value:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_fill</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Your code here: iterate through all elements
+</span>}
+</pre>
+</div>
+
+<div class="html" id="orgecec17d">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orge966295">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgcd31960">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_fill</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = x;
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="org598c27f">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="challenge-matrix-multiplication"></a>🎯 Challenge: Matrix Multiplication<br />
+<div class="outline-text-5" id="text-challenge-matrix-multiplication">
+<p>
+This is the hardest but most important operation!
+</p>
+
+<p>
+<b>Understanding the Problem:</b>
+</p>
+
+<p>
+If A is 2×3 and B is 3×4, what size is C = A × B?
+</p>
+
+<div class="html" id="org0103977">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orgb59089f">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="orge632944">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+C is 2×4
+</p>
+
+<p>
+<b>Rule:</b> (m×n) × (n×p) = (m×p)
+</p>
+
+<p>
+The inner dimensions must match!
+</p>
+
+<div class="html" id="org93e9446">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<p>
+<b>How to compute C[i][j]?</b>
+</p>
+
+<div class="html" id="orgd7a65af">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orge1d7d4d">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="orgdcad71c">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<pre class="example" id="org1b9bb70">
+C[i][j] = Σ(A[i][k] * B[k][j]) for k = 0 to n-1
+</pre>
+
+<p>
+This is the dot product of row i of A and column j of B.
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+
+<pre class="example" id="orgea9c469">
+A = [1 2]    B = [5 6]
+    [3 4]        [7 8]
+
+C[0][0] = 1*5 + 2*7 = 19
+C[0][1] = 1*6 + 2*8 = 22
+C[1][0] = 3*5 + 4*7 = 43
+C[1][1] = 3*6 + 4*8 = 50
+</pre>
+
+<div class="html" id="org751855d">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="exercise-implement-mat_dot"></a>✍️ Exercise: Implement mat<sub>dot</sub>()<br />
+<div class="outline-text-5" id="text-exercise-implement-mat_dot">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_dot</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">b</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Implement matrix multiplication
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Remember to:
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">1. Assert dimensions are compatible
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">2. Initialize dst to zero
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">3. Compute each element
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org52ef322">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org5d28489">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgd6a8829">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_dot</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">b</span>)
+{
+    NN_ASSERT(a.cols == b.rows);
+    NN_ASSERT(dst.rows == a.rows);
+    NN_ASSERT(dst.cols == b.cols);
+
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">n</span> = a.cols;
+
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; dst.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; dst.cols; ++j) {
+            MAT_AT(dst, i, j) = 0;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Initialize
+</span>            <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; n; ++k) {
+                MAT_AT(dst, i, j) += MAT_AT(a, i, k) * MAT_AT(b, k, j);
+            }
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="org1ecb31e">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-4-activation-functions" class="outline-4">
+<h4 id="step-4-activation-functions"><span class="section-number-4">1.3.5.</span> Step 4: Activation Functions</h4>
+<div class="outline-text-4" id="text-step-4-activation-functions">
+</div>
+<ol class="org-ol">
+<li><a id="what-is-an-activation-function"></a>🤔 What is an activation function?<br />
+<div class="outline-text-5" id="text-what-is-an-activation-function">
+<div class="html" id="org4685a05">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org772b850">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for explanation
+</p>
+
+<div class="html" id="orge40b146">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+Activation functions introduce non-linearity into neural networks.
+Without them, a neural network is just matrix multiplication, which can
+only learn linear relationships.
+</p>
+
+<p>
+<b>Common activation functions:</b> - <b>Sigmoid:</b> Squashes to (0, 1) - good
+for probabilities - <b>ReLU:</b> max(0, x) - simple and fast - <b>Tanh:</b>
+Squashes to (-1, 1) - zero-centered
+</p>
+
+<div class="html" id="org668ebcc">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="the-sigmoid-function"></a>The Sigmoid Function<br />
+<div class="outline-text-5" id="text-the-sigmoid-function">
+<pre class="example" id="org9cac7e9">
+σ(x) = 1 / (1 + e^(-x))
+</pre>
+
+<p>
+<b>Properties:</b> - Always outputs between 0 and 1 - Smooth and
+differentiable - Derivative is easy: σ'(x) = σ(x) × (1 - σ(x))
+</p>
+</div>
+</li>
+
+<li><a id="exercise-implement-sigmoidf"></a>✍️ Exercise: Implement sigmoidf()<br />
+<div class="outline-text-5" id="text-exercise-implement-sigmoidf">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">sigmoidf</span>(<span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Implement sigmoid
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Hint: Use expf() from math.h
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org1401db8">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org9bdd7fc">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgafe90f1">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">sigmoidf</span>(<span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">return</span> 1.0f / (1.0f + expf(-x));
+}
+</pre>
+</div>
+
+<div class="html" id="org4eaead8">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="exercise-apply-sigmoid-to-a-matrix"></a>✍️ Exercise: Apply sigmoid to a matrix<br />
+<div class="outline-text-5" id="text-exercise-apply-sigmoid-to-a-matrix">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_sig</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Apply sigmoid to every element
+</span>}
+</pre>
+</div>
+
+<div class="html" id="orgfb104cb">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org1fda59d">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgbddca20">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_sig</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = sigmoidf(MAT_AT(m, i, j));
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="orga2a6449">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-5-neural-network" class="outline-4">
+<h4 id="step-5-neural-network"><span class="section-number-4">1.3.6.</span> Step 5: Neural Network</h4>
+<div class="outline-text-4" id="text-step-5-neural-network">
+</div>
+<ol class="org-ol">
+<li><a id="what-is-a-neural-network"></a>🤔 What is a neural network?<br />
+<div class="outline-text-5" id="text-what-is-a-neural-network">
+<div class="html" id="orgbd7083b">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org9724686">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for explanation
+</p>
+
+<div class="html" id="org8cbe871">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+A neural network is composed of layers of neurons: - <b>Input layer:</b>
+Receives the raw data - <b>Hidden layers:</b> Process the data (can have
+multiple) - <b>Output layer:</b> Produces the final prediction
+</p>
+
+<p>
+Each connection between neurons has: - <b>Weight (W):</b> How strong the
+connection is - <b>Bias (b):</b> An offset/threshold
+</p>
+
+<p>
+<b>Forward pass:</b>
+</p>
+
+<pre class="example" id="orgd9e2dde">
+output = σ(input × W + b)
+</pre>
+
+<div class="html" id="org89ec20b">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="understanding-the-nn-structure"></a>Understanding the NN Structure<br />
+<div class="outline-text-5" id="text-understanding-the-nn-structure">
+<p>
+For architecture <code>[2, 3, 1]</code>:
+</p>
+
+<pre class="example" id="org2d40449">
+Layer 0 (Input): 2 neurons
+Layer 1 (Hidden): 3 neurons
+Layer 2 (Output): 1 neuron
+</pre>
+
+<p>
+<b>What matrices do we need?</b>
+</p>
+
+<div class="html" id="org6289831">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org75693ae">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see answer
+</p>
+
+<div class="html" id="orgc57d4fb">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">count</span>;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of layers with parameters (2)
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">ws</span>;       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Weight matrices
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">bs</span>;       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Bias matrices
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">as</span>;       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Activation matrices
+</span>} <span style="color: #95a99f;">NN</span>;
+</pre>
+</div>
+
+<p>
+For <code>[2, 3, 1]</code>: - <code>count = 2</code> - <code>ws[0]</code>: 2×3 (input → hidden) -
+<code>bs[0]</code>: 1×3 (hidden biases) - <code>ws[1]</code>: 3×1 (hidden → output) - <code>bs[1]</code>:
+1×1 (output bias) - <code>as[0]</code>: 1×2 (input activations) - <code>as[1]</code>: 1×3
+(hidden activations) - <code>as[2]</code>: 1×1 (output activations)
+</p>
+
+<div class="html" id="org43de698">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="exercise-implement-the-forward-pass"></a>✍️ Exercise: Implement the Forward Pass<br />
+<div class="outline-text-5" id="text-exercise-implement-the-forward-pass">
+<p>
+The forward pass computes the network's output:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_forward</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: For each layer:
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">1. Multiply by weights: a &#215; W
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">2. Add bias: y + b
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">3. Apply activation: &#963;(y)
+</span>}
+</pre>
+</div>
+
+<div class="html" id="orgf71b50c">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orgddcf090">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgb1960e2">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_forward</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; nn.count; ++i) {
+        mat_dot(nn.as[i + 1], nn.as[i], nn.ws[i]);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">a &#215; W
+</span>        mat_sum(nn.as[i + 1], nn.bs[i]);             <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">+ b
+</span>        mat_sig(nn.as[i + 1]);                       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">&#963;()
+</span>    }
+}
+</pre>
+</div>
+
+<div class="html" id="org132e115">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-6-training---the-cost-function" class="outline-4">
+<h4 id="step-6-training---the-cost-function"><span class="section-number-4">1.3.7.</span> Step 6: Training - The Cost Function</h4>
+<div class="outline-text-4" id="text-step-6-training---the-cost-function">
+</div>
+<ol class="org-ol">
+<li><a id="how-do-we-know-if-the-network-is-good"></a>🤔 How do we know if the network is good?<br />
+<div class="outline-text-5" id="text-how-do-we-know-if-the-network-is-good">
+<div class="html" id="orgaf7a3b6">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org4c5b7fc">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for explanation
+</p>
+
+<div class="html" id="org07ffeca">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+We use a <b>cost function</b> (also called loss function) that measures the
+error.
+</p>
+
+<p>
+<b>Mean Squared Error (MSE):</b>
+</p>
+
+<pre class="example" id="orgd2d0bcd">
+J = (1/n) × Σ(predicted - actual)²
+</pre>
+
+<p>
+Lower cost = better predictions!
+</p>
+
+<div class="html" id="org545c6d2">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="exercise-implement-nn_cost"></a>✍️ Exercise: Implement nn<sub>cost</sub>()<br />
+<div class="outline-text-5" id="text-exercise-implement-nn_cost">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">nn_cost</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO:
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">1. For each training sample
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">2. Run forward pass
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">3. Calculate squared error
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">4. Return mean error
+</span>
+    <span style="color: #ffdd33; font-weight: bold;">return</span> 0.0f;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Placeholder
+</span>}
+</pre>
+</div>
+
+<div class="html" id="orgd7e5a21">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org9f126ac">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="org9ffa6d2">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">nn_cost</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span>)
+{
+    NN_ASSERT(ti.rows == to.rows);
+    NN_ASSERT(to.cols == NN_OUTPUT(nn).cols);
+
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">n</span> = ti.rows;
+    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">c</span> = 0;
+
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; n; ++i) {
+        <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">x</span> = mat_row(ti, i);
+        <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">y</span> = mat_row(to, i);
+
+        mat_copy(NN_INPUT(nn), x);
+        nn_forward(nn);
+
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; to.cols; ++j) {
+            <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">d</span> = MAT_AT(NN_OUTPUT(nn), 0, j) - MAT_AT(y, 0, j);
+            c += d * d;
+        }
+    }
+    <span style="color: #ffdd33; font-weight: bold;">return</span> c / n;
+}
+</pre>
+</div>
+
+<div class="html" id="org74946b0">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-7-backpropagation" class="outline-4">
+<h4 id="step-7-backpropagation"><span class="section-number-4">1.3.8.</span> Step 7: Backpropagation</h4>
+<div class="outline-text-4" id="text-step-7-backpropagation">
+</div>
+<ol class="org-ol">
+<li><a id="how-do-we-improve-the-network"></a>🤔 How do we improve the network?<br />
+<div class="outline-text-5" id="text-how-do-we-improve-the-network">
+<div class="html" id="orge1735da">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org5bf60e0">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for explanation
+</p>
+
+<div class="html" id="orgea36304">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+We use <b>gradient descent</b>: 1. Calculate how much each parameter
+contributes to the error (gradient) 2. Adjust parameters in the opposite
+direction of the gradient 3. Repeat!
+</p>
+
+<p>
+<b>The Chain Rule:</b>
+</p>
+
+<pre class="example" id="orgfbddda8">
+∂Loss/∂Weight = ∂Loss/∂Output × ∂Output/∂Activation × ∂Activation/∂Weight
+</pre>
+
+<p>
+Backpropagation efficiently computes all gradients using the chain rule!
+</p>
+
+<div class="html" id="org6db892c">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="key-gradients-for-sigmoid"></a>Key Gradients for Sigmoid:<br />
+<div class="outline-text-5" id="text-key-gradients-for-sigmoid">
+<p>
+For a single neuron with: - <code>a</code> = activation value - <code>da</code> = error
+gradient
+</p>
+
+<pre class="example" id="org111c439">
+Bias gradient:  ∂J/∂b = 2 × da × a × (1 - a)
+Weight gradient: ∂J/∂W = 2 × da × a × (1 - a) × previous_activation
+</pre>
+</div>
+</li>
+
+<li><a id="exercise-implement-gradient-descent-update"></a>✍️ Exercise: Implement Gradient Descent Update<br />
+<div class="outline-text-5" id="text-exercise-implement-gradient-descent-update">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_learn</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Update each parameter:
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">parameter = parameter - learning_rate &#215; gradient
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org37d98f5">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="orgf697edf">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click to see the answer
+</p>
+
+<div class="html" id="orgd6a1688">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_learn</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; nn.count; ++i) {
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Update weights
+</span>        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; nn.ws[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; nn.ws[i].cols; ++k) {
+                MAT_AT(nn.ws[i], j, k) -= rate * MAT_AT(g.ws[i], j, k);
+            }
+        }
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Update biases
+</span>        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; nn.bs[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; nn.bs[i].cols; ++k) {
+                MAT_AT(nn.bs[i], j, k) -= rate * MAT_AT(g.bs[i], j, k);
+            }
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="org27483ac">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-step-8-putting-it-all-together" class="outline-4">
+<h4 id="step-8-putting-it-all-together"><span class="section-number-4">1.3.9.</span> Step 8: Putting It All Together</h4>
+<div class="outline-text-4" id="text-step-8-putting-it-all-together">
+</div>
+<ol class="org-ol">
+<li><a id="complete-exercise-train-xor"></a>✍️ Complete Exercise: Train XOR<br />
+<div class="outline-text-5" id="text-complete-exercise-train-xor">
+<p>
+Try to write a complete program that trains a neural network to solve
+XOR:
+</p>
+
+<p>
+<b>XOR Truth Table:</b>
+</p>
+
+<pre class="example" id="org3110da3">
+Input | Output
+------|-------
+0, 0  | 0
+0, 1  | 1
+1, 0  | 1
+1, 1  | 0
+</pre>
+
+<div class="html" id="orgef96444">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org95012fe">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for a complete solution
+</p>
+
+<div class="html" id="org0764aea">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_IMPLEMENTATION</span>
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">"nn.h"</span>
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stdio.h&gt;</span>
+
+<span style="color: #95a99f;">int</span> <span style="color: #96a6c8;">main</span>(<span style="color: #95a99f;">void</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Define architecture: 2 inputs, 3 hidden, 1 output
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">arch</span>[] = {2, 3, 1};
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span> = nn_alloc(arch, ARRAY_LEN(arch));
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span> = nn_alloc(arch, ARRAY_LEN(arch));
+
+    nn_rand(nn, -1, 1);
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Training data
+</span>    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">train_data</span>[] = {
+        0, 0, 0,
+        0, 1, 1,
+        1, 0, 1,
+        1, 1, 0
+    };
+
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span> = {.rows = 4, .cols = 2, .stride = 3, .es = train_data};
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span> = {.rows = 4, .cols = 1, .stride = 3, .es = train_data + 2};
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Training loop
+</span>    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span> = 0.1f;
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; 10000; ++i) {
+        nn_backprop(nn, g, ti, to);
+        nn_learn(nn, g, rate);
+
+        <span style="color: #ffdd33; font-weight: bold;">if</span> (i % 1000 == 0) {
+            printf(<span style="color: #73c936;">"Cost: %f\n"</span>, nn_cost(nn, ti, to));
+        }
+    }
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Test
+</span>    mat_fill(NN_INPUT(nn), 0);
+    MAT_AT(NN_INPUT(nn), 0, 0) = 1;
+    MAT_AT(NN_INPUT(nn), 0, 1) = 0;
+    nn_forward(nn);
+    printf(<span style="color: #73c936;">"XOR(1, 0) = %f\n"</span>, MAT_AT(NN_OUTPUT(nn), 0, 0));
+
+    <span style="color: #ffdd33; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div>
+
+<div class="html" id="org57d5070">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-congratulations" class="outline-4">
+<h4 id="congratulations"><span class="section-number-4">1.3.10.</span> 🎓 Congratulations!</h4>
+<div class="outline-text-4" id="text-congratulations">
+<p>
+You've now learned: - ✅ How to represent matrices in C - ✅ Matrix
+operations (multiplication, etc.) - ✅ Activation functions - ✅ Forward
+pass in neural networks - ✅ Cost functions - ✅ Gradient descent - ✅
+Training a neural network
+</p>
+
+<p>
+<b>Next Steps:</b> - Experiment with different architectures - Try different
+activation functions (ReLU, Tanh) - Learn about optimization techniques
+(momentum, Adam) - Study regularization (dropout, L2)
+</p>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-quick-reference" class="outline-4">
+<h4 id="quick-reference"><span class="section-number-4">1.3.11.</span> 📚 Quick Reference</h4>
+<div class="outline-text-4" id="text-quick-reference">
+<p>
+<b>Essential Concepts:</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Concept</th>
+<th scope="col" class="org-left">Formula</th>
+<th scope="col" class="org-left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Matrix Access</td>
+<td class="org-left"><code>index = i * stride + j</code></td>
+<td class="org-left">Find element in memory</td>
+</tr>
+
+<tr>
+<td class="org-left">Matrix Multiply</td>
+<td class="org-left"><code>C[i][j] = Σ(A[i][k] * B[k][j])</code></td>
+<td class="org-left">Transform data</td>
+</tr>
+
+<tr>
+<td class="org-left">Sigmoid</td>
+<td class="org-left"><code>σ(x) = 1/(1 + e^(-x))</code></td>
+<td class="org-left">Squash to (0,1)</td>
+</tr>
+
+<tr>
+<td class="org-left">Forward Pass</td>
+<td class="org-left"><code>a = σ(input × W + b)</code></td>
+<td class="org-left">Compute prediction</td>
+</tr>
+
+<tr>
+<td class="org-left">MSE Cost</td>
+<td class="org-left"><code>J = Σ(predicted - actual)² / n</code></td>
+<td class="org-left">Measure error</td>
+</tr>
+
+<tr>
+<td class="org-left">Gradient Descent</td>
+<td class="org-left"><code>param = param - rate × gradient</code></td>
+<td class="org-left">Minimize error</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-header-guards" class="outline-3">
+<h3 id="header-guards"><span class="section-number-3">1.4.</span> Header Guards</h3>
+<div class="outline-text-3" id="text-header-guards">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#if</span><span style="color: #95a99f;">n</span><span style="color: #95a99f;">def</span> NN_H_
+<span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_H_</span>
+...
+<span style="color: #95a99f;">#endif</span> <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">NN_H_</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-what-are-header-guards" class="outline-4">
+<h4 id="what-are-header-guards"><span class="section-number-4">1.4.1.</span> What are header guards?</h4>
+<div class="outline-text-4" id="text-what-are-header-guards">
+<p>
+Header guards prevent the same header file from being included multiple
+times in a single compilation unit. Without them, you'd get
+"redefinition" errors.
+</p>
+</div>
+</div>
+
+<div id="outline-container-how-they-work" class="outline-4">
+<h4 id="how-they-work"><span class="section-number-4">1.4.2.</span> How they work:</h4>
+<div class="outline-text-4" id="text-how-they-work">
+<ol class="org-ol">
+<li>First time: <code>NN_H_</code> is not defined, so it gets defined and content is
+included</li>
+<li>Subsequent times: <code>NN_H_</code> is already defined, so the entire file is
+skipped</li>
+</ol>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-includes-and-dependencies" class="outline-3">
+<h3 id="includes-and-dependencies"><span class="section-number-3">1.5.</span> Includes and Dependencies</h3>
+<div class="outline-text-3" id="text-includes-and-dependencies">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stdbool.h&gt;</span>   <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For bool type
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stddef.h&gt;</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For size_t type
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stdio.h&gt;</span>     <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For file I/O and printf
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;time.h&gt;</span>      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For random number seeding
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;math.h&gt;</span>      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For expf() and sigmoid function
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stdint.h&gt;</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For fixed-width integers
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;float.h&gt;</span>     <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For float constants (FLT_MAX, etc.)
+</span><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;string.h&gt;</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">For memcpy, strlen</span>
+</pre>
+</div>
+
+<p>
+Each include provides specific functionality: - <b>stdbool.h</b>: Boolean
+type (<code>true</code>, <code>false</code>) - <b>stddef.h</b>: Size type and NULL constant -
+<b>stdio.h</b>: Input/output operations - <b>math.h</b>: Mathematical functions -
+<b>stdlib.h</b>: Memory allocation (malloc)
+</p>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-configurable-macros" class="outline-3">
+<h3 id="configurable-macros"><span class="section-number-3">1.6.</span> Configurable Macros</h3>
+<div class="outline-text-3" id="text-configurable-macros">
+</div>
+<div id="outline-container-memory-allocation-customization" class="outline-4">
+<h4 id="memory-allocation-customization"><span class="section-number-4">1.6.1.</span> Memory Allocation Customization</h4>
+<div class="outline-text-4" id="text-memory-allocation-customization">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#if</span><span style="color: #95a99f;">n</span><span style="color: #95a99f;">def</span> NN_MALLOC
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;stdlib.h&gt;</span>
+<span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_MALLOC</span> malloc
+<span style="color: #95a99f;">#endif</span> <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">NN_MALLOC</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-why-this-is-useful" class="outline-4">
+<h4 id="why-this-is-useful"><span class="section-number-4">1.6.2.</span> Why this is useful:</h4>
+<div class="outline-text-4" id="text-why-this-is-useful">
+<ul class="org-ul">
+<li>Allows users to inject custom memory allocators</li>
+<li>Useful for debugging (can track allocations)</li>
+<li>Useful for embedded systems (might use different allocation strategy)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-assertion-customization" class="outline-4">
+<h4 id="assertion-customization"><span class="section-number-4">1.6.3.</span> Assertion Customization</h4>
+<div class="outline-text-4" id="text-assertion-customization">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#if</span><span style="color: #95a99f;">n</span><span style="color: #95a99f;">def</span> NN_ASSERT
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;assert.h&gt;</span>
+<span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_ASSERT</span> assert
+<span style="color: #95a99f;">#endif</span> <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">NN_ASSERT</span>
+</pre>
+</div>
+
+<p>
+Similar to <code>NN_MALLOC</code>, this allows custom assertion behavior.
+</p>
+</div>
+</div>
+
+<div id="outline-container-array-length-macro" class="outline-4">
+<h4 id="array-length-macro"><span class="section-number-4">1.6.4.</span> Array Length Macro</h4>
+<div class="outline-text-4" id="text-array-length-macro">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">ARRAY_LEN</span>(<span style="color: #f4f4ff;">xs</span>) <span style="color: #ffdd33; font-weight: bold;">sizeof</span>((xs)) / <span style="color: #ffdd33; font-weight: bold;">sizeof</span>((xs)[0])
+</pre>
+</div>
+
+<p>
+This calculates the number of elements in a static array.
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">int</span> <span style="color: #f4f4ff;">arr</span>[] = {1, 2, 3, 4, 5};
+<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">len</span> = ARRAY_LEN(arr); <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">len = 5</span>
+</pre>
+</div>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-data-structures" class="outline-3">
+<h3 id="data-structures"><span class="section-number-3">1.7.</span> Data Structures</h3>
+<div class="outline-text-3" id="text-data-structures">
+</div>
+<div id="outline-container-gym_batch---batch-processing-state" class="outline-4">
+<h4 id="gym_batch---batch-processing-state"><span class="section-number-4">1.7.1.</span> 1. Gym<sub>Batch</sub> - Batch Processing State</h4>
+<div class="outline-text-4" id="text-gym_batch---batch-processing-state">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">begin</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Starting index for current batch
+</span>    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">cost</span>;        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Accumulated cost for the batch
+</span>    <span style="color: #95a99f;">bool</span> <span style="color: #f4f4ff;">finished</span>;     <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Whether batch processing is complete
+</span>} <span style="color: #95a99f;">Gym_Batch</span>;
+</pre>
+</div>
+
+<p>
+This tracks progress when processing data in mini-batches for training.
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat---matrix-structure" class="outline-4">
+<h4 id="mat---matrix-structure"><span class="section-number-4">1.7.2.</span> 2. Mat - Matrix Structure</h4>
+<div class="outline-text-4" id="text-mat---matrix-structure">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">rows</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of rows
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">cols</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of columns
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">stride</span>;    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Elements per row in memory (enables row views)
+</span>    <span style="color: #95a99f;">float</span> *<span style="color: #f4f4ff;">es</span>;        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Pointer to matrix elements
+</span>} <span style="color: #95a99f;">Mat</span>;
+</pre>
+</div>
+</div>
+
+<ol class="org-ol">
+<li><a id="understanding-stride"></a>Understanding <code>stride</code>:<br />
+<div class="outline-text-5" id="text-understanding-stride">
+<p>
+The stride is an advanced feature that allows efficient row operations.
+A normal matrix has <code>stride =</code> cols=, but row views can share memory
+with the parent matrix.
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Original matrix: 3x4
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Memory layout: [a,b,c,d, e,f,g,h, i,j,k,l]
+</span>
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Row 1 view: 1x4
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">stride = 4 (same as parent)
+</span><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">es points to 'e' element</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-matrix-access-macro" class="outline-4">
+<h4 id="matrix-access-macro"><span class="section-number-4">1.7.3.</span> Matrix Access Macro</h4>
+<div class="outline-text-4" id="text-matrix-access-macro">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">MAT_AT</span>(<span style="color: #f4f4ff;">m</span>, <span style="color: #f4f4ff;">i</span>, <span style="color: #f4f4ff;">j</span>) (m).es[(i)*(m).stride + (j)]
+</pre>
+</div>
+
+<p>
+This macro accesses element at row <code>i</code>, column <code>j</code>.
+</p>
+
+<p>
+<b>How it works:</b>
+</p>
+
+<pre class="example" id="org1bb0267">
+Memory index = row * stride + column
+</pre>
+
+<p>
+<b>Example:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span> = {
+    .rows = 2,
+    .cols = 3,
+    .stride = 3,
+    .es = {1,2,3, 4,5,6}
+};
+
+<span style="color: #96a6c8;">MAT_AT</span>(m, 1, 2) = m.es[1*3 + 2] = m.es[5] = 6
+</pre>
+</div>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-matrix-operations" class="outline-3">
+<h3 id="matrix-operations"><span class="section-number-3">1.8.</span> Matrix Operations</h3>
+<div class="outline-text-3" id="text-matrix-operations">
+</div>
+<div id="outline-container-mat_alloc---create-a-matrix" class="outline-4">
+<h4 id="mat_alloc---create-a-matrix"><span class="section-number-4">1.8.1.</span> 1. mat<sub>alloc</sub>() - Create a Matrix</h4>
+<div class="outline-text-4" id="text-mat_alloc---create-a-matrix">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_alloc</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">rows</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">cols</span>)
+{
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>;
+    m.rows = rows;
+    m.cols = cols;
+    m.stride = cols;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">stride equals cols for new matrices
+</span>    m.es = NN_MALLOC(<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*m.es)*rows*cols);
+    NN_ASSERT(m.es != <span style="color: #95a99f;">NULL</span>);
+    <span style="color: #ffdd33; font-weight: bold;">return</span> m;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-what-it-does" class="outline-4">
+<h4 id="what-it-does"><span class="section-number-4">1.8.2.</span> What it does:</h4>
+<div class="outline-text-4" id="text-what-it-does">
+<ol class="org-ol">
+<li>Sets matrix dimensions</li>
+<li>Allocates memory for all elements</li>
+<li>Returns the initialized matrix</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-mat_fill---fill-matrix-with-value" class="outline-4">
+<h4 id="mat_fill---fill-matrix-with-value"><span class="section-number-4">1.8.3.</span> 2. mat<sub>fill</sub>() - Fill Matrix with Value</h4>
+<div class="outline-text-4" id="text-mat_fill---fill-matrix-with-value">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_fill</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = x;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-mat_dot---matrix-multiplication" class="outline-4">
+<h4 id="mat_dot---matrix-multiplication"><span class="section-number-4">1.8.4.</span> 3. mat<sub>dot</sub>() - Matrix Multiplication</h4>
+<div class="outline-text-4" id="text-mat_dot---matrix-multiplication">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_dot</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">b</span>)
+{
+    NN_ASSERT(a.cols == b.rows);
+    NN_ASSERT(dst.rows == a.rows);
+    NN_ASSERT(dst.cols == b.cols);
+
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; dst.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; dst.cols; ++j) {
+            MAT_AT(dst, i, j) = 0;
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; a.cols; ++k) {
+                MAT_AT(dst, i, j) += MAT_AT(a, i, k) * MAT_AT(b, k, j);
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-understanding-matrix-multiplication" class="outline-4">
+<h4 id="understanding-matrix-multiplication"><span class="section-number-4">1.8.5.</span> Understanding Matrix Multiplication:</h4>
+<div class="outline-text-4" id="text-understanding-matrix-multiplication">
+<p>
+Given matrices A (m×n) and B (n×p), the product C = A×B (m×p) is:
+</p>
+
+<pre class="example" id="org73c804a">
+C[i][j] = Σ(A[i][k] * B[k][j]) for k = 0 to n-1
+</pre>
+
+<p>
+<b>Example:</b>
+</p>
+
+<pre class="example" id="orgcf5e4e8">
+A = [1 2]    B = [5 6]
+    [3 4]        [7 8]
+
+C[0][0] = 1*5 + 2*7 = 5 + 14 = 19
+C[0][1] = 1*6 + 2*8 = 6 + 16 = 22
+C[1][0] = 3*5 + 4*7 = 15 + 28 = 43
+C[1][1] = 3*6 + 4*8 = 18 + 32 = 50
+
+C = [19 22]
+    [43 50]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-mat_row---create-a-row-view" class="outline-4">
+<h4 id="mat_row---create-a-row-view"><span class="section-number-4">1.8.6.</span> 4. mat<sub>row</sub>() - Create a Row View</h4>
+<div class="outline-text-4" id="text-mat_row---create-a-row-view">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_row</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">row</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">return</span> (Mat) {
+        .rows = 1,
+        .cols = m.cols,
+        .stride = m.stride,  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Share stride with parent
+</span>        .es = &amp;MAT_AT(m, row, 0),  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Point to row's first element
+</span>    };
+}
+</pre>
+</div>
+
+<p>
+This creates a 1×cols matrix that <b>shares memory</b> with the parent
+matrix. No copying occurs!
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat_sig---apply-sigmoid-activation" class="outline-4">
+<h4 id="mat_sig---apply-sigmoid-activation"><span class="section-number-4">1.8.7.</span> 5. mat<sub>sig</sub>() - Apply Sigmoid Activation</h4>
+<div class="outline-text-4" id="text-mat_sig---apply-sigmoid-activation">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_sig</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = sigmoidf(MAT_AT(m, i, j));
+        }
+    }
+}
+
+<span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">sigmoidf</span>(<span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">return</span> 1.f / (1.f + expf(-x));
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-the-sigmoid-function-1" class="outline-4">
+<h4 id="the-sigmoid-function-1"><span class="section-number-4">1.8.8.</span> The Sigmoid Function:</h4>
+<div class="outline-text-4" id="text-the-sigmoid-function-1">
+<pre class="example" id="orgac2bc3f">
+σ(x) = 1 / (1 + e^(-x))
+</pre>
+
+<p>
+<b>Properties:</b> - Output range: (0, 1) - Squashes any input to between 0
+and 1 - Differentiable (important for backpropagation)
+</p>
+
+<p>
+<b>Graph:</b>
+</p>
+
+<pre class="example" id="org87b15dd">
+1 |            ________
+  |          /
+  |        /
+  |      /
+  |    /
+0 |__/
+  +------------------
+   -∞       0       +∞
+</pre>
+</div>
+</div>
+
+<div id="outline-container-mat_sum---element-wise-addition" class="outline-4">
+<h4 id="mat_sum---element-wise-addition"><span class="section-number-4">1.8.9.</span> 6. mat<sub>sum</sub>() - Element-wise Addition</h4>
+<div class="outline-text-4" id="text-mat_sum---element-wise-addition">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_sum</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>)
+{
+    NN_ASSERT(dst.rows == a.rows);
+    NN_ASSERT(dst.cols == a.cols);
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; dst.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; dst.cols; ++j) {
+            MAT_AT(dst, i, j) += MAT_AT(a, i, j);
+        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Adds corresponding elements: <code>dst[i][j] +</code> a[i][j]=
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat_copy---copy-matrix-data" class="outline-4">
+<h4 id="mat_copy---copy-matrix-data"><span class="section-number-4">1.8.10.</span> 7. mat<sub>copy</sub>() - Copy Matrix Data</h4>
+<div class="outline-text-4" id="text-mat_copy---copy-matrix-data">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_copy</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">src</span>)
+{
+    NN_ASSERT(dst.rows == src.rows);
+    NN_ASSERT(dst.cols == src.cols);
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; dst.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; dst.cols; ++j) {
+            MAT_AT(dst, i, j) = MAT_AT(src, i, j);
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-mat_rand---random-initialization" class="outline-4">
+<h4 id="mat_rand---random-initialization"><span class="section-number-4">1.8.11.</span> 8. mat<sub>rand</sub>() - Random Initialization</h4>
+<div class="outline-text-4" id="text-mat_rand---random-initialization">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_rand</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">low</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">high</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = rand_float() * (high - low) + low;
+        }
+    }
+}
+
+<span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">rand_float</span>(<span style="color: #95a99f;">void</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">return</span> (<span style="color: #95a99f;">float</span>)rand()/(<span style="color: #95a99f;">float</span>)RAND_MAX;
+}
+</pre>
+</div>
+
+<p>
+Generates random floats in range [low, high].
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat_save-and-mat_load---persistence" class="outline-4">
+<h4 id="mat_save-and-mat_load---persistence"><span class="section-number-4">1.8.12.</span> 9. mat<sub>save</sub>() and mat<sub>load</sub>() - Persistence</h4>
+<div class="outline-text-4" id="text-mat_save-and-mat_load---persistence">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_save</span>(<span style="color: #95a99f;">FILE</span> *<span style="color: #f4f4ff;">out</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">const</span> <span style="color: #95a99f;">char</span> *<span style="color: #f4f4ff;">magic</span> = <span style="color: #73c936;">"nn.h.mat"</span>;
+    fwrite(magic, strlen(magic), 1, out);
+    fwrite(&amp;m.rows, <span style="color: #ffdd33; font-weight: bold;">sizeof</span>(m.rows), 1, out);
+    fwrite(&amp;m.cols, <span style="color: #ffdd33; font-weight: bold;">sizeof</span>(m.cols), 1, out);
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">n</span> = fwrite(&amp;MAT_AT(m, i, 0), <span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*m.es), m.cols, out);
+        <span style="color: #ffdd33; font-weight: bold;">while</span>(n &lt; m.cols &amp;&amp; !ferror(out)) {
+            <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = fwrite(m.es + n, <span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*m.es), m.cols - n, out);
+            n += k;
+        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Saves matrix to file with magic number for validation.
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat_print---debug-output" class="outline-4">
+<h4 id="mat_print---debug-output"><span class="section-number-4">1.8.13.</span> 10. mat<sub>print</sub>() - Debug Output</h4>
+<div class="outline-text-4" id="text-mat_print---debug-output">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_print</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #ffdd33; font-weight: bold;">const</span> <span style="color: #95a99f;">char</span> *<span style="color: #f4f4ff;">name</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">padding</span>)
+{
+    printf(<span style="color: #73c936;">"%*s%s = [\n"</span>,(<span style="color: #95a99f;">int</span>)padding, <span style="color: #73c936;">""</span>, name);
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        printf(<span style="color: #73c936;">"%*s    "</span>, (<span style="color: #95a99f;">int</span>)padding, <span style="color: #73c936;">""</span>);
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            printf(<span style="color: #73c936;">"%f "</span>, MAT_AT(m, i, j));
+        }
+        printf(<span style="color: #73c936;">"\n"</span>);
+    }
+    printf(<span style="color: #73c936;">"%*s]\n"</span>, (<span style="color: #95a99f;">int</span>)padding, <span style="color: #73c936;">""</span>);
+}
+
+<span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">MAT_PRINT</span>(<span style="color: #f4f4ff;">m</span>) mat_print(m, #m, 0)
+</pre>
+</div>
+
+<p>
+The <code>MAT_PRINT</code> macro uses stringification (<code>#m</code>) to automatically use
+the variable name as the label.
+</p>
+</div>
+</div>
+
+<div id="outline-container-mat_shuffle_rows---random-row-shuffling" class="outline-4">
+<h4 id="mat_shuffle_rows---random-row-shuffling"><span class="section-number-4">1.8.14.</span> 11. mat<sub>shuffle</sub><sub>rows</sub>() - Random Row Shuffling</h4>
+<div class="outline-text-4" id="text-mat_shuffle_rows---random-row-shuffling">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_shuffle_rows</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = i + rand() % (m.rows - i);
+        <span style="color: #ffdd33; font-weight: bold;">if</span>(i != j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; m.cols; ++k) {
+                <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">t</span> = MAT_AT(m, i, k);
+                MAT_AT(m, i, k) = MAT_AT(m, j, k);
+                MAT_AT(m, j, k) = t;
+            }
+        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Uses Fisher-Yates shuffle algorithm for randomness. Important for
+training to avoid order bias.
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-neural-network-structure" class="outline-3">
+<h3 id="neural-network-structure"><span class="section-number-3">1.9.</span> Neural Network Structure</h3>
+<div class="outline-text-3" id="text-neural-network-structure">
+</div>
+<div id="outline-container-the-nn-structure" class="outline-4">
+<h4 id="the-nn-structure"><span class="section-number-4">1.9.1.</span> The NN Structure</h4>
+<div class="outline-text-4" id="text-the-nn-structure">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">count</span>;    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of layers (input layer not counted)
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">ws</span>;         <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Array of weight matrices
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">bs</span>;         <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Array of bias matrices
+</span>    <span style="color: #95a99f;">Mat</span> *<span style="color: #f4f4ff;">as</span>;         <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Array of activation matrices
+</span>} <span style="color: #95a99f;">NN</span>;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-understanding-the-structure" class="outline-4">
+<h4 id="understanding-the-structure"><span class="section-number-4">1.9.2.</span> Understanding the Structure:</h4>
+<div class="outline-text-4" id="text-understanding-the-structure">
+<p>
+For a network with architecture <code>[2, 3, 1]</code> (2 inputs, 3 hidden, 1
+output): - <code>count = 2</code> (two layers with learnable parameters) - <code>ws[0]</code>
+= 2×3 matrix (input → hidden weights) - <code>bs[0]</code> = 1×3 matrix (hidden
+layer biases) - <code>ws[1]</code> = 3×1 matrix (hidden → output weights) - <code>bs[1]</code>
+= 1×1 matrix (output bias) - <code>as[0]</code> = 1×2 matrix (input layer) -
+<code>as[1]</code> = 1×3 matrix (hidden activations) - <code>as[2]</code> = 1×1 matrix (output
+activations)
+</p>
+</div>
+</div>
+
+<div id="outline-container-helper-macros" class="outline-4">
+<h4 id="helper-macros"><span class="section-number-4">1.9.3.</span> Helper Macros</h4>
+<div class="outline-text-4" id="text-helper-macros">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">NN_INPUT</span>(<span style="color: #f4f4ff;">nn</span>) (nn).as[0]
+<span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">NN_OUTPUT</span>(<span style="color: #f4f4ff;">nn</span>) (nn).as[(nn).count]
+</pre>
+</div>
+
+<p>
+These provide convenient access to input and output layers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-nn_alloc---create-network" class="outline-4">
+<h4 id="nn_alloc---create-network"><span class="section-number-4">1.9.4.</span> nn<sub>alloc</sub>() - Create Network</h4>
+<div class="outline-text-4" id="text-nn_alloc---create-network">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">NN</span> <span style="color: #96a6c8;">nn_alloc</span>(<span style="color: #95a99f;">size_t</span> *<span style="color: #f4f4ff;">arch</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">arch_count</span>)
+{
+    NN_ASSERT(arch_count &gt; 0);
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>;
+    nn.count = arch_count - 1;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of weight layers
+</span>
+    nn.ws = NN_MALLOC(<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*nn.ws)*nn.count);
+    nn.bs = NN_MALLOC(<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*nn.bs)*nn.count);
+    nn.as = NN_MALLOC(<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*nn.as)*(nn.count + 1));
+
+    nn.as[0] = mat_alloc(1, arch[0]);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input layer
+</span>
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 1; i &lt; arch_count; ++i) {
+        nn.ws[i-1] = mat_alloc(nn.as[i-1].cols, arch[i]);
+        nn.bs[i-1] = mat_alloc(nn.as[i-1].rows, arch[i]);
+        nn.as[i]   = mat_alloc(nn.as[i-1].rows, arch[i]);
+    }
+
+    <span style="color: #ffdd33; font-weight: bold;">return</span> nn;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-how-it-works" class="outline-4">
+<h4 id="how-it-works"><span class="section-number-4">1.9.5.</span> How it works:</h4>
+<div class="outline-text-4" id="text-how-it-works">
+<ol class="org-ol">
+<li>Calculate number of layers with parameters</li>
+<li>Allocate arrays for weights, biases, activations</li>
+<li>Create each layer with appropriate dimensions</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-nn_forward---forward-pass" class="outline-4">
+<h4 id="nn_forward---forward-pass"><span class="section-number-4">1.9.6.</span> nn<sub>forward</sub>() - Forward Pass</h4>
+<div class="outline-text-4" id="text-nn_forward---forward-pass">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_forward</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; nn.count; ++i) {
+        mat_dot(nn.as[i+1], nn.as[i], nn.ws[i]);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Multiply by weights
+</span>        mat_sum(nn.as[i+1], nn.bs[i]);             <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Add bias
+</span>        mat_sig(nn.as[i+1]);                       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Apply activation
+</span>    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-the-forward-pass" class="outline-4">
+<h4 id="the-forward-pass"><span class="section-number-4">1.9.7.</span> The Forward Pass:</h4>
+<div class="outline-text-4" id="text-the-forward-pass">
+<p>
+For each layer: 1. <b>Weighted sum</b>: <code>y = a_prev × W</code> 2. <b>Add bias</b>:
+<code>y = y + b</code> 3. <b>Activation</b>: <code>a = σ(y)</code>
+</p>
+
+<p>
+<b>Mathematical representation:</b>
+</p>
+
+<pre class="example" id="orgcdd7472">
+a^(l) = σ(a^(l-1) × W^(l) + b^(l))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-nn_cost---calculate-loss" class="outline-4">
+<h4 id="nn_cost---calculate-loss"><span class="section-number-4">1.9.8.</span> nn<sub>cost</sub>() - Calculate Loss</h4>
+<div class="outline-text-4" id="text-nn_cost---calculate-loss">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">nn_cost</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span>)
+{
+    NN_ASSERT(ti.rows == to.rows);
+    NN_ASSERT(to.cols == NN_OUTPUT(nn).cols);
+
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">n</span> = ti.rows;
+    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">c</span> = 0;
+
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; n; ++i) {
+        <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">x</span> = mat_row(ti, i);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input sample
+</span>        <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">y</span> = mat_row(to, i);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Target output
+</span>
+        mat_copy(NN_INPUT(nn), x);
+        nn_forward(nn);
+
+        <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">q</span> = to.cols;
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; q; ++j) {
+            <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">d</span> = MAT_AT(NN_OUTPUT(nn), 0, j) - MAT_AT(y, 0, j);
+            c += d*d;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Squared error
+</span>        }
+    }
+    <span style="color: #ffdd33; font-weight: bold;">return</span> c / n;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Mean squared error
+</span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-understanding-cost-function" class="outline-4">
+<h4 id="understanding-cost-function"><span class="section-number-4">1.9.9.</span> Understanding Cost Function:</h4>
+<div class="outline-text-4" id="text-understanding-cost-function">
+<p>
+<b>Mean Squared Error (MSE):</b>
+</p>
+
+<pre class="example" id="org7065301">
+J = (1/n) × Σ(predicted - actual)²
+</pre>
+
+<p>
+This measures how wrong the network's predictions are. Lower is better!
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-training-algorithm" class="outline-3">
+<h3 id="training-algorithm"><span class="section-number-3">1.10.</span> Training Algorithm</h3>
+<div class="outline-text-3" id="text-training-algorithm">
+</div>
+<div id="outline-container-nn_backprop---backpropagation" class="outline-4">
+<h4 id="nn_backprop---backpropagation"><span class="section-number-4">1.10.1.</span> nn<sub>backprop</sub>() - Backpropagation</h4>
+<div class="outline-text-4" id="text-nn_backprop---backpropagation">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_backprop</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span>)
+{
+    NN_ASSERT(ti.rows == to.rows);
+    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">n</span> = ti.rows;
+    NN_ASSERT(NN_OUTPUT(nn).cols == to.cols);
+
+    nn_zero(g);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Reset gradients
+</span>
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; n; ++i) {
+        mat_copy(NN_INPUT(nn), mat_row(ti, i));
+        nn_forward(nn);
+
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Reset activation gradients
+</span>        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt;= nn.count; ++j) {
+            mat_fill(g.as[j], 0);
+        }
+
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Calculate output layer error
+</span>        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; to.cols; ++j) {
+            MAT_AT(NN_OUTPUT(g), 0, j) = MAT_AT(NN_OUTPUT(nn), 0, j) - MAT_AT(to, i, j);
+        }
+
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Backpropagate through layers
+</span>        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">l</span> = nn.count; l &gt; 0; --l) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; nn.as[l].cols; ++j) {
+                <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">a</span>  = MAT_AT(nn.as[l], 0, j);      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Activation
+</span>                <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">da</span> = MAT_AT(g.as[l], 0, j);       <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Gradient
+</span>
+                <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Bias gradient: 2*da*a*(1-a)
+</span>                MAT_AT(g.bs[l-1], 0, j) += 2*da*a*(1-a);
+
+                <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; nn.as[l-1].cols; ++k) {
+                    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">pa</span> = MAT_AT(nn.as[l-1], 0, k);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Previous activation
+</span>                    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">w</span>  = MAT_AT(nn.ws[l-1], k, j);   <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Weight
+</span>
+                    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Weight gradient
+</span>                    MAT_AT(g.ws[l-1], k, j) += 2*da*a*(1-a)*pa;
+
+                    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Backpropagate to previous layer
+</span>                    MAT_AT(g.as[l-1], 0, k) += 2*da*a*(1-a)*w;
+                }
+            }
+        }
+    }
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Average gradients over all samples
+</span>    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; g.count; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; g.ws[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; g.ws[i].cols; ++k) {
+                MAT_AT(g.ws[i], j, k) /= n;
+            }
+        }
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; g.bs[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; g.bs[i].cols; ++k) {
+                MAT_AT(g.bs[i], j, k) /= n;
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-understanding-backpropagation" class="outline-4">
+<h4 id="understanding-backpropagation"><span class="section-number-4">1.10.2.</span> Understanding Backpropagation:</h4>
+<div class="outline-text-4" id="text-understanding-backpropagation">
+<p>
+Backpropagation calculates how much each parameter contributes to the
+error.
+</p>
+
+<p>
+<b>The Chain Rule:</b>
+</p>
+
+<pre class="example" id="orge04ab41">
+∂Loss/∂Weight = ∂Loss/∂Output × ∂Output/∂Activation × ∂Activation/∂Weight
+</pre>
+
+<p>
+<b>For sigmoid activation:</b>
+</p>
+
+<pre class="example" id="orgfa28410">
+σ'(x) = σ(x) × (1 - σ(x))
+</pre>
+
+<p>
+<b>Gradient equations:</b>
+</p>
+
+<pre class="example" id="org92ea048">
+∂J/∂b = 2 × (predicted - actual) × a × (1 - a)
+∂J/∂W = 2 × (predicted - actual) × a × (1 - a) × previous_activation
+</pre>
+</div>
+</div>
+
+<div id="outline-container-nn_learn---update-weights" class="outline-4">
+<h4 id="nn_learn---update-weights"><span class="section-number-4">1.10.3.</span> nn<sub>learn</sub>() - Update Weights</h4>
+<div class="outline-text-4" id="text-nn_learn---update-weights">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_learn</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; nn.count; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; nn.ws[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; nn.ws[i].cols; ++k) {
+                MAT_AT(nn.ws[i], j, k) -= rate * MAT_AT(g.ws[i], j, k);
+            }
+        }
+
+        <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; nn.bs[i].rows; ++j) {
+            <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">k</span> = 0; k &lt; nn.bs[i].cols; ++k) {
+                MAT_AT(nn.bs[i], j, k) -= rate * MAT_AT(g.bs[i], j, k);
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-gradient-descent" class="outline-4">
+<h4 id="gradient-descent"><span class="section-number-4">1.10.4.</span> Gradient Descent:</h4>
+<div class="outline-text-4" id="text-gradient-descent">
+<pre class="example" id="org7280765">
+parameter = parameter - learning_rate × gradient
+</pre>
+
+<p>
+This moves parameters in the direction that reduces the error.
+</p>
+
+<p>
+<b>Visual analogy:</b>
+</p>
+
+<pre class="example" id="orgaf08499">
+Imagine you're on a mountain (the error surface)
+- You want to go down (minimize error)
+- Gradient tells you which way is up
+- You move opposite to gradient (go down)
+- Learning rate = step size
+</pre>
+</div>
+</div>
+
+<div id="outline-container-nn_rand---random-initialization" class="outline-4">
+<h4 id="nn_rand---random-initialization"><span class="section-number-4">1.10.5.</span> nn<sub>rand</sub>() - Random Initialization</h4>
+<div class="outline-text-4" id="text-nn_rand---random-initialization">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_rand</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">low</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">high</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; nn.count; ++i) {
+        mat_rand(nn.ws[i], low, high);
+        mat_rand(nn.bs[i], low, high);
+    }
+}
+</pre>
+</div>
+
+<p>
+Initializes all weights and biases with random values.
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-visualization-system-gym" class="outline-3">
+<h3 id="visualization-system-gym"><span class="section-number-3">1.11.</span> Visualization System (Gym)</h3>
+<div class="outline-text-3" id="text-visualization-system-gym">
+<p>
+The gym system (enabled with <code>#define NN_ENABLE_GYM</code>) provides
+visualization using Raylib.
+</p>
+</div>
+
+<div id="outline-container-plot-structure" class="outline-4">
+<h4 id="plot-structure"><span class="section-number-4">1.11.1.</span> Plot Structure</h4>
+<div class="outline-text-4" id="text-plot-structure">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">float</span> *<span style="color: #f4f4ff;">items</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Array of values to plot
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">count</span>;      <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Number of values
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">capacity</span>;   <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Allocated capacity
+</span>} <span style="color: #95a99f;">Plot</span>;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-dynamic-array-macro" class="outline-4">
+<h4 id="dynamic-array-macro"><span class="section-number-4">1.11.2.</span> Dynamic Array Macro</h4>
+<div class="outline-text-4" id="text-dynamic-array-macro">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">da_append</span>(<span style="color: #f4f4ff;">da</span>, <span style="color: #f4f4ff;">item</span>)                         \
+<span style="color: #ffdd33; font-weight: bold;">do</span> {                                                \
+    <span style="color: #ffdd33; font-weight: bold;">if</span>(((da))-&gt;count &gt;= ((da))-&gt;capacity) {         \
+        (da)-&gt;capacity = (da)-&gt;capacity == 0 ?      \
+            DA_INIT_CAP : (da)-&gt;capacity*2;         \
+        (da)-&gt;items = realloc((da)-&gt;items,          \
+            (da)-&gt;capacity*<span style="color: #ffdd33; font-weight: bold;">sizeof</span>(*(da)-&gt;items));   \
+        assert((da)-&gt;items != <span style="color: #95a99f;">NULL</span>);                \
+    }                                               \
+    (da)-&gt;items[(da)-&gt;count++] = (item);            \
+} <span style="color: #ffdd33; font-weight: bold;">while</span>(0)
+</pre>
+</div>
+
+<p>
+This is a <b>dynamic array</b> that automatically grows when needed.
+</p>
+</div>
+</div>
+
+<div id="outline-container-gym_render_nn---visualize-network" class="outline-4">
+<h4 id="gym_render_nn---visualize-network"><span class="section-number-4">1.11.3.</span> gym<sub>render</sub><sub>nn</sub>() - Visualize Network</h4>
+<div class="outline-text-4" id="text-gym_render_nn---visualize-network">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">gym_render_nn</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rx</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">ry</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rw</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rh</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Draws neurons as circles
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Draws connections as lines
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Color intensity shows weight strength
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">...
+</span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-gym_plot---draw-cost-graph" class="outline-4">
+<h4 id="gym_plot---draw-cost-graph"><span class="section-number-4">1.11.4.</span> gym<sub>plot</sub>() - Draw Cost Graph</h4>
+<div class="outline-text-4" id="text-gym_plot---draw-cost-graph">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">gym_plot</span>(<span style="color: #95a99f;">Plot</span> <span style="color: #f4f4ff;">plot</span>, <span style="color: #95a99f;">int</span> <span style="color: #f4f4ff;">rx</span>, <span style="color: #95a99f;">int</span> <span style="color: #f4f4ff;">ry</span>, <span style="color: #95a99f;">int</span> <span style="color: #f4f4ff;">rw</span>, <span style="color: #95a99f;">int</span> <span style="color: #f4f4ff;">rh</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Plots training cost over time
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Shows learning progress
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">...
+</span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-gym_process_batch---batch-training" class="outline-4">
+<h4 id="gym_process_batch---batch-training"><span class="section-number-4">1.11.5.</span> gym<sub>process</sub><sub>batch</sub>() - Batch Training</h4>
+<div class="outline-text-4" id="text-gym_process_batch---batch-training">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">gym_process_batch</span>(<span style="color: #95a99f;">Gym_Batch</span> *<span style="color: #f4f4ff;">gb</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">batch_size</span>,
+                       <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">t</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Processes training data in mini-batches
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Updates weights incrementally
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Tracks cost and progress
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">...
+</span>}
+</pre>
+</div>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-complete-usage-example" class="outline-3">
+<h3 id="complete-usage-example"><span class="section-number-3">1.12.</span> Complete Usage Example</h3>
+<div class="outline-text-3" id="text-complete-usage-example">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_IMPLEMENTATION</span>
+<span style="color: #95a99f;">#define</span> <span style="color: #f4f4ff;">NN_ENABLE_GYM</span>
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">"nn.h"</span>
+<span style="color: #95a99f;">#include</span> <span style="color: #73c936;">"raylib.h"</span>
+
+<span style="color: #95a99f;">int</span> <span style="color: #96a6c8;">main</span>(<span style="color: #95a99f;">void</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Define network architecture: 2 inputs, 3 hidden, 1 output
+</span>    <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">arch</span>[] = {2, 3, 1};
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span> = nn_alloc(arch, ARRAY_LEN(arch));
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span> = nn_alloc(arch, ARRAY_LEN(arch));  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Gradient network
+</span>
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Initialize with random weights
+</span>    nn_rand(nn, -1, 1);
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Training data for XOR problem
+</span>    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">train_data</span>[] = {
+        0, 0, 0,  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input: 0,0 &#8594; Output: 0
+</span>        0, 1, 1,  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input: 0,1 &#8594; Output: 1
+</span>        1, 0, 1,  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input: 1,0 &#8594; Output: 1
+</span>        1, 1, 0   <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Input: 1,1 &#8594; Output: 0
+</span>    };
+
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">ti</span> = {
+        .rows = 4,
+        .cols = 2,
+        .stride = 3,
+        .es = train_data
+    };
+
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">to</span> = {
+        .rows = 4,
+        .cols = 1,
+        .stride = 3,
+        .es = train_data + 2
+    };
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Training loop
+</span>    <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">learning_rate</span> = 0.1f;
+    <span style="color: #ffdd33; font-weight: bold;">for</span>(<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; 10000; ++i) {
+        nn_backprop(nn, g, ti, to);
+        nn_learn(nn, g, learning_rate);
+
+        <span style="color: #ffdd33; font-weight: bold;">if</span>(i % 100 == 0) {
+            <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">cost</span> = nn_cost(nn, ti, to);
+            printf(<span style="color: #73c936;">"Cost: %f\n"</span>, cost);
+        }
+    }
+
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Test the trained network
+</span>    mat_fill(NN_INPUT(nn), 0);
+    MAT_AT(NN_INPUT(nn), 0, 0) = 1;
+    MAT_AT(NN_INPUT(nn), 0, 1) = 0;
+    nn_forward(nn);
+
+    printf(<span style="color: #73c936;">"Prediction for (1,0): %f\n"</span>,
+           MAT_AT(NN_OUTPUT(nn), 0, 0));
+
+    <span style="color: #ffdd33; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-learning-checklist" class="outline-3">
+<h3 id="learning-checklist"><span class="section-number-3">1.13.</span> Learning Checklist</h3>
+<div class="outline-text-3" id="text-learning-checklist">
+<p>
+Use this checklist to track your progress through the interactive
+exercises:
+</p>
+</div>
+
+<div id="outline-container-foundation-skills" class="outline-4">
+<h4 id="foundation-skills"><span class="section-number-4">1.13.1.</span> 🟢 Foundation Skills</h4>
+<div class="outline-text-4" id="text-foundation-skills">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> I understand what a matrix is and how it's stored in memory</li>
+<li class="off"><code>[&#xa0;]</code> I can explain what <code>stride</code> is and why it's useful</li>
+<li class="off"><code>[&#xa0;]</code> I can trace through <code>MAT_AT(m, i, j)</code> to find the memory index</li>
+<li class="off"><code>[&#xa0;]</code> I implemented the <code>Mat</code> structure myself</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-matrix-operations-1" class="outline-4">
+<h4 id="matrix-operations-1"><span class="section-number-4">1.13.2.</span> 🟡 Matrix Operations</h4>
+<div class="outline-text-4" id="text-matrix-operations-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> I implemented <code>mat_alloc()</code> to create a matrix</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>mat_fill()</code> to set all elements</li>
+<li class="off"><code>[&#xa0;]</code> I understand matrix multiplication and can compute it by hand</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>mat_dot()</code> for matrix multiplication</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>mat_sig()</code> to apply sigmoid activation</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-neural-network" class="outline-4">
+<h4 id="neural-network"><span class="section-number-4">1.13.3.</span> 🔴 Neural Network</h4>
+<div class="outline-text-4" id="text-neural-network">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> I understand the <code>NN</code> structure and what each field stores</li>
+<li class="off"><code>[&#xa0;]</code> I can draw a diagram of a [2, 3, 1] network</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>nn_forward()</code> to compute predictions</li>
+<li class="off"><code>[&#xa0;]</code> I understand what a cost function measures</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>nn_cost()</code> for mean squared error</li>
+<li class="off"><code>[&#xa0;]</code> I understand the concept of gradients</li>
+<li class="off"><code>[&#xa0;]</code> I implemented <code>nn_learn()</code> for gradient descent</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-complete-project" class="outline-4">
+<h4 id="complete-project"><span class="section-number-4">1.13.4.</span> 🏆 Complete Project</h4>
+<div class="outline-text-4" id="text-complete-project">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> I wrote a complete program that trains on XOR</li>
+<li class="off"><code>[&#xa0;]</code> I can explain how backpropagation works in my own words</li>
+<li class="off"><code>[&#xa0;]</code> I experimented with different network architectures</li>
+<li class="off"><code>[&#xa0;]</code> I understand the training loop (forward → cost → backward →
+update)</li>
+</ul>
+
+<hr />
+</div>
+</div>
+</div>
+
+<div id="outline-container-common-pitfalls-debugging-tips" class="outline-3">
+<h3 id="common-pitfalls-debugging-tips"><span class="section-number-3">1.14.</span> Common Pitfalls &amp; Debugging Tips</h3>
+<div class="outline-text-3" id="text-common-pitfalls-debugging-tips">
+</div>
+<div id="outline-container-common-mistakes-beginners-make" class="outline-4">
+<h4 id="common-mistakes-beginners-make"><span class="section-number-4">1.14.1.</span> ⚠️ Common Mistakes Beginners Make</h4>
+<div class="outline-text-4" id="text-common-mistakes-beginners-make">
+</div>
+<ol class="org-ol">
+<li><a id="confusing-row-major-vs-column-major-order"></a>1. Confusing Row-Major vs Column-Major Order<br />
+<div class="outline-text-5" id="text-confusing-row-major-vs-column-major-order">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">WRONG (column-major):
+</span>index = j * rows + i
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">CORRECT (row-major):
+</span>index = i * cols + j
+</pre>
+</div>
+
+<p>
+<b>Remember:</b> C uses row-major order!
+</p>
+</div>
+</li>
+
+<li><a id="forgetting-to-initialize-stride"></a>2. Forgetting to Initialize stride<br />
+<div class="outline-text-5" id="text-forgetting-to-initialize-stride">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">WRONG:
+</span><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span> = mat_alloc(2, 3);
+m.stride = 2;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Bug! Should be 3
+</span>
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">CORRECT:
+</span><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span> = mat_alloc(2, 3);
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">stride is already set to cols in mat_alloc</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="not-checking-matrix-dimensions-before-operations"></a>3. Not Checking Matrix Dimensions Before Operations<br />
+<div class="outline-text-5" id="text-not-checking-matrix-dimensions-before-operations">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Always assert dimensions match!
+</span><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_sum</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>)
+{
+    NN_ASSERT(dst.rows == a.rows);  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Don't forget this!
+</span>    NN_ASSERT(dst.cols == a.cols);
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">... rest of function
+</span>}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="modifying-row-views-affects-parent-matrix"></a>4. Modifying Row Views Affects Parent Matrix<br />
+<div class="outline-text-5" id="text-modifying-row-views-affects-parent-matrix">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">row</span> = mat_row(parent, 0);
+<span style="color: #96a6c8;">MAT_AT</span>(row, 0, 0) = 999;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">This changes parent!</span>
+</pre>
+</div>
+
+<p>
+<b>Remember:</b> Row views share memory with the parent!
+</p>
+</div>
+</li>
+
+<li><a id="learning-rate-too-high-or-too-low"></a>5. Learning Rate Too High or Too Low<br />
+<div class="outline-text-5" id="text-learning-rate-too-high-or-too-low">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Too high - training diverges:
+</span><span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span> = 10.0f;
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Too low - training is very slow:
+</span><span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span> = 0.00001f;
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Good starting point:
+</span><span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span> = 0.1f;
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="forgetting-to-seed-random-number-generator"></a>6. Forgetting to Seed Random Number Generator<br />
+<div class="outline-text-5" id="text-forgetting-to-seed-random-number-generator">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">WRONG - same "random" values every time:
+</span><span style="color: #96a6c8;">nn_rand</span>(nn, -1, 1);
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">CORRECT:
+</span><span style="color: #96a6c8;">srand</span>(time(<span style="color: #95a99f;">NULL</span>));  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Seed once at program start
+</span><span style="color: #96a6c8;">nn_rand</span>(nn, -1, 1);
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-debugging-techniques" class="outline-4">
+<h4 id="debugging-techniques"><span class="section-number-4">1.14.2.</span> 🔍 Debugging Techniques</h4>
+<div class="outline-text-4" id="text-debugging-techniques">
+</div>
+<ol class="org-ol">
+<li><a id="print-matrix-contents"></a>Print Matrix Contents<br />
+<div class="outline-text-5" id="text-print-matrix-contents">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#define</span> <span style="color: #96a6c8;">MAT_PRINT</span>(<span style="color: #f4f4ff;">m</span>) mat_print(m, #m, 0)
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Use liberally during development!
+</span><span style="color: #96a6c8;">MAT_PRINT</span>(my_matrix);
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="check-for-nan-or-infinity"></a>Check for NaN or Infinity<br />
+<div class="outline-text-5" id="text-check-for-nan-or-infinity">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">#include</span> <span style="color: #73c936;">&lt;math.h&gt;</span>
+
+<span style="color: #ffdd33; font-weight: bold;">if</span> (isnan(value) || isinf(value)) {
+    printf(<span style="color: #73c936;">"Found invalid value!\n"</span>);
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="verify-gradients-with-finite-differences"></a>Verify Gradients with Finite Differences<br />
+<div class="outline-text-5" id="text-verify-gradients-with-finite-differences">
+<p>
+The <code>nn_finite_diff()</code> function can verify your backpropagation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span> = nn_alloc(arch, ARRAY_LEN(arch));
+<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span> = nn_alloc(arch, ARRAY_LEN(arch));
+<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g2</span> = nn_alloc(arch, ARRAY_LEN(arch));
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Compare backprop with numerical gradient
+</span><span style="color: #96a6c8;">nn_backprop</span>(nn, g, ti, to);
+<span style="color: #96a6c8;">nn_finite_diff</span>(nn, g2, 0.001f, ti, to);
+
+<span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">g and g2 should be similar!</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="track-cost-during-training"></a>Track Cost During Training<br />
+<div class="outline-text-5" id="text-track-cost-during-training">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; 10000; ++i) {
+    nn_backprop(nn, g, ti, to);
+    nn_learn(nn, g, rate);
+
+    <span style="color: #ffdd33; font-weight: bold;">if</span> (i % 100 == 0) {
+        <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">cost</span> = nn_cost(nn, ti, to);
+        printf(<span style="color: #73c936;">"Epoch %zu: Cost = %f\n"</span>, i, cost);
+
+        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Cost should decrease over time!
+</span>        <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">If it increases, something is wrong.
+</span>    }
+}
+</pre>
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-key-takeaways" class="outline-3">
+<h3 id="key-takeaways"><span class="section-number-3">1.15.</span> Key Takeaways</h3>
+<div class="outline-text-3" id="text-key-takeaways">
+<ol class="org-ol">
+<li><b>Matrix operations</b> are the foundation of neural network computations</li>
+<li><b>Forward pass</b> computes predictions: <code>a = σ(a × W + b)</code></li>
+<li><b>Backpropagation</b> computes gradients using the chain rule</li>
+<li><b>Gradient descent</b> updates weights: <code>W = W - α × ∇J</code></li>
+<li><b>Cost function</b> measures prediction error (MSE)</li>
+<li><b>Sigmoid activation</b> squashes values to (0,1) range</li>
+<li><b>Batch training</b> processes multiple samples before updating</li>
+<li><b>Visualization</b> helps understand network behavior</li>
+</ol>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-practice-problems" class="outline-3">
+<h3 id="practice-problems"><span class="section-number-3">1.16.</span> Practice Problems</h3>
+<div class="outline-text-3" id="text-practice-problems">
+<p>
+Test your understanding with these exercises:
+</p>
+</div>
+
+<div id="outline-container-beginner-problems" class="outline-4">
+<h4 id="beginner-problems"><span class="section-number-4">1.16.1.</span> 📝 Beginner Problems</h4>
+<div class="outline-text-4" id="text-beginner-problems">
+</div>
+<ol class="org-ol">
+<li><a id="problem-1-matrix-transpose"></a>Problem 1: Matrix Transpose<br />
+<div class="outline-text-5" id="text-problem-1-matrix-transpose">
+<p>
+Write a function that transposes a matrix (rows become columns):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_transpose</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Return a new matrix that is the transpose of m
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Hint: For a 2&#215;3 matrix, return a 3&#215;2 matrix
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org78f2bbc">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org1829c8b">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for hint
+</p>
+
+<div class="html" id="org96aad85">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+The result should have dimensions <code>m.cols × m.rows</code>. Element <code>[i][j]</code> of
+the result = element <code>[j][i]</code> of the input.
+</p>
+
+<div class="html" id="org1f3b5cf">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org48dde5c">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org60e283c">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for solution
+</p>
+
+<div class="html" id="org8331b10">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">Mat</span> <span style="color: #96a6c8;">mat_transpose</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">result</span> = mat_alloc(m.cols, m.rows);
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(result, j, i) = MAT_AT(m, i, j);
+        }
+    }
+    <span style="color: #ffdd33; font-weight: bold;">return</span> result;
+}
+</pre>
+</div>
+
+<div class="html" id="org62dab72">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="problem-2-element-wise-multiply"></a>Problem 2: Element-wise Multiply<br />
+<div class="outline-text-5" id="text-problem-2-element-wise-multiply">
+<p>
+Write a function that multiplies two matrices element-by-element:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_elem_mult</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">b</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: dst[i][j] = a[i][j] * b[i][j]
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org5a7e5e4">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org3483082">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for solution
+</p>
+
+<div class="html" id="orgbf66f0f">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_elem_mult</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">dst</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">a</span>, <span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">b</span>)
+{
+    NN_ASSERT(dst.rows == a.rows);
+    NN_ASSERT(dst.cols == a.cols);
+    NN_ASSERT(a.rows == b.rows);
+    NN_ASSERT(a.cols == b.cols);
+
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; dst.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; dst.cols; ++j) {
+            MAT_AT(dst, i, j) = MAT_AT(a, i, j) * MAT_AT(b, i, j);
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="orga0283bc">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-intermediate-problems" class="outline-4">
+<h4 id="intermediate-problems"><span class="section-number-4">1.16.2.</span> 📝 Intermediate Problems</h4>
+<div class="outline-text-4" id="text-intermediate-problems">
+</div>
+<ol class="org-ol">
+<li><a id="problem-3-relu-activation"></a>Problem 3: ReLU Activation<br />
+<div class="outline-text-5" id="text-problem-3-relu-activation">
+<p>
+Implement the ReLU activation function and its derivative:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">ReLU: max(0, x)
+</span><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">reluf</span>(<span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Return x if x &gt; 0, else return 0
+</span>}
+
+<span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_relu</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Apply ReLU to every element
+</span>}
+</pre>
+</div>
+
+<div class="html" id="org1b457c2">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org15fbdfc">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for solution
+</p>
+
+<div class="html" id="orgb02ee29">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">float</span> <span style="color: #96a6c8;">reluf</span>(<span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">x</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">return</span> x &gt; 0 ? x : 0;
+}
+
+<span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_relu</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>)
+{
+    <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">i</span> = 0; i &lt; m.rows; ++i) {
+        <span style="color: #ffdd33; font-weight: bold;">for</span> (<span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">j</span> = 0; j &lt; m.cols; ++j) {
+            MAT_AT(m, i, j) = reluf(MAT_AT(m, i, j));
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="html" id="org9713e93">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+
+<li><a id="problem-4-add-a-new-layer-function"></a>Problem 4: Add a New Layer Function<br />
+<div class="outline-text-5" id="text-problem-4-add-a-new-layer-function">
+<p>
+Write a function that adds a new layer to an existing network:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_add_layer</span>(<span style="color: #95a99f;">NN</span> *<span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">size_t</span> <span style="color: #f4f4ff;">layer_size</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Resize the network and add a new layer
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">This is challenging! Requires reallocation.
+</span>}
+</pre>
+</div>
+
+<div class="html" id="orgc217312">
+<p>
+&lt;details&gt;
+</p>
+
+</div>
+
+<div class="html" id="org05340a1">
+<p>
+&lt;summary&gt;
+</p>
+
+</div>
+
+<p>
+Click for hint
+</p>
+
+<div class="html" id="org0a0e328">
+<p>
+&lt;/summary&gt;
+</p>
+
+</div>
+
+<p>
+You'll need to: 1. Reallocate the ws, bs, and as arrays 2. Create new
+matrices for the additional layer 3. Update nn-&gt;count
+</p>
+
+<div class="html" id="org2512c47">
+<p>
+&lt;/details&gt;
+</p>
+
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-advanced-problems" class="outline-4">
+<h4 id="advanced-problems"><span class="section-number-4">1.16.3.</span> 📝 Advanced Problems</h4>
+<div class="outline-text-4" id="text-advanced-problems">
+</div>
+<ol class="org-ol">
+<li><a id="problem-5-implement-momentum"></a>Problem 5: Implement Momentum<br />
+<div class="outline-text-5" id="text-problem-5-implement-momentum">
+<p>
+Modify the learning rule to use momentum, which helps escape local
+minima:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ffdd33; font-weight: bold;">typedef</span> <span style="color: #ffdd33; font-weight: bold;">struct</span> {
+    <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">velocity</span>;  <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Stores velocity for each parameter
+</span>} <span style="color: #95a99f;">MomentumOptimizer</span>;
+
+<span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_learn_momentum</span>(<span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">g</span>, <span style="color: #95a99f;">MomentumOptimizer</span> *<span style="color: #f4f4ff;">opt</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">momentum</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Update parameters using momentum
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">velocity = momentum * velocity - rate * gradient
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">parameter = parameter + velocity
+</span>}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="problem-6-implement-dropout"></a>Problem 6: Implement Dropout<br />
+<div class="outline-text-5" id="text-problem-6-implement-dropout">
+<p>
+Add dropout regularization to prevent overfitting:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">mat_dropout</span>(<span style="color: #95a99f;">Mat</span> <span style="color: #f4f4ff;">m</span>, <span style="color: #95a99f;">float</span> <span style="color: #f4f4ff;">rate</span>, <span style="color: #95a99f;">bool</span> *<span style="color: #f4f4ff;">mask</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Randomly set elements to 0 with probability = rate
+</span>    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">Store which elements were dropped in mask
+</span>}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="problem-7-saveload-neural-network"></a>Problem 7: Save/Load Neural Network<br />
+<div class="outline-text-5" id="text-problem-7-saveload-neural-network">
+<p>
+Write functions to save and load entire neural networks:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #95a99f;">void</span> <span style="color: #96a6c8;">nn_save</span>(<span style="color: #95a99f;">FILE</span> *<span style="color: #f4f4ff;">out</span>, <span style="color: #95a99f;">NN</span> <span style="color: #f4f4ff;">nn</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Save all weights, biases, and architecture
+</span>}
+
+<span style="color: #95a99f;">NN</span> <span style="color: #96a6c8;">nn_load</span>(<span style="color: #95a99f;">FILE</span> *<span style="color: #f4f4ff;">in</span>)
+{
+    <span style="color: #cc8c3c;">// </span><span style="color: #cc8c3c;">TODO: Load and reconstruct a neural network
+</span>}
+</pre>
+</div>
+
+<hr />
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-further-learning" class="outline-3">
+<h3 id="further-learning"><span class="section-number-3">1.17.</span> Further Learning</h3>
+<div class="outline-text-3" id="text-further-learning">
+<ul class="org-ul">
+<li><b>Matrix multiplication</b>: Essential for understanding neural networks</li>
+<li><b>Calculus</b>: Derivatives and chain rule for backpropagation</li>
+<li><b>Optimization</b>: Gradient descent variants (SGD, Adam, etc.)</li>
+<li><b>Activation functions</b>: ReLU, tanh, softmax alternatives</li>
+<li><b>Regularization</b>: L1/L2, dropout for preventing overfitting</li>
+</ul>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-summary-table" class="outline-3">
+<h3 id="summary-table"><span class="section-number-3">1.18.</span> Summary Table</h3>
+<div class="outline-text-3" id="text-summary-table">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>mat_alloc</code></td>
+<td class="org-left">Create a new matrix</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_dot</code></td>
+<td class="org-left">Matrix multiplication</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_sum</code></td>
+<td class="org-left">Element-wise addition</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_sig</code></td>
+<td class="org-left">Apply sigmoid activation</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_fill</code></td>
+<td class="org-left">Fill with constant value</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_copy</code></td>
+<td class="org-left">Copy matrix data</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_rand</code></td>
+<td class="org-left">Random initialization</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_save</code></td>
+<td class="org-left">Save to file</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mat_load</code></td>
+<td class="org-left">Load from file</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_alloc</code></td>
+<td class="org-left">Create neural network</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_forward</code></td>
+<td class="org-left">Compute predictions</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_backprop</code></td>
+<td class="org-left">Calculate gradients</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_learn</code></td>
+<td class="org-left">Update weights</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_cost</code></td>
+<td class="org-left">Compute error</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>nn_rand</code></td>
+<td class="org-left">Randomize weights</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+</div>
+</div>
+
+<div id="outline-container-references" class="outline-3">
+<h3 id="references"><span class="section-number-3">1.19.</span> References</h3>
+<div class="outline-text-3" id="text-references">
+<ul class="org-ul">
+<li><b>Neural Networks and Deep Learning</b> by Michael Nielsen</li>
+<li><b>CS231n: Convolutional Neural Networks</b> (Stanford)</li>
+<li><b>The Matrix Cookbook</b> (matrix reference)</li>
+</ul>
+
+<hr />
+
+<p>
+<i>This document provides a comprehensive explanation of the nn.h library,
+designed for beginners learning neural network implementation in C.</i>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: YFZX-WZX</p>
+<p class="date">Created: 2026-03-11 Wed 16:26</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
