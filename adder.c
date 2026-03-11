@@ -10,6 +10,7 @@ size_t epochs_per_frame = 103;
 float rate = 1.0f;
 bool paused = true;
 
+// draw by raylib library
 void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)
 {
     float s;
@@ -24,5 +25,158 @@ void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)
     size_t n = 1 << BITS;
     float cs = s/n;
 
-    
+    // tranverse the input parameter
+    for(size_t x = 0; x < n; ++x) {
+	for(size_t y = 0; y < n; ++y) {
+	    for(size_t i = 0; i < BITS; ++i) {
+		MAT_AT(NN_INPUT(nn), 0, i) = (x >> i) & 1; 
+		MAT_AT(NN_INPUT(nn), 0, i + BITS) = (y >> i) & 1;
+	    }
+	    // do one epoch
+	    nn_forward(nn);
+
+	    size_t z = 0.0f;
+	    for(size_t i = 0; i < BITS; ++i) {
+		size_t bit = MAT_AT(NN_OUTPUT(nn), 0, i) > 0.5;
+		z = Z | (bit << i);
+	    }
+	    bool overflow = MAT_AT(NN_OUTPUT(nn), 0, BITS) > 0.5;
+
+	    Vector2 position = { rx + x * cs, ry + y * cs };
+	    Vectors size = {cs, cs };
+
+	    if(overflow) DrawRectangleV(position, size, DARKPURPLE);
+
+	    char buffer[256];
+	    snprintf(buffer, sizeof(buffer), "%zu", z);
+
+	    // make the text to be the center of the region
+	    float fontSize = cs * 0.8;
+	    float spacing = 0;
+
+	    Vector2 text_size = MeasureTextEx(font, buffer, fontSize, spacing);
+	    position.x = position.x + cs/2 - text_size.x/2;
+	    position.y = position.y + cs/2 - text_size.y/2;
+
+	    DrawTextEx(font, buffer, position, fontSize, spacing, WHITE);
+	}
+    }
+}
+
+void main()
+{
+    size_t n = (1 << BITS);
+    size_t rows = n*n;
+    // construct the input and output into one single matrix
+    // and the rows are the number of input and output bindings
+    Mat t = mat_alloc(rows, 2 * BITS + BITS + 1);
+
+    // split the inpput parameter from the binding matrix
+    Mat ti = {
+	.es = &MAT_AT(t, 0, 0),
+	.rows = t.rows,
+	.cols = 2*BITS,
+	.stride = t.stride,
+    };
+
+    // split the outupt parameter from the binding matrix
+    Mat to = {
+	.es = &MAT_AT(t, 0, 2*BITS), // filter the input parameter position and reach to the output parameter position 
+	.rows = t.rows,
+	.cols = 2*BITS,
+	.stride = t.stride,
+    };
+
+
+    // do some operations for each rows of input matrix
+    for(size_t i = 0; i < ti.rows; ++i) {
+	size_t x = i / n;
+	size_t y = i % n;
+
+	for(size_t j = 0; j < BITS; ++j) {
+	    MAT_AT(ti, i, j)		= (x>>j)&1;
+	    MAT_AT(ti, i, j + BITS)	= (y>>j)&1;
+	    MAT_AT(to, i, j)		= (z>>j)&1;
+	}
+	if(z >= n) {
+	    for(size_t j = 0; j < BITS; ++j) {
+		MAT_AT(to, i, j) = 1;
+	    }
+	    MAT_AT(to, i, BITS) = 1;
+	} else {
+	    MAT_AT(to, i, BITS) = 0;
+	}
+    }
+
+    // initialize the neural network
+    NN nn = nn_alloc(arch, ARRAY_LEN(arch));
+    NN g = nn_alloc(arch, ARRAY_LEN(arch));
+
+    // make the parameters to be random
+    nn_rand(nn, -1, 1);
+
+    // set the size of the region which is target to be drawing
+    size_t WINDOW_FACTOR = 80;
+    size_t WINDOW_WIDTH = (16*WINDOW_FACTOR);
+    size_t WINDOW_HEIGHT = (9*WINDOW_FACTOR);
+
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+
+    // initialize the window
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "xor");
+
+    SetTargetFPS(60);
+
+    // set font from our own custom font
+    Font font = LoadFontEx("./fonts/iosevka-regular.ttf", 72, NULL, 0);
+    SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
+
+    // this is the cost plot
+    Plot plot = {0};
+
+    size_t epoch = 0;
+
+    while(!WindowShouldClose()) {
+	if(IsKeyPressed(KEY_SPACE)) {
+	    paused = !paused;
+	}
+	if(IsKeyPressed(KEY_R)) {
+	    epoch = 0;
+	    nn_rand(nn, -1, 1);
+	    plot.count = 0;
+	}
+
+	for(size_t i = 0; i < epochs_per_frame && !paused && epoch < max_epoch; ++i) {
+	    nn_backprop(nn, g, ti, to);
+	    nn_learn(nn, g, rate);
+	    epoch += 1;
+	    da_append(&plot, nn_cost(nn, ti, to));
+	}
+
+	BeginDrawing();
+	Color background_color = { 0x18, 0x18, 0x18, 0xFF }; // this is the gray color when rgb are the same number
+	ClearBackground(background_color);
+
+	{
+	    int w = GetRenderWidth();
+	    int h = GetRenderHeight();
+
+	    int rw = w/3;
+	    int rh = h*2/3;
+	    int rx = 0;
+	    int ry = h/2 - rh/2;
+
+	    gym_plot(plot, rx, ry, rw, rh);
+	    rx += rw;
+	    gym_render_nn(nn, rx, ry, rw, rh);
+	    rx += rw;
+	    verify_nn_adder(font, nn, rx, ry, rw, rh);
+
+	    char buffer[256];
+	    snprintf(buffer, sizeof(buffer), "Epoch: %zu/%zu, Rate: %f, Cost: %f", epoch, max_epoch, rate, nn_cost(nn, ti, to));
+	    DrawTextEx(font, buffer, CLITERAL(Vector2){}, h*0.04, 0, WHITE);
+	}
+	EndDrawing();
+    }        
+    return 0;
 }
