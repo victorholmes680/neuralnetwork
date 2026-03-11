@@ -38,7 +38,7 @@ void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)
 	    size_t z = 0.0f;
 	    for(size_t i = 0; i < BITS; ++i) {
 		size_t bit = MAT_AT(NN_OUTPUT(nn), 0, i) > 0.5;
-		z = z | (bit << i);
+		z = z | (bit << i); // merge the bit of output to the final z
 	    }
 	    bool overflow = MAT_AT(NN_OUTPUT(nn), 0, BITS) > 0.5;
 
