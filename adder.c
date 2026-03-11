@@ -83,7 +83,7 @@ int main(void)
     Mat to = {
 	.es = &MAT_AT(t, 0, 2*BITS), // filter the input parameter position and reach to the output parameter position 
 	.rows = t.rows,
-	.cols = 2*BITS,
+	.cols = BITS + 1,
 	.stride = t.stride,
     };
 
