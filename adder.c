@@ -38,12 +38,12 @@ void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)
 	    size_t z = 0.0f;
 	    for(size_t i = 0; i < BITS; ++i) {
 		size_t bit = MAT_AT(NN_OUTPUT(nn), 0, i) > 0.5;
-		z = Z | (bit << i);
+		z = z | (bit << i);
 	    }
 	    bool overflow = MAT_AT(NN_OUTPUT(nn), 0, BITS) > 0.5;
 
 	    Vector2 position = { rx + x * cs, ry + y * cs };
-	    Vectors size = {cs, cs };
+	    Vector2 size = {cs, cs };
 
 	    if(overflow) DrawRectangleV(position, size, DARKPURPLE);
 
@@ -63,7 +63,7 @@ void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)
     }
 }
 
-void main()
+int main(void)
 {
     size_t n = (1 << BITS);
     size_t rows = n*n;
@@ -92,6 +92,7 @@ void main()
     for(size_t i = 0; i < ti.rows; ++i) {
 	size_t x = i / n;
 	size_t y = i % n;
+	size_t z = x + y;
 
 	for(size_t j = 0; j < BITS; ++j) {
 	    MAT_AT(ti, i, j)		= (x>>j)&1;
