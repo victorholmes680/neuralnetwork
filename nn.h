@@ -36,7 +36,7 @@ typedef struct {
 
 #define MAT_AT(m, i, j) (m).es[(i)*(m).stride + (j)]
 
-Mat mat_alloc(size_t rows, size_t cols);
+Matm at_alloc(size_t rows, size_t cols);
 void mat_save(FILE *out, Mat m);
 Mat mat_load(FILE *in);
 void mat_fill(Mat m, float x);
@@ -249,7 +249,7 @@ Mat mat_load(FILE *in) {
     size_t n = fread(m.es, sizeof(*m.es), rows*cols, in);
 
     while(n < rows*cols && !ferror(in)) {
-	size_t k = fread(m.es, sizeof(*m.es) + n, rows*cols - n, in);
+	size_t k = fread(m.es, sizeof(*m.es), rows*cols - n, in);
 	n += k;
     }
     return m;
