@@ -4,6 +4,5 @@ CFLAGS="-O3 -Wall -Wextra `pkg-config --cflags raylib` -I./thirdparty/"
 LIBS="`pkg-config --libs raylib` -lm"
 
 cc $CFLAGS -o adder adder.c $LIBS
-cc $CFLAGS -o gym gym.c $LIBS
 cc $CFLAGS -o img2nn img2nn.c $LIBS
 cc $CFLAGS -o xor xor.c $LIBS
