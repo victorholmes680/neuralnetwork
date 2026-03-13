@@ -323,7 +323,7 @@ void nn_backprop_traditional(NN nn, NN g, Mat ti, Mat to) {
 	// this is the method of calculating traditional gradient
 	// nn must go through forward method first
 	for(size_t j = 0; j < to.cols; ++j) {
-	    MAT_AT(NN_OUTPUT(g), 0, j) = (MAT_AT(NN_OUTPUT(NN), 0, j) - MAT_AT(to, i, j))*2/n;
+	    MAT_AT(NN_OUTPUT(g), 0, j) = (MAT_AT(NN_OUTPUT(nn), 0, j) - MAT_AT(to, i, j))*2/n;
 	}
 
 	for (size_t l = nn.count; l > 0; --l) {
