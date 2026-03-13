@@ -1,0 +1,1516 @@
+
+img2nn,0
+
+build.sh,0
+
+fonts/iosevka-regular.ttf,0
+
+xor,0
+
+mnist/training/8/10057.png,0
+
+mnist/training/6/10032.png,0
+
+mnist/CREDITS,0
+
+TAGS,0
+
+adder.c,588
+#define NN_IMPLEMENTATIONNN_IMPLEMENTATION1,0
+#define NN_ENABLE_GYMNN_ENABLE_GYM2,26
+#define BITS BITS5,65
+size_t arch[] = { 2*BITS, 4*BITS, BITS + 1 };arch7,81
+size_t epoch = 0;epoch8,127
+size_t max_epoch = 100*1000;max_epoch9,145
+size_t batches_per_frame = 200;batches_per_frame10,174
+size_t batch_size = 28; // this is the size of the img's width and heightbatch_size11,206
+float rate = 1.0f;rate12,280
+bool paused = true;paused13,299
+void verify_nn_adder(Font font, NN nn, float rx, float ry, float rw, float rh)verify_nn_adder16,346
+int main(void)main68,1737
+
+xor.c,413
+#define NN_IMPLEMENTATIONNN_IMPLEMENTATION1,0
+#define NN_ENABLE_GYMNN_ENABLE_GYM2,26
+size_t arch[] = {2, 2, 1, 1};arch5,65
+size_t max_epoch = 100*1000;max_epoch6,95
+size_t epochs_per_frame = 103;epochs_per_frame7,124
+float rate = 1.0f;rate8,155
+bool paused = true;paused9,174
+void verify_nn_gate(Font font, NN nn, float rx, float ry, float rw, float rh)verify_nn_gate11,195
+int main()main28,722
+
+formula/grad.pdf,0
+
+formula/grad.aux,0
+
+formula/grad.tex,49
+\section{Gradient Descent}Gradient Descent6,64
+
+formula/grad.log,0
+
+doc.html,50320
+<div id="content" class="content">content198,7733
+<div id="table-of-contents" role="doc-toc">table-of-contents199,7768
+<h2>Table of Contents</h2>Table of Contents200,7812
+<div id="text-table-of-contents" role="doc-toc">text-table-of-contents201,7839
+<div id="outline-container-nn.h---neural-network-library-explained" class="outline-2">outline-container-nn.h---neural-network-library-explained328,14969
+<h2 id="nn.h---neural-network-library-explained"><span class="section-number-2">1.</span> nn.h -nn.h---neural-network-library-explained329,15056
+<h2 id="nn.h---neural-network-library-explained"><span class="section-number-2">1.</span> nn.h -1. nn.h - Neural Network Library Explained329,15056
+<div class="outline-text-2" id="text-nn.h---neural-network-library-explained">text-nn.h---neural-network-library-explained330,15191
+<div id="outline-container-table-of-contents" class="outline-3">outline-container-table-of-contents332,15277
+<h3 id="table-of-contents"><span class="section-number-3">1.1.</span> Table of Contents</h3>table-of-contents333,15342
+<h3 id="table-of-contents"><span class="section-number-3">1.1.</span> Table of Contents</h3>1.1. Table of Contents333,15342
+<div class="outline-text-3" id="text-table-of-contents">text-table-of-contents334,15435
+<div id="outline-container-overview" class="outline-3">outline-container-overview353,16203
+<h3 id="overview"><span class="section-number-3">1.2.</span> Overview</h3>overview354,16259
+<h3 id="overview"><span class="section-number-3">1.2.</span> Overview</h3>1.2. Overview354,16259
+<div class="outline-text-3" id="text-overview">text-overview355,16334
+<div id="outline-container-key-features" class="outline-4">outline-container-key-features363,16590
+<h4 id="key-features"><span class="section-number-4">1.2.1.</span> Key Features</h4>key-features364,16650
+<div class="outline-text-4" id="text-key-features">text-key-features365,16735
+<div id="outline-container-interactive-learning-guide" class="outline-3">outline-container-interactive-learning-guide378,17072
+<h3 id="interactive-learning-guide"><span class="section-number-3">1.3.</span> Interactive Learninteractive-learning-guide379,17146
+<h3 id="interactive-learning-guide"><span class="section-number-3">1.3.</span> Interactive Learn1.3. Interactive Learning Guide379,17146
+<div class="outline-text-3" id="text-interactive-learning-guide">text-interactive-learning-guide380,17257
+<div id="outline-container-learning-path" class="outline-4">outline-container-learning-path390,17517
+<h4 id="learning-path"><span class="section-number-4">1.3.1.</span> Learning Path</h4>learning-path391,17578
+<div class="outline-text-4" id="text-learning-path">text-learning-path392,17665
+<div id="outline-container-step-1-understanding-the-matrix" class="outline-4">outline-container-step-1-understanding-the-matrix439,18833
+<h4 id="step-1-understanding-the-matrix"><span class="section-number-4">1.3.2.</span> Step 1: Unstep-1-understanding-the-matrix440,18912
+<div class="outline-text-4" id="text-step-1-understanding-the-matrix">text-step-1-understanding-the-matrix441,19036
+<li><a id="think-about-it"></a>🤔 Think About It<br />think-about-it444,19134
+<div class="outline-text-5" id="text-think-about-it">text-think-about-it445,19191
+<div class="html" id="org712bd73">org712bd73454,19343
+<div class="html" id="org044484c">org044484c461,19412
+<div class="html" id="org41f8400">org41f8400472,19511
+<div class="html" id="org526b07f">org526b07f484,19730
+<div class="html" id="orge0cb08e">orge0cb08e495,19861
+<div class="html" id="org863caf4">org863caf4502,19930
+<div class="html" id="org448584d">org448584d513,20029
+<pre class="example" id="org6168ec5">org6168ec5529,20232
+<div class="html" id="org3932088">org3932088534,20329
+<div class="html" id="orgf23f598">orgf23f598545,20465
+<div class="html" id="org7998032">org7998032552,20534
+<div class="html" id="orgc560215">orgc560215563,20633
+<pre class="example" id="orgc0ec5d3">orgc0ec5d3570,20703
+<pre class="example" id="org998c1c7">org998c1c7578,20830
+<div class="html" id="orgcbd3ec6">orgcbd3ec6582,20898
+<li><a id="your-turn-write-the-matrix-structure"></a>✍️ Your Turn: Write the Matrix Structuryour-turn-write-the-matrix-structure591,20981
+<div class="outline-text-5" id="text-your-turn-write-the-matrix-structure">text-your-turn-write-the-matrix-structure592,21085
+<div class="html" id="org6ea596a">org6ea596a611,22199
+<div class="html" id="org3c7cdd6">org3c7cdd6618,22268
+<div class="html" id="org2cd6b6f">org2cd6b6f629,22371
+<div class="html" id="org03d95ee">org03d95ee646,23455
+<li><a id="what-is-stride-and-why-do-we-need-it"></a>🤔 What is <code>stride</code> and why dowhat-is-stride-and-why-do-we-need-it655,23538
+<div class="outline-text-5" id="text-what-is-stride-and-why-do-we-need-it">text-what-is-stride-and-why-do-we-need-it656,23653
+<div class="html" id="orgf2d98c8">orgf2d98c8657,23729
+<div class="html" id="org75d007b">org75d007b664,23798
+<div class="html" id="org2d23e29">org2d23e29675,23899
+<div class="html" id="orge0a2663">orge0a2663717,25328
+<div id="outline-container-step-2-matrix-access-macro" class="outline-4">outline-container-step-2-matrix-access-macro730,25432
+<h4 id="step-2-matrix-access-macro"><span class="section-number-4">1.3.3.</span> Step 2: Matrix step-2-matrix-access-macro731,25506
+<div class="outline-text-4" id="text-step-2-matrix-access-macro">text-step-2-matrix-access-macro732,25620
+<li><a id="think-about-it-1"></a>🤔 Think About It<br />think-about-it-1735,25713
+<div class="outline-text-5" id="text-think-about-it-1">text-think-about-it-1736,25772
+<div class="html" id="orgcada52c">orgcada52c746,26016
+<div class="html" id="org27a26f4">org27a26f4753,26085
+<div class="html" id="orgde9ac3f">orgde9ac3f764,26184
+<div class="html" id="org60ebba4">org60ebba4781,26697
+<li><a id="practice-trace-through-an-example"></a>✍️ Practice: Trace Through an Example<br /practice-trace-through-an-example790,26780
+<div class="outline-text-5" id="text-practice-trace-through-an-example">text-practice-trace-through-an-example791,26878
+<div class="html" id="org0707116">org0707116806,27236
+<div class="html" id="orgb03d39e">orgb03d39e813,27305
+<div class="html" id="org000d090">org000d090824,27404
+<div class="html" id="orgcb5f9ad">orgcb5f9ad836,27629
+<div class="html" id="orgf5bc66a">orgf5bc66a847,27755
+<div class="html" id="org35d18b9">org35d18b9854,27824
+<div class="html" id="org391d004">org391d004865,27923
+<div class="html" id="org90263cf">org90263cf879,28273
+<div id="outline-container-step-3-matrix-operations" class="outline-4">outline-container-step-3-matrix-operations892,28377
+<h4 id="step-3-matrix-operations"><span class="section-number-4">1.3.4.</span> Step 3: Matrix Opstep-3-matrix-operations893,28449
+<div class="outline-text-4" id="text-step-3-matrix-operations">text-step-3-matrix-operations894,28559
+<li><a id="exercise-implement-mat_alloc"></a>✍️ Exercise: Implement mat<sub>alloc</sub>()<brexercise-implement-mat_alloc897,28650
+<div class="outline-text-5" id="text-exercise-implement-mat_alloc">text-exercise-implement-mat_alloc898,28750
+<div class="html" id="org7aecb53">org7aecb53918,29908
+<div class="html" id="orgce8d2c7">orgce8d2c7925,29977
+<div class="html" id="org6c8c118">org6c8c118936,30080
+<div class="html" id="orgc2cd003">orgc2cd003957,31058
+<li><a id="exercise-implement-mat_fill"></a>✍️ Exercise: Implement mat<sub>fill</sub>()<br /exercise-implement-mat_fill966,31141
+<div class="outline-text-5" id="text-exercise-implement-mat_fill">text-exercise-implement-mat_fill967,31239
+<div class="html" id="orgecec17d">orgecec17d980,31831
+<div class="html" id="orge966295">orge966295987,31900
+<div class="html" id="orgcd31960">orgcd31960998,32003
+<div class="html" id="org598c27f">org598c27f1017,32802
+<li><a id="challenge-matrix-multiplication"></a>🎯 Challenge: Matrix Multiplication<br />challenge-matrix-multiplication1026,32885
+<div class="outline-text-5" id="text-challenge-matrix-multiplication">text-challenge-matrix-multiplication1027,32977
+<div class="html" id="org0103977">org01039771040,33215
+<div class="html" id="orgb59089f">orgb59089f1047,33284
+<div class="html" id="orge632944">orge6329441058,33383
+<div class="html" id="org93e9446">org93e94461077,33565
+<div class="html" id="orgd7a65af">orgd7a65af1088,33676
+<div class="html" id="orge1d7d4d">orge1d7d4d1095,33745
+<div class="html" id="orgdcad71c">orgdcad71c1106,33844
+<pre class="example" id="org1b9bb70">org1b9bb701113,33914
+<pre class="example" id="orgea9c469">orgea9c4691125,34102
+<div class="html" id="org751855d">org751855d1135,34295
+<li><a id="exercise-implement-mat_dot"></a>✍️ Exercise: Implement mat<sub>dot</sub>()<br />exercise-implement-mat_dot1144,34378
+<div class="outline-text-5" id="text-exercise-implement-mat_dot">text-exercise-implement-mat_dot1145,34474
+<div class="html" id="org52ef322">org52ef3221158,35488
+<div class="html" id="org5d28489">org5d284891165,35557
+<div class="html" id="orgd6a8829">orgd6a88291176,35660
+<div class="html" id="org1ecb31e">org1ecb31e1204,37100
+<div id="outline-container-step-4-activation-functions" class="outline-4">outline-container-step-4-activation-functions1217,37204
+<h4 id="step-4-activation-functions"><span class="section-number-4">1.3.5.</span> Step 4: Activastep-4-activation-functions1218,37279
+<div class="outline-text-4" id="text-step-4-activation-functions">text-step-4-activation-functions1219,37395
+<li><a id="what-is-an-activation-function"></a>🤔 What is an activation function?<br />what-is-an-activation-function1222,37489
+<div class="outline-text-5" id="text-what-is-an-activation-function">text-what-is-an-activation-function1223,37579
+<div class="html" id="org4685a05">org4685a051224,37649
+<div class="html" id="org772b850">org772b8501231,37718
+<div class="html" id="orge40b146">orge40b1461242,37819
+<div class="html" id="org668ebcc">org668ebcc1261,38273
+<li><a id="the-sigmoid-function"></a>The Sigmoid Function<br />the-sigmoid-function1270,38356
+<div class="outline-text-5" id="text-the-sigmoid-function">text-the-sigmoid-function1271,38420
+<pre class="example" id="org9cac7e9">org9cac7e91272,38480
+<li><a id="exercise-implement-sigmoidf"></a>✍️ Exercise: Implement sigmoidf()<br />exercise-implement-sigmoidf1283,38706
+<div class="outline-text-5" id="text-exercise-implement-sigmoidf">text-exercise-implement-sigmoidf1284,38794
+<div class="html" id="org1401db8">org1401db81294,39322
+<div class="html" id="org9bdd7fc">org9bdd7fc1301,39391
+<div class="html" id="orgafe90f1">orgafe90f11312,39494
+<div class="html" id="org4eaead8">org4eaead81327,39903
+<li><a id="exercise-apply-sigmoid-to-a-matrix"></a>✍️ Exercise: Apply sigmoid to a matrix<brexercise-apply-sigmoid-to-a-matrix1336,39986
+<div class="outline-text-5" id="text-exercise-apply-sigmoid-to-a-matrix">text-exercise-apply-sigmoid-to-a-matrix1337,40086
+<div class="html" id="orgfb104cb">orgfb104cb1346,40520
+<div class="html" id="org1fda59d">org1fda59d1353,40589
+<div class="html" id="orgbddca20">orgbddca201364,40692
+<div class="html" id="orga2a6449">orga2a64491383,41431
+<div id="outline-container-step-5-neural-network" class="outline-4">outline-container-step-5-neural-network1396,41535
+<h4 id="step-5-neural-network"><span class="section-number-4">1.3.6.</span> Step 5: Neural Netwostep-5-neural-network1397,41604
+<div class="outline-text-4" id="text-step-5-neural-network">text-step-5-neural-network1398,41708
+<li><a id="what-is-a-neural-network"></a>🤔 What is a neural network?<br />what-is-a-neural-network1401,41796
+<div class="outline-text-5" id="text-what-is-a-neural-network">text-what-is-a-neural-network1402,41874
+<div class="html" id="orgbd7083b">orgbd7083b1403,41938
+<div class="html" id="org9724686">org97246861410,42007
+<div class="html" id="org8cbe871">org8cbe8711421,42108
+<pre class="example" id="orgd9e2dde">orgd9e2dde1443,42564
+<div class="html" id="org89ec20b">org89ec20b1447,42638
+<li><a id="understanding-the-nn-structure"></a>Understanding the NN Structure<br />understanding-the-nn-structure1456,42721
+<div class="outline-text-5" id="text-understanding-the-nn-structure">text-understanding-the-nn-structure1457,42805
+<pre class="example" id="org2d40449">org2d404491462,42926
+<div class="html" id="org6289831">org62898311472,43097
+<div class="html" id="org75693ae">org75693ae1479,43166
+<div class="html" id="orgc57d4fb">orgc57d4fb1490,43265
+<div class="html" id="org43de698">org43de6981514,44727
+<li><a id="exercise-implement-the-forward-pass"></a>✍️ Exercise: Implement the Forward Pass<exercise-implement-the-forward-pass1523,44810
+<div class="outline-text-5" id="text-exercise-implement-the-forward-pass">text-exercise-implement-the-forward-pass1524,44912
+<div class="html" id="orgf71b50c">orgf71b50c1540,45721
+<div class="html" id="orgddcf090">orgddcf0901547,45790
+<div class="html" id="orgb1960e2">orgb1960e21558,45893
+<div class="html" id="org132e115">org132e1151577,46804
+<div id="outline-container-step-6-training---the-cost-function" class="outline-4">outline-container-step-6-training---the-cost-function1590,46908
+<h4 id="step-6-training---the-cost-function"><span class="section-number-4">1.3.7.</span> Step 6step-6-training---the-cost-function1591,46991
+<div class="outline-text-4" id="text-step-6-training---the-cost-function">text-step-6-training---the-cost-function1592,47123
+<li><a id="how-do-we-know-if-the-network-is-good"></a>🤔 How do we know if the network is goodhow-do-we-know-if-the-network-is-good1595,47225
+<div class="outline-text-5" id="text-how-do-we-know-if-the-network-is-good">text-how-do-we-know-if-the-network-is-good1596,47329
+<div class="html" id="orgaf7a3b6">orgaf7a3b61597,47406
+<div class="html" id="org4c5b7fc">org4c5b7fc1604,47475
+<div class="html" id="org07ffeca">org07ffeca1615,47576
+<pre class="example" id="orgd2d0bcd">orgd2d0bcd1631,47782
+<div class="html" id="org545c6d2">org545c6d21639,47909
+<li><a id="exercise-implement-nn_cost"></a>✍️ Exercise: Implement nn<sub>cost</sub>()<br />exercise-implement-nn_cost1648,47992
+<div class="outline-text-5" id="text-exercise-implement-nn_cost">text-exercise-implement-nn_cost1649,48088
+<div class="html" id="orgd7e5a21">orgd7e5a211664,49232
+<div class="html" id="org9f126ac">org9f126ac1671,49301
+<div class="html" id="org9ffa6d2">org9ffa6d21682,49404
+<div class="html" id="org74946b0">org74946b01715,51033
+<div id="outline-container-step-7-backpropagation" class="outline-4">outline-container-step-7-backpropagation1728,51137
+<h4 id="step-7-backpropagation"><span class="section-number-4">1.3.8.</span> Step 7: Backpropagastep-7-backpropagation1729,51207
+<div class="outline-text-4" id="text-step-7-backpropagation">text-step-7-backpropagation1730,51313
+<li><a id="how-do-we-improve-the-network"></a>🤔 How do we improve the network?<br />how-do-we-improve-the-network1733,51402
+<div class="outline-text-5" id="text-how-do-we-improve-the-network">text-how-do-we-improve-the-network1734,51490
+<div class="html" id="orge1735da">orge1735da1735,51559
+<div class="html" id="org5bf60e0">org5bf60e01742,51628
+<div class="html" id="orgea36304">orgea363041753,51729
+<pre class="example" id="orgfbddda8">orgfbddda81770,52021
+<div class="html" id="org6db892c">org6db892c1778,52242
+<li><a id="key-gradients-for-sigmoid"></a>Key Gradients for Sigmoid:<br />key-gradients-for-sigmoid1787,52325
+<div class="outline-text-5" id="text-key-gradients-for-sigmoid">text-key-gradients-for-sigmoid1788,52400
+<pre class="example" id="org111c439">org111c4391794,52572
+<li><a id="exercise-implement-gradient-descent-update"></a>✍️ Exercise: Implement Gradient Dexercise-implement-gradient-descent-update1801,52759
+<div class="outline-text-5" id="text-exercise-implement-gradient-descent-update">text-exercise-implement-gradient-descent-update1802,52875
+<div class="html" id="org37d98f5">org37d98f51812,53611
+<div class="html" id="orgf697edf">orgf697edf1819,53680
+<div class="html" id="orgd6a1688">orgd6a16881830,53783
+<div class="html" id="org27483ac">org27483ac1858,55588
+<div id="outline-container-step-8-putting-it-all-together" class="outline-4">outline-container-step-8-putting-it-all-together1871,55692
+<h4 id="step-8-putting-it-all-together"><span class="section-number-4">1.3.9.</span> Step 8: Putstep-8-putting-it-all-together1872,55770
+<div class="outline-text-4" id="text-step-8-putting-it-all-together">text-step-8-putting-it-all-together1873,55892
+<li><a id="complete-exercise-train-xor"></a>✍️ Complete Exercise: Train XOR<br />complete-exercise-train-xor1876,55989
+<div class="outline-text-5" id="text-complete-exercise-train-xor">text-complete-exercise-train-xor1877,56075
+<pre class="example" id="org3110da3">org3110da31887,56261
+<div class="html" id="orgef96444">orgef964441896,56377
+<div class="html" id="org95012fe">org95012fe1903,56446
+<div class="html" id="org0764aea">org0764aea1914,56555
+<div class="html" id="org57d5070">org57d50701969,59180
+<div id="outline-container-congratulations" class="outline-4">outline-container-congratulations1982,59284
+<h4 id="congratulations"><span class="section-number-4">1.3.10.</span> 🎓 Congratulations!</h4congratulations1983,59347
+<div class="outline-text-4" id="text-congratulations">text-congratulations1984,59445
+<div id="outline-container-quick-reference" class="outline-4">outline-container-quick-reference2002,59990
+<h4 id="quick-reference"><span class="section-number-4">1.3.11.</span> 📚 Quick Reference</h4>quick-reference2003,60053
+<div class="outline-text-4" id="text-quick-reference">text-quick-reference2004,60150
+<div id="outline-container-header-guards" class="outline-3">outline-container-header-guards2070,61613
+<h3 id="header-guards"><span class="section-number-3">1.4.</span> Header Guards</h3>header-guards2071,61674
+<h3 id="header-guards"><span class="section-number-3">1.4.</span> Header Guards</h3>1.4. Header Guards2071,61674
+<div class="outline-text-3" id="text-header-guards">text-header-guards2072,61759
+<div id="outline-container-what-are-header-guards" class="outline-4">outline-container-what-are-header-guards2082,62233
+<h4 id="what-are-header-guards"><span class="section-number-4">1.4.1.</span> What are header guawhat-are-header-guards2083,62303
+<div class="outline-text-4" id="text-what-are-header-guards">text-what-are-header-guards2084,62409
+<div id="outline-container-how-they-work" class="outline-4">outline-container-how-they-work2093,62650
+<h4 id="how-they-work"><span class="section-number-4">1.4.2.</span> How they work:</h4>how-they-work2094,62711
+<div class="outline-text-4" id="text-how-they-work">text-how-they-work2095,62799
+<div id="outline-container-includes-and-dependencies" class="outline-3">outline-container-includes-and-dependencies2108,63103
+<h3 id="includes-and-dependencies"><span class="section-number-3">1.5.</span> Includes and Depenincludes-and-dependencies2109,63176
+<h3 id="includes-and-dependencies"><span class="section-number-3">1.5.</span> Includes and Depen1.5. Includes and Dependencies2109,63176
+<div class="outline-text-3" id="text-includes-and-dependencies">text-includes-and-dependencies2110,63285
+<div id="outline-container-configurable-macros" class="outline-3">outline-container-configurable-macros2134,65378
+<h3 id="configurable-macros"><span class="section-number-3">1.6.</span> Configurable Macros</h3>configurable-macros2135,65445
+<h3 id="configurable-macros"><span class="section-number-3">1.6.</span> Configurable Macros</h3>1.6. Configurable Macros2135,65445
+<div class="outline-text-3" id="text-configurable-macros">text-configurable-macros2136,65542
+<div id="outline-container-memory-allocation-customization" class="outline-4">outline-container-memory-allocation-customization2138,65608
+<h4 id="memory-allocation-customization"><span class="section-number-4">1.6.1.</span> Memory Allmemory-allocation-customization2139,65687
+<div class="outline-text-4" id="text-memory-allocation-customization">text-memory-allocation-customization2140,65810
+<div id="outline-container-why-this-is-useful" class="outline-4">outline-container-why-this-is-useful2151,66424
+<h4 id="why-this-is-useful"><span class="section-number-4">1.6.2.</span> Why this is useful:</h4why-this-is-useful2152,66490
+<div class="outline-text-4" id="text-why-this-is-useful">text-why-this-is-useful2153,66588
+<div id="outline-container-assertion-customization" class="outline-4">outline-container-assertion-customization2162,66877
+<h4 id="assertion-customization"><span class="section-number-4">1.6.3.</span> Assertion Customizassertion-customization2163,66948
+<div class="outline-text-4" id="text-assertion-customization">text-assertion-customization2164,67055
+<div id="outline-container-array-length-macro" class="outline-4">outline-container-array-length-macro2179,67745
+<h4 id="array-length-macro"><span class="section-number-4">1.6.4.</span> Array Length Macro</h4>array-length-macro2180,67811
+<div class="outline-text-4" id="text-array-length-macro">text-array-length-macro2181,67908
+<div id="outline-container-data-structures" class="outline-3">outline-container-data-structures2206,68796
+<h3 id="data-structures"><span class="section-number-3">1.7.</span> Data Structures</h3>data-structures2207,68859
+<h3 id="data-structures"><span class="section-number-3">1.7.</span> Data Structures</h3>1.7. Data Structures2207,68859
+<div class="outline-text-3" id="text-data-structures">text-data-structures2208,68948
+<div id="outline-container-gym_batch---batch-processing-state" class="outline-4">outline-container-gym_batch---batch-processing-state2210,69010
+<h4 id="gym_batch---batch-processing-state"><span class="section-number-4">1.7.1.</span> 1. Gym<gym_batch---batch-processing-state2211,69092
+<div class="outline-text-4" id="text-gym_batch---batch-processing-state">text-gym_batch---batch-processing-state2212,69234
+<div id="outline-container-mat---matrix-structure" class="outline-4">outline-container-mat---matrix-structure2228,70276
+<h4 id="mat---matrix-structure"><span class="section-number-4">1.7.2.</span> 2. Mat - Matrix Strmat---matrix-structure2229,70346
+<div class="outline-text-4" id="text-mat---matrix-structure">text-mat---matrix-structure2230,70454
+<li><a id="understanding-stride"></a>Understanding <code>stride</code>:<br />understanding-stride2243,71585
+<div class="outline-text-5" id="text-understanding-stride">text-understanding-stride2244,71663
+<div id="outline-container-matrix-access-macro" class="outline-4">outline-container-matrix-access-macro2269,72550
+<h4 id="matrix-access-macro"><span class="section-number-4">1.7.3.</span> Matrix Access Macro</hmatrix-access-macro2270,72617
+<div class="outline-text-4" id="text-matrix-access-macro">text-matrix-access-macro2271,72716
+<pre class="example" id="org1bb0267">org1bb02672285,73198
+<div id="outline-container-matrix-operations" class="outline-3">outline-container-matrix-operations2310,73649
+<h3 id="matrix-operations"><span class="section-number-3">1.8.</span> Matrix Operations</h3>matrix-operations2311,73714
+<h3 id="matrix-operations"><span class="section-number-3">1.8.</span> Matrix Operations</h3>1.8. Matrix Operations2311,73714
+<div class="outline-text-3" id="text-matrix-operations">text-matrix-operations2312,73807
+<div id="outline-container-mat_alloc---create-a-matrix" class="outline-4">outline-container-mat_alloc---create-a-matrix2314,73871
+<h4 id="mat_alloc---create-a-matrix"><span class="section-number-4">1.8.1.</span> 1. mat<sub>allmat_alloc---create-a-matrix2315,73946
+<div class="outline-text-4" id="text-mat_alloc---create-a-matrix">text-mat_alloc---create-a-matrix2316,74076
+<div id="outline-container-what-it-does" class="outline-4">outline-container-what-it-does2333,74990
+<h4 id="what-it-does"><span class="section-number-4">1.8.2.</span> What it does:</h4>what-it-does2334,75050
+<div class="outline-text-4" id="text-what-it-does">text-what-it-does2335,75136
+<div id="outline-container-mat_fill---fill-matrix-with-value" class="outline-4">outline-container-mat_fill---fill-matrix-with-value2344,75344
+<h4 id="mat_fill---fill-matrix-with-value"><span class="section-number-4">1.8.3.</span> 2. mat<smat_fill---fill-matrix-with-value2345,75425
+<div class="outline-text-4" id="text-mat_fill---fill-matrix-with-value">text-mat_fill---fill-matrix-with-value2346,75567
+<div id="outline-container-mat_dot---matrix-multiplication" class="outline-4">outline-container-mat_dot---matrix-multiplication2361,76381
+<h4 id="mat_dot---matrix-multiplication"><span class="section-number-4">1.8.4.</span> 3. mat<submat_dot---matrix-multiplication2362,76460
+<div class="outline-text-4" id="text-mat_dot---matrix-multiplication">text-mat_dot---matrix-multiplication2363,76598
+<div id="outline-container-understanding-matrix-multiplication" class="outline-4">outline-container-understanding-matrix-multiplication2385,77868
+<h4 id="understanding-matrix-multiplication"><span class="section-number-4">1.8.5.</span> Undersunderstanding-matrix-multiplication2386,77951
+<div class="outline-text-4" id="text-understanding-matrix-multiplication">text-understanding-matrix-multiplication2387,78083
+<pre class="example" id="org73c804a">org73c804a2392,78238
+<pre class="example" id="orgcf5e4e8">orgcf5e4e82400,78359
+<div id="outline-container-mat_row---create-a-row-view" class="outline-4">outline-container-mat_row---create-a-row-view2415,78629
+<h4 id="mat_row---create-a-row-view"><span class="section-number-4">1.8.6.</span> 4. mat<sub>rowmat_row---create-a-row-view2416,78704
+<div class="outline-text-4" id="text-mat_row---create-a-row-view">text-mat_row---create-a-row-view2417,78834
+<div id="outline-container-mat_sig---apply-sigmoid-activation" class="outline-4">outline-container-mat_sig---apply-sigmoid-activation2438,79752
+<h4 id="mat_sig---apply-sigmoid-activation"><span class="section-number-4">1.8.7.</span> 5. mat<mat_sig---apply-sigmoid-activation2439,79834
+<div class="outline-text-4" id="text-mat_sig---apply-sigmoid-activation">text-mat_sig---apply-sigmoid-activation2440,79978
+<div id="outline-container-the-sigmoid-function-1" class="outline-4">outline-container-the-sigmoid-function-12460,81001
+<h4 id="the-sigmoid-function-1"><span class="section-number-4">1.8.8.</span> The Sigmoid Functiothe-sigmoid-function-12461,81071
+<div class="outline-text-4" id="text-the-sigmoid-function-1">text-the-sigmoid-function-12462,81175
+<pre class="example" id="orgac2bc3f">orgac2bc3f2463,81237
+<pre class="example" id="org87b15dd">org87b15dd2476,81473
+<div id="outline-container-mat_sum---element-wise-addition" class="outline-4">outline-container-mat_sum---element-wise-addition2489,81661
+<h4 id="mat_sum---element-wise-addition"><span class="section-number-4">1.8.9.</span> 6. mat<submat_sum---element-wise-addition2490,81740
+<div class="outline-text-4" id="text-mat_sum---element-wise-addition">text-mat_sum---element-wise-addition2491,81878
+<div id="outline-container-mat_copy---copy-matrix-data" class="outline-4">outline-container-mat_copy---copy-matrix-data2512,82853
+<h4 id="mat_copy---copy-matrix-data"><span class="section-number-4">1.8.10.</span> 7. mat<sub>comat_copy---copy-matrix-data2513,82928
+<div class="outline-text-4" id="text-mat_copy---copy-matrix-data">text-mat_copy---copy-matrix-data2514,83059
+<div id="outline-container-mat_rand---random-initialization" class="outline-4">outline-container-mat_rand---random-initialization2531,83965
+<h4 id="mat_rand---random-initialization"><span class="section-number-4">1.8.11.</span> 8. mat<smat_rand---random-initialization2532,84045
+<div class="outline-text-4" id="text-mat_rand---random-initialization">text-mat_rand---random-initialization2533,84186
+<div id="outline-container-mat_save-and-mat_load---persistence" class="outline-4">outline-container-mat_save-and-mat_load---persistence2557,85486
+<h4 id="mat_save-and-mat_load---persistence"><span class="section-number-4">1.8.12.</span> 9. mamat_save-and-mat_load---persistence2558,85569
+<div class="outline-text-4" id="text-mat_save-and-mat_load---persistence">text-mat_save-and-mat_load---persistence2559,85728
+<div id="outline-container-mat_print---debug-output" class="outline-4">outline-container-mat_print---debug-output2584,87396
+<h4 id="mat_print---debug-output"><span class="section-number-4">1.8.13.</span> 10. mat<sub>prinmat_print---debug-output2585,87468
+<div class="outline-text-4" id="text-mat_print---debug-output">text-mat_print---debug-output2586,87594
+<div id="outline-container-mat_shuffle_rows---random-row-shuffling" class="outline-4">outline-container-mat_shuffle_rows---random-row-shuffling2612,89418
+<h4 id="mat_shuffle_rows---random-row-shuffling"><span class="section-number-4">1.8.14.</span> 1mat_shuffle_rows---random-row-shuffling2613,89505
+<div class="outline-text-4" id="text-mat_shuffle_rows---random-row-shuffling">text-mat_shuffle_rows---random-row-shuffling2614,89671
+<div id="outline-container-neural-network-structure" class="outline-3">outline-container-neural-network-structure2642,90924
+<h3 id="neural-network-structure"><span class="section-number-3">1.9.</span> Neural Network Struneural-network-structure2643,90996
+<h3 id="neural-network-structure"><span class="section-number-3">1.9.</span> Neural Network Stru1.9. Neural Network Structure2643,90996
+<div class="outline-text-3" id="text-neural-network-structure">text-neural-network-structure2644,91103
+<div id="outline-container-the-nn-structure" class="outline-4">outline-container-the-nn-structure2646,91174
+<h4 id="the-nn-structure"><span class="section-number-4">1.9.1.</span> The NN Structure</h4>the-nn-structure2647,91238
+<div class="outline-text-4" id="text-the-nn-structure">text-the-nn-structure2648,91331
+<div id="outline-container-understanding-the-structure" class="outline-4">outline-container-understanding-the-structure2661,92451
+<h4 id="understanding-the-structure"><span class="section-number-4">1.9.2.</span> Understanding understanding-the-structure2662,92526
+<div class="outline-text-4" id="text-understanding-the-structure">text-understanding-the-structure2663,92642
+<div id="outline-container-helper-macros" class="outline-4">outline-container-helper-macros2676,93276
+<h4 id="helper-macros"><span class="section-number-4">1.9.3.</span> Helper Macros</h4>helper-macros2677,93337
+<div class="outline-text-4" id="text-helper-macros">text-helper-macros2678,93424
+<div id="outline-container-nn_alloc---create-network" class="outline-4">outline-container-nn_alloc---create-network2691,93927
+<h4 id="nn_alloc---create-network"><span class="section-number-4">1.9.4.</span> nn<sub>alloc</sunn_alloc---create-network2692,94000
+<div class="outline-text-4" id="text-nn_alloc---create-network">text-nn_alloc---create-network2693,94123
+<div id="outline-container-how-it-works" class="outline-4">outline-container-how-it-works2720,95674
+<h4 id="how-it-works"><span class="section-number-4">1.9.5.</span> How it works:</h4>how-it-works2721,95734
+<div class="outline-text-4" id="text-how-it-works">text-how-it-works2722,95820
+<div id="outline-container-nn_forward---forward-pass" class="outline-4">outline-container-nn_forward---forward-pass2731,96078
+<h4 id="nn_forward---forward-pass"><span class="section-number-4">1.9.6.</span> nn<sub>forward</nn_forward---forward-pass2732,96151
+<div class="outline-text-4" id="text-nn_forward---forward-pass">text-nn_forward---forward-pass2733,96274
+<div id="outline-container-the-forward-pass" class="outline-4">outline-container-the-forward-pass2748,97209
+<h4 id="the-forward-pass"><span class="section-number-4">1.9.7.</span> The Forward Pass:</h4>the-forward-pass2749,97273
+<div class="outline-text-4" id="text-the-forward-pass">text-the-forward-pass2750,97367
+<pre class="example" id="orgcdd7472">orgcdd74722760,97636
+<div id="outline-container-nn_cost---calculate-loss" class="outline-4">outline-container-nn_cost---calculate-loss2766,97733
+<h4 id="nn_cost---calculate-loss"><span class="section-number-4">1.9.8.</span> nn<sub>cost</sub>nn_cost---calculate-loss2767,97805
+<div class="outline-text-4" id="text-nn_cost---calculate-loss">text-nn_cost---calculate-loss2768,97926
+<div id="outline-container-understanding-cost-function" class="outline-4">outline-container-understanding-cost-function2798,100027
+<h4 id="understanding-cost-function"><span class="section-number-4">1.9.9.</span> Understanding understanding-cost-function2799,100102
+<div class="outline-text-4" id="text-understanding-cost-function">text-understanding-cost-function2800,100218
+<pre class="example" id="org7065301">org70653012805,100328
+<div id="outline-container-training-algorithm" class="outline-3">outline-container-training-algorithm2818,100523
+<h3 id="training-algorithm"><span class="section-number-3">1.10.</span> Training Algorithm</h3>training-algorithm2819,100589
+<h3 id="training-algorithm"><span class="section-number-3">1.10.</span> Training Algorithm</h3>1.10. Training Algorithm2819,100589
+<div class="outline-text-3" id="text-training-algorithm">text-training-algorithm2820,100685
+<div id="outline-container-nn_backprop---backpropagation" class="outline-4">outline-container-nn_backprop---backpropagation2822,100750
+<h4 id="nn_backprop---backpropagation"><span class="section-number-4">1.10.1.</span> nn<sub>backnn_backprop---backpropagation2823,100827
+<div class="outline-text-4" id="text-nn_backprop---backpropagation">text-nn_backprop---backpropagation2824,100959
+<div id="outline-container-understanding-backpropagation" class="outline-4">outline-container-understanding-backpropagation2890,106131
+<h4 id="understanding-backpropagation"><span class="section-number-4">1.10.2.</span> Understandiunderstanding-backpropagation2891,106208
+<div class="outline-text-4" id="text-understanding-backpropagation">text-understanding-backpropagation2892,106329
+<pre class="example" id="orge04ab41">orge04ab412902,106518
+<pre class="example" id="orgfa28410">orgfa284102910,106697
+<pre class="example" id="org92ea048">org92ea0482918,106810
+<div id="outline-container-nn_learn---update-weights" class="outline-4">outline-container-nn_learn---update-weights2925,107001
+<h4 id="nn_learn---update-weights"><span class="section-number-4">1.10.3.</span> nn<sub>learn</snn_learn---update-weights2926,107074
+<div class="outline-text-4" id="text-nn_learn---update-weights">text-nn_learn---update-weights2927,107198
+<div id="outline-container-gradient-descent" class="outline-4">outline-container-gradient-descent2950,108809
+<h4 id="gradient-descent"><span class="section-number-4">1.10.4.</span> Gradient Descent:</h4>gradient-descent2951,108873
+<div class="outline-text-4" id="text-gradient-descent">text-gradient-descent2952,108968
+<pre class="example" id="org7280765">org72807652953,109024
+<pre class="example" id="orgaf08499">orgaf084992965,109226
+<div id="outline-container-nn_rand---random-initialization" class="outline-4">outline-container-nn_rand---random-initialization2975,109481
+<h4 id="nn_rand---random-initialization"><span class="section-number-4">1.10.5.</span> nn<sub>rann_rand---random-initialization2976,109560
+<div class="outline-text-4" id="text-nn_rand---random-initialization">text-nn_rand---random-initialization2977,109696
+<div id="outline-container-visualization-system-gym" class="outline-3">outline-container-visualization-system-gym2998,110534
+<h3 id="visualization-system-gym"><span class="section-number-3">1.11.</span> Visualization Systvisualization-system-gym2999,110606
+<h3 id="visualization-system-gym"><span class="section-number-3">1.11.</span> Visualization Syst1.11. Visualization System (Gym)2999,110606
+<div class="outline-text-3" id="text-visualization-system-gym">text-visualization-system-gym3000,110716
+<div id="outline-container-plot-structure" class="outline-4">outline-container-plot-structure3007,110899
+<h4 id="plot-structure"><span class="section-number-4">1.11.1.</span> Plot Structure</h4>plot-structure3008,110961
+<div class="outline-text-4" id="text-plot-structure">text-plot-structure3009,111051
+<div id="outline-container-dynamic-array-macro" class="outline-4">outline-container-dynamic-array-macro3021,111945
+<h4 id="dynamic-array-macro"><span class="section-number-4">1.11.2.</span> Dynamic Array Macro</dynamic-array-macro3022,112012
+<div class="outline-text-4" id="text-dynamic-array-macro">text-dynamic-array-macro3023,112112
+<div id="outline-container-gym_render_nn---visualize-network" class="outline-4">outline-container-gym_render_nn---visualize-network3045,113333
+<h4 id="gym_render_nn---visualize-network"><span class="section-number-4">1.11.3.</span> gym<subgym_render_nn---visualize-network3046,113414
+<div class="outline-text-4" id="text-gym_render_nn---visualize-network">text-gym_render_nn---visualize-network3047,113564
+<div id="outline-container-gym_plot---draw-cost-graph" class="outline-4">outline-container-gym_plot---draw-cost-graph3061,114653
+<h4 id="gym_plot---draw-cost-graph"><span class="section-number-4">1.11.4.</span> gym<sub>plot</gym_plot---draw-cost-graph3062,114727
+<div class="outline-text-4" id="text-gym_plot---draw-cost-graph">text-gym_plot---draw-cost-graph3063,114853
+<div id="outline-container-gym_process_batch---batch-training" class="outline-4">outline-container-gym_process_batch---batch-training3076,115809
+<h4 id="gym_process_batch---batch-training"><span class="section-number-4">1.11.5.</span> gym<sugym_process_batch---batch-training3077,115891
+<div class="outline-text-4" id="text-gym_process_batch---batch-training">text-gym_process_batch---batch-training3078,116043
+<div id="outline-container-complete-usage-example" class="outline-3">outline-container-complete-usage-example3096,117273
+<h3 id="complete-usage-example"><span class="section-number-3">1.12.</span> Complete Usage Exampcomplete-usage-example3097,117343
+<h3 id="complete-usage-example"><span class="section-number-3">1.12.</span> Complete Usage Examp1.12. Complete Usage Example3097,117343
+<div class="outline-text-3" id="text-complete-usage-example">text-complete-usage-example3098,117447
+<div id="outline-container-learning-checklist" class="outline-3">outline-container-learning-checklist3167,121076
+<h3 id="learning-checklist"><span class="section-number-3">1.13.</span> Learning Checklist</h3>learning-checklist3168,121142
+<h3 id="learning-checklist"><span class="section-number-3">1.13.</span> Learning Checklist</h3>1.13. Learning Checklist3168,121142
+<div class="outline-text-3" id="text-learning-checklist">text-learning-checklist3169,121238
+<div id="outline-container-foundation-skills" class="outline-4">outline-container-foundation-skills3176,121390
+<h4 id="foundation-skills"><span class="section-number-4">1.13.1.</span> 🟢 Foundation Skills<foundation-skills3177,121455
+<div class="outline-text-4" id="text-foundation-skills">text-foundation-skills3178,121556
+<div id="outline-container-matrix-operations-1" class="outline-4">outline-container-matrix-operations-13188,122074
+<h4 id="matrix-operations-1"><span class="section-number-4">1.13.2.</span> 🟡 Matrix Operationmatrix-operations-13189,122141
+<div class="outline-text-4" id="text-matrix-operations-1">text-matrix-operations-13190,122244
+<div id="outline-container-neural-network" class="outline-4">outline-container-neural-network3201,122865
+<h4 id="neural-network"><span class="section-number-4">1.13.3.</span> 🔴 Neural Network</h4>neural-network3202,122927
+<div class="outline-text-4" id="text-neural-network">text-neural-network3203,123022
+<div id="outline-container-complete-project" class="outline-4">outline-container-complete-project3216,123795
+<h4 id="complete-project"><span class="section-number-4">1.13.4.</span> 🏆 Complete Project</hcomplete-project3217,123859
+<div class="outline-text-4" id="text-complete-project">text-complete-project3218,123958
+<div id="outline-container-common-pitfalls-debugging-tips" class="outline-3">outline-container-common-pitfalls-debugging-tips3232,124470
+<h3 id="common-pitfalls-debugging-tips"><span class="section-number-3">1.14.</span> Common Pitfacommon-pitfalls-debugging-tips3233,124548
+<h3 id="common-pitfalls-debugging-tips"><span class="section-number-3">1.14.</span> Common Pitfa1.14. Common Pitfalls &amp; Debugging Tips3233,124548
+<div class="outline-text-3" id="text-common-pitfalls-debugging-tips">text-common-pitfalls-debugging-tips3234,124674
+<div id="outline-container-common-mistakes-beginners-make" class="outline-4">outline-container-common-mistakes-beginners-make3236,124751
+<h4 id="common-mistakes-beginners-make"><span class="section-number-4">1.14.1.</span> ⚠️ Comcommon-mistakes-beginners-make3237,124829
+<div class="outline-text-4" id="text-common-mistakes-beginners-make">text-common-mistakes-beginners-make3238,124958
+<li><a id="confusing-row-major-vs-column-major-order"></a>1. Confusing Row-Major vs Column-Majorconfusing-row-major-vs-column-major-order3241,125055
+<div class="outline-text-5" id="text-confusing-row-major-vs-column-major-order">text-confusing-row-major-vs-column-major-order3242,125164
+<li><a id="forgetting-to-initialize-stride"></a>2. Forgetting to Initialize stride<br />forgetting-to-initialize-stride3258,125619
+<div class="outline-text-5" id="text-forgetting-to-initialize-stride">text-forgetting-to-initialize-stride3259,125708
+<li><a id="not-checking-matrix-dimensions-before-operations"></a>3. Not Checking Matrix Dimensionot-checking-matrix-dimensions-before-operations3273,126460
+<div class="outline-text-5" id="text-not-checking-matrix-dimensions-before-operations">text-not-checking-matrix-dimensions-before-operations3274,126583
+<li><a id="modifying-row-views-affects-parent-matrix"></a>4. Modifying Row Views Affects Parent modifying-row-views-affects-parent-matrix3288,127387
+<div class="outline-text-5" id="text-modifying-row-views-affects-parent-matrix">text-modifying-row-views-affects-parent-matrix3289,127496
+<li><a id="learning-rate-too-high-or-too-low"></a>5. Learning Rate Too High or Too Low<br />learning-rate-too-high-or-too-low3302,127992
+<div class="outline-text-5" id="text-learning-rate-too-high-or-too-low">text-learning-rate-too-high-or-too-low3303,128085
+<li><a id="forgetting-to-seed-random-number-generator"></a>6. Forgetting to Seed Random Number Gforgetting-to-seed-random-number-generator3318,128842
+<div class="outline-text-5" id="text-forgetting-to-seed-random-number-generator">text-forgetting-to-seed-random-number-generator3319,128953
+<div id="outline-container-debugging-techniques" class="outline-4">outline-container-debugging-techniques3334,129648
+<h4 id="debugging-techniques"><span class="section-number-4">1.14.2.</span> 🔍 Debugging Techndebugging-techniques3335,129716
+<div class="outline-text-4" id="text-debugging-techniques">text-debugging-techniques3336,129823
+<li><a id="print-matrix-contents"></a>Print Matrix Contents<br />print-matrix-contents3339,129910
+<div class="outline-text-5" id="text-print-matrix-contents">text-print-matrix-contents3340,129976
+<li><a id="check-for-nan-or-infinity"></a>Check for NaN or Infinity<br />check-for-nan-or-infinity3351,130443
+<div class="outline-text-5" id="text-check-for-nan-or-infinity">text-check-for-nan-or-infinity3352,130517
+<li><a id="verify-gradients-with-finite-differences"></a>Verify Gradients with Finite Differenceverify-gradients-with-finite-differences3364,130933
+<div class="outline-text-5" id="text-verify-gradients-with-finite-differences">text-verify-gradients-with-finite-differences3365,131037
+<li><a id="track-cost-during-training"></a>Track Cost During Training<br />track-cost-during-training3385,131997
+<div class="outline-text-5" id="text-track-cost-during-training">text-track-cost-during-training3386,132073
+<div id="outline-container-key-takeaways" class="outline-3">outline-container-key-takeaways3410,133012
+<h3 id="key-takeaways"><span class="section-number-3">1.15.</span> Key Takeaways</h3>key-takeaways3411,133073
+<h3 id="key-takeaways"><span class="section-number-3">1.15.</span> Key Takeaways</h3>1.15. Key Takeaways3411,133073
+<div class="outline-text-3" id="text-key-takeaways">text-key-takeaways3412,133159
+<div id="outline-container-practice-problems" class="outline-3">outline-container-practice-problems3428,133848
+<h3 id="practice-problems"><span class="section-number-3">1.16.</span> Practice Problems</h3>practice-problems3429,133913
+<h3 id="practice-problems"><span class="section-number-3">1.16.</span> Practice Problems</h3>1.16. Practice Problems3429,133913
+<div class="outline-text-3" id="text-practice-problems">text-practice-problems3430,134007
+<div id="outline-container-beginner-problems" class="outline-4">outline-container-beginner-problems3436,134127
+<h4 id="beginner-problems"><span class="section-number-4">1.16.1.</span> 📝 Beginner Problems<beginner-problems3437,134192
+<div class="outline-text-4" id="text-beginner-problems">text-beginner-problems3438,134293
+<li><a id="problem-1-matrix-transpose"></a>Problem 1: Matrix Transpose<br />problem-1-matrix-transpose3441,134377
+<div class="outline-text-5" id="text-problem-1-matrix-transpose">text-problem-1-matrix-transpose3442,134454
+<div class="html" id="org78f2bbc">org78f2bbc3456,135111
+<div class="html" id="org1829c8b">org1829c8b3463,135180
+<div class="html" id="org96aad85">org96aad853474,135274
+<div class="html" id="org1f3b5cf">org1f3b5cf3486,135505
+<div class="html" id="org48dde5c">org48dde5c3493,135575
+<div class="html" id="org60e283c">org60e283c3500,135644
+<div class="html" id="org8331b10">org8331b103511,135742
+<div class="html" id="org62dab72">org62dab723532,136674
+<li><a id="problem-2-element-wise-multiply"></a>Problem 2: Element-wise Multiply<br />problem-2-element-wise-multiply3541,136757
+<div class="outline-text-5" id="text-problem-2-element-wise-multiply">text-problem-2-element-wise-multiply3542,136844
+<div class="html" id="org5a7e5e4">org5a7e5e43555,137520
+<div class="html" id="org3483082">org34830823562,137589
+<div class="html" id="orgbf66f0f">orgbf66f0f3573,137687
+<div class="html" id="orga0283bc">orga0283bc3597,138747
+<div id="outline-container-intermediate-problems" class="outline-4">outline-container-intermediate-problems3608,138843
+<h4 id="intermediate-problems"><span class="section-number-4">1.16.2.</span> 📝 Intermediate Pintermediate-problems3609,138912
+<div class="outline-text-4" id="text-intermediate-problems">text-intermediate-problems3610,139021
+<li><a id="problem-3-relu-activation"></a>Problem 3: ReLU Activation<br />problem-3-relu-activation3613,139109
+<div class="outline-text-5" id="text-problem-3-relu-activation">text-problem-3-relu-activation3614,139184
+<div class="html" id="org1b457c2">org1b457c23633,140066
+<div class="html" id="org15fbdfc">org15fbdfc3640,140135
+<div class="html" id="orgb02ee29">orgb02ee293651,140233
+<div class="html" id="org9713e93">org9713e933675,141229
+<li><a id="problem-4-add-a-new-layer-function"></a>Problem 4: Add a New Layer Function<br />problem-4-add-a-new-layer-function3684,141312
+<div class="outline-text-5" id="text-problem-4-add-a-new-layer-function">text-problem-4-add-a-new-layer-function3685,141405
+<div class="html" id="orgc217312">orgc2173123699,142144
+<div class="html" id="org05340a1">org05340a13706,142213
+<div class="html" id="org0a0e328">org0a0e3283717,142307
+<div class="html" id="org2512c47">org2512c473729,142514
+<div id="outline-container-advanced-problems" class="outline-4">outline-container-advanced-problems3740,142610
+<h4 id="advanced-problems"><span class="section-number-4">1.16.3.</span> 📝 Advanced Problems<advanced-problems3741,142675
+<div class="outline-text-4" id="text-advanced-problems">text-advanced-problems3742,142776
+<li><a id="problem-5-implement-momentum"></a>Problem 5: Implement Momentum<br />problem-5-implement-momentum3745,142860
+<div class="outline-text-5" id="text-problem-5-implement-momentum">text-problem-5-implement-momentum3746,142941
+<li><a id="problem-6-implement-dropout"></a>Problem 6: Implement Dropout<br />problem-6-implement-dropout3768,144469
+<div class="outline-text-5" id="text-problem-6-implement-dropout">text-problem-6-implement-dropout3769,144548
+<li><a id="problem-7-saveload-neural-network"></a>Problem 7: Save/Load Neural Network<br />problem-7-saveload-neural-network3785,145368
+<div class="outline-text-5" id="text-problem-7-saveload-neural-network">text-problem-7-saveload-neural-network3786,145460
+<div id="outline-container-further-learning" class="outline-3">outline-container-further-learning3811,146397
+<h3 id="further-learning"><span class="section-number-3">1.17.</span> Further Learning</h3>further-learning3812,146461
+<h3 id="further-learning"><span class="section-number-3">1.17.</span> Further Learning</h3>1.17. Further Learning3812,146461
+<div class="outline-text-3" id="text-further-learning">text-further-learning3813,146553
+<div id="outline-container-summary-table" class="outline-3">outline-container-summary-table3826,147033
+<h3 id="summary-table"><span class="section-number-3">1.18.</span> Summary Table</h3>summary-table3827,147094
+<h3 id="summary-table"><span class="section-number-3">1.18.</span> Summary Table</h3>1.18. Summary Table3827,147094
+<div class="outline-text-3" id="text-summary-table">text-summary-table3828,147180
+<div id="outline-container-references" class="outline-3">outline-container-references3925,149142
+<h3 id="references"><span class="section-number-3">1.19.</span> References</h3>references3926,149200
+<h3 id="references"><span class="section-number-3">1.19.</span> References</h3>1.19. References3926,149200
+<div class="outline-text-3" id="text-references">text-references3927,149280
+<div id="postamble" class="status">postamble3944,149738
+
+adder_explanation.md,2169
+# Neural Network Binary Adder - Complete ExplanationNeural Network Binary Adder - Complete Explanation1,0
+## OverviewOverview3,54
+### What the Program DoesWhat the Program Does7,285
+## Key ConceptsKey Concepts18,702
+### Binary AdditionBinary Addition20,719
+### Neural Network TrainingNeural Network Training25,913
+## Code BreakdownCode Breakdown32,1132
+### 1. Header and Configuration1. Header and Configuration34,1151
+### 2. Global Configuration2. Global Configuration48,1473
+### 3. The `verify_nn_adder` Function3. The `verify_nn_adder` Function63,2089
+#### How It Works:How It Works:71,2302
+### 4. The `main` Function4. The `main` Function119,3824
+#### Step 1: Generate Training Data (lines 68-110)Step 1: Generate Training Data (lines 68-110)121,3852
+#### Step 2: Initialize Neural Network (lines 113-117)Step 2: Initialize Neural Network (lines 113-117)169,5532
+#### Step 3: Initialize Graphics (lines 120-133)Step 3: Initialize Graphics (lines 120-133)180,5901
+#### Step 4: Main Training Loop (lines 140-181)Step 4: Main Training Loop (lines 140-181)189,6134
+## Key Functions from `nn.h` LibraryKey Functions from `nn.h` Library228,7173
+## Understanding Matrix OperationsUnderstanding Matrix Operations244,7836
+### Matrix Macro: `MAT_AT`Matrix Macro: `MAT_AT`246,7872
+### Matrix View (Pointer Sharing)Matrix View (Pointer Sharing)257,8096
+## Binary Operations ExplainedBinary Operations Explained274,8487
+### Extracting BitsExtracting Bits276,8519
+### Setting BitsSetting Bits286,8721
+## How the Training WorksHow the Training Works296,8846
+### The Training ProcessThe Training Process298,8873
+### Learning RateLearning Rate306,9218
+### Cost FunctionCost Function316,9390
+## Interactive ControlsInteractive Controls325,9615
+## Visual Output LayoutVisual Output Layout334,9768
+## Important Notes for BeginnersImportant Notes for Beginners360,10734
+### Memory ManagementMemory Management362,10768
+### Float vs Size_tFloat vs Size_t367,10967
+### Training TimeTraining Time371,11093
+### Why This WorksWhy This Works376,11246
+## SummarySummary383,11479
+## Further ReadingFurther Reading395,11912
+
+thirdparty/sv.h,1922
+#define SV_H_SV_H_23,1141
+#define SVDEFSVDEF32,1271
+typedef struct {__anon367a02de010835,1302
+    size_t count;count36,1319
+    const char *data;data37,1337
+} String_View;String_View38,1359
+#define SV(SV40,1375
+#define SV_STATIC(SV_STATIC41,1442
+#define SV_NULL SV_NULL47,1577
+#define SV_Fmt SV_Fmt50,1650
+#define SV_Arg(SV_Arg51,1672
+SVDEF String_View sv_from_parts(const char *data, size_t count)sv_from_parts80,2985
+SVDEF String_View sv_from_cstr(const char *cstr)sv_from_cstr88,3131
+SVDEF String_View sv_trim_left(String_View sv)sv_trim_left93,3231
+SVDEF String_View sv_trim_right(String_View sv)sv_trim_right103,3427
+SVDEF String_View sv_trim(String_View sv)sv_trim113,3635
+SVDEF String_View sv_chop_left(String_View *sv, size_t n)sv_chop_left118,3726
+SVDEF String_View sv_chop_right(String_View *sv, size_t n)sv_chop_right132,3958
+SVDEF bool sv_index_of(String_View sv, char c, size_t *index)sv_index_of145,4187
+SVDEF bool sv_try_chop_by_delim(String_View *sv, char delim, String_View *chunk)sv_try_chop_by_delim162,4482
+SVDEF String_View sv_chop_by_delim(String_View *sv, char delim)sv_chop_by_delim183,4902
+SVDEF String_View sv_chop_by_sv(String_View *sv, String_View thicc_delim)sv_chop_by_sv203,5286
+SVDEF bool sv_starts_with(String_View sv, String_View expected_prefix)sv_starts_with229,5954
+SVDEF bool sv_ends_with(String_View sv, String_View expected_suffix)sv_ends_with239,6237
+SVDEF bool sv_eq(String_View a, String_View b)sv_eq249,6553
+SVDEF bool sv_eq_ignorecase(String_View a, String_View b)sv_eq_ignorecase258,6729
+SVDEF uint64_t sv_to_u64(String_View sv)sv_to_u64279,7182
+uint64_t sv_chop_u64(String_View *sv)sv_chop_u64290,7407
+SVDEF String_View sv_chop_left_while(String_View *sv, bool (*predicate)(char x))sv_chop_left_while301,7643
+SVDEF String_View sv_take_left_while(String_View sv, bool (*predicate)(char x))sv_take_left_while310,7855
+
+thirdparty/stb_image.h,40911
+#define STBI_INCLUDE_STB_IMAGE_HSTBI_INCLUDE_STB_IMAGE_H130,6426
+#define STBI_VERSION STBI_VERSION374,16939
+{__anon38d662c00103377,16968
+   STBI_default = 0, // only used for desired_channelsSTBI_default378,16970
+   STBI_grey       = 1,STBI_grey380,17026
+   STBI_grey_alpha = 2,STBI_grey_alpha381,17050
+   STBI_rgb        = 3,STBI_rgb382,17074
+   STBI_rgb_alpha  = 4STBI_rgb_alpha383,17098
+typedef unsigned char stbi_uc;stbi_uc387,17145
+typedef unsigned short stbi_us;stbi_us388,17176
+#define STBIDEF STBIDEF396,17289
+{__anon38d662c00208412,17564
+   int      (*read)  (void *user,char *data,int size);   // fill 'data' with 'size' bytes.  returead413,17566
+   void     (*skip)  (void *user,int n);                 // skip the next 'n' bytes, or 'unget' skip414,17695
+   int      (*eof)   (void *user);                       // returns nonzero if we are at end of eof415,17821
+} stbi_io_callbacks;stbi_io_callbacks416,17927
+   #define STBI_NO_JPEGSTBI_NO_JPEG554,24360
+   #define STBI_NO_PNGSTBI_NO_PNG557,24419
+   #define STBI_NO_BMPSTBI_NO_BMP560,24477
+   #define STBI_NO_PSDSTBI_NO_PSD563,24535
+   #define STBI_NO_TGASTBI_NO_TGA566,24593
+   #define STBI_NO_GIFSTBI_NO_GIF569,24651
+   #define STBI_NO_HDRSTBI_NO_HDR572,24709
+   #define STBI_NO_PICSTBI_NO_PIC575,24767
+   #define STBI_NO_PNMSTBI_NO_PNM578,24825
+#define STBI_NO_ZLIBSTBI_NO_ZLIB583,24948
+#define STBI_ASSERT(STBI_ASSERT603,25283
+#define STBI_EXTERN STBI_EXTERN607,25343
+#define STBI_EXTERN STBI_EXTERN609,25380
+   #define stbi_inline stbi_inline615,25455
+   #define stbi_inlinestbi_inline617,25494
+   #define stbi_inline stbi_inline620,25533
+      #define STBI_THREAD_LOCAL STBI_THREAD_LOCAL625,25663
+      #define STBI_THREAD_LOCAL STBI_THREAD_LOCAL627,25757
+      #define STBI_THREAD_LOCAL STBI_THREAD_LOCAL629,25831
+      #define STBI_THREAD_LOCAL STBI_THREAD_LOCAL631,25988
+        #define STBI_THREAD_LOCAL STBI_THREAD_LOCAL636,26108
+typedef unsigned short stbi__uint16;stbi__uint16642,26236
+typedef   signed short stbi__int16;stbi__int16643,26273
+typedef unsigned int   stbi__uint32;stbi__uint32644,26309
+typedef   signed int   stbi__int32;stbi__int32645,26346
+typedef uint16_t stbi__uint16;stbi__uint16648,26408
+typedef int16_t  stbi__int16;stbi__int16649,26439
+typedef uint32_t stbi__uint32;stbi__uint32650,26469
+typedef int32_t  stbi__int32;stbi__int32651,26500
+typedef unsigned char validate_uint32[sizeof(stbi__uint32)==4 ? 1 : -1];validate_uint32655,26588
+#define STBI_NOTUSED(STBI_NOTUSED658,26678
+#define STBI_NOTUSED(STBI_NOTUSED660,26719
+#define STBI_HAS_LROTLSTBI_HAS_LROTL664,26784
+   #define stbi_lrot(stbi_lrot668,26837
+   #define stbi_lrot(stbi_lrot670,26882
+#define STBI_MALLOC(STBI_MALLOC682,27317
+#define STBI_REALLOC(STBI_REALLOC683,27362
+#define STBI_FREE(STBI_FREE684,27413
+#define STBI_REALLOC_SIZED(STBI_REALLOC_SIZED688,27490
+#define STBI__X64_TARGETSTBI__X64_TARGET693,27626
+#define STBI__X86_TARGETSTBI__X86_TARGET695,27693
+#define STBI_NO_SIMDSTBI_NO_SIMD706,28297
+#define STBI_NO_SIMDSTBI_NO_SIMD721,29041
+#define STBI_SSE2STBI_SSE2725,29157
+static int stbi__cpuid3(void)stbi__cpuid3732,29280
+static int stbi__cpuid3(void)stbi__cpuid3739,29375
+#define STBI_SIMD_ALIGN(STBI_SIMD_ALIGN751,29508
+static int stbi__sse2_available(void)stbi__sse2_available754,29626
+#define STBI_SIMD_ALIGN(STBI_SIMD_ALIGN762,29781
+static int stbi__sse2_available(void)stbi__sse2_available765,29906
+#define STBI_SIMD_ALIGN(STBI_SIMD_ALIGN785,30307
+#define STBI_SIMD_ALIGN(STBI_SIMD_ALIGN787,30381
+#define STBI_SIMD_ALIGN(STBI_SIMD_ALIGN792,30495
+#define STBI_MAX_DIMENSIONS STBI_MAX_DIMENSIONS796,30577
+{__anon38d662c00308806,30879
+   stbi__uint32 img_x, img_y;img_x807,30881
+   stbi__uint32 img_x, img_y;img_y807,30881
+   int img_n, img_out_n;img_n808,30911
+   int img_n, img_out_n;img_out_n808,30911
+   stbi_io_callbacks io;io810,30937
+   void *io_user_data;io_user_data811,30962
+   int read_from_callbacks;read_from_callbacks813,30986
+   int buflen;buflen814,31014
+   stbi_uc buffer_start[128];buffer_start815,31029
+   int callback_already_read;callback_already_read816,31059
+   stbi_uc *img_buffer, *img_buffer_end;img_buffer818,31090
+   stbi_uc *img_buffer, *img_buffer_end;img_buffer_end818,31090
+   stbi_uc *img_buffer_original, *img_buffer_original_end;img_buffer_original819,31131
+   stbi_uc *img_buffer_original, *img_buffer_original_end;img_buffer_original_end819,31131
+} stbi__context;stbi__context820,31190
+static void stbi__start_mem(stbi__context *s, stbi_uc const *buffer, int len)stbi__start_mem826,31299
+static void stbi__start_callbacks(stbi__context *s, stbi_io_callbacks *c, void *user)stbi__start_callbacks836,31647
+static int stbi__stdio_read(void *user, char *data, int size)stbi__stdio_read850,32046
+static void stbi__stdio_skip(void *user, int n)stbi__stdio_skip855,32162
+static int stbi__stdio_eof(void *user)stbi__stdio_eof865,32444
+static stbi_io_callbacks stbi__stdio_callbacks =stbi__stdio_callbacks870,32543
+static void stbi__start_file(stbi__context *s, FILE *f)stbi__start_file877,32660
+static void stbi__rewind(stbi__context *s)stbi__rewind886,32859
+{__anon38d662c00403896,33234
+   STBI_ORDER_RGB,STBI_ORDER_RGB897,33236
+   STBI_ORDER_BGRSTBI_ORDER_BGR898,33255
+{__anon38d662c00508902,33292
+   int bits_per_channel;bits_per_channel903,33294
+   int num_channels;num_channels904,33319
+   int channel_order;channel_order905,33340
+} stbi__result_info;stbi__result_info906,33362
+const char *stbi__g_failure_reason;stbi__g_failure_reason970,36143
+STBIDEF const char *stbi_failure_reason(void)stbi_failure_reason972,36180
+static int stbi__err(const char *str)stbi__err978,36297
+static void *stbi__malloc(size_t size)stbi__malloc985,36393
+static int stbi__addsizes_valid(int a, int b)stbi__addsizes_valid1002,37050
+static int stbi__mul2sizes_valid(int a, int b)stbi__mul2sizes_valid1014,37428
+static int stbi__mad2sizes_valid(int a, int b, int add)stbi__mad2sizes_valid1024,37824
+static int stbi__mad3sizes_valid(int a, int b, int c, int add)stbi__mad3sizes_valid1031,38046
+static int stbi__mad4sizes_valid(int a, int b, int c, int d, int add)stbi__mad4sizes_valid1039,38390
+static void *stbi__malloc_mad2(int a, int b, int add)stbi__malloc_mad21048,38764
+static void *stbi__malloc_mad3(int a, int b, int c, int add)stbi__malloc_mad31055,38920
+static void *stbi__malloc_mad4(int a, int b, int c, int d, int add)stbi__malloc_mad41062,39160
+static int stbi__addints_valid(int a, int b)stbi__addints_valid1070,39445
+static int stbi__mul2shorts_valid(int a, int b)stbi__mul2shorts_valid1078,39807
+   #define stbi__err(stbi__err1091,40343
+   #define stbi__err(stbi__err1093,40408
+   #define stbi__err(stbi__err1095,40454
+#define stbi__errpf(stbi__errpf1098,40502
+#define stbi__errpuc(stbi__errpuc1099,40576
+STBIDEF void stbi_image_free(void *retval_from_stbi_load)stbi_image_free1101,40659
+static int stbi__vertically_flip_on_load_global = 0;stbi__vertically_flip_on_load_global1114,40964
+STBIDEF void stbi_set_flip_vertically_on_load(int flag_true_if_should_flip)stbi_set_flip_vertically_on_load1116,41018
+#define stbi__vertically_flip_on_load stbi__vertically_flip_on_load1122,41193
+static STBI_THREAD_LOCAL int stbi__vertically_flip_on_load_local, stbi__vertically_flip_on_load_stbi__vertically_flip_on_load_local1124,41275
+static STBI_THREAD_LOCAL int stbi__vertically_flip_on_load_local, stbi__vertically_flip_on_load_stbi__vertically_flip_on_load_set1124,41275
+STBIDEF void stbi_set_flip_vertically_on_load_thread(int flag_true_if_should_flip)stbi_set_flip_vertically_on_load_thread1126,41377
+#define stbi__vertically_flip_on_load stbi__vertically_flip_on_load1132,41574
+static void *stbi__load_main(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__restbi__load_main1137,41848
+static stbi_uc *stbi__convert_16_to_8(stbi__uint16 *orig, int w, int h, int channels)stbi__convert_16_to_81190,43820
+static stbi__uint16 *stbi__convert_8_to_16(stbi_uc *orig, int w, int h, int channels)stbi__convert_8_to_161206,44294
+static void stbi__vertical_flip(void *image, int w, int h, int bytes_per_pixel)stbi__vertical_flip1222,44801
+static void stbi__vertical_flip_slices(void *image, int w, int h, int z, int bytes_per_pixel)stbi__vertical_flip_slices1247,45595
+static unsigned char *stbi__load_and_postprocess_8bit(stbi__context *s, int *x, int *y, int *comstbi__load_and_postprocess_8bit1260,45929
+static stbi__uint16 *stbi__load_and_postprocess_16bit(stbi__context *s, int *x, int *y, int *comstbi__load_and_postprocess_16bit1286,46770
+static void stbi__float_postprocess(float *result, int *x, int *y, int *comp, int req_comp)stbi__float_postprocess1314,47769
+STBIDEF int stbi_convert_wchar_to_utf8(char *buffer, size_t bufferlen, const wchar_t* input)stbi_convert_wchar_to_utf81331,48556
+static FILE *stbi__fopen(char const *filename, char const *mode)stbi__fopen1337,48759
+STBIDEF stbi_uc *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)stbi_load1366,49484
+STBIDEF stbi_uc *stbi_load_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)stbi_load_from_file1376,49803
+STBIDEF stbi__uint16 *stbi_load_from_file_16(FILE *f, int *x, int *y, int *comp, int req_comp)stbi_load_from_file_161389,50205
+STBIDEF stbi_us *stbi_load_16(char const *filename, int *x, int *y, int *comp, int req_comp)stbi_load_161402,50615
+STBIDEF stbi_us *stbi_load_16_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *cstbi_load_16_from_memory1415,50977
+STBIDEF stbi_us *stbi_load_16_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, stbi_load_16_from_callbacks1422,51258
+STBIDEF stbi_uc *stbi_load_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *compstbi_load_from_memory1429,51581
+STBIDEF stbi_uc *stbi_load_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, intstbi_load_from_callbacks1436,51818
+STBIDEF stbi_uc *stbi_load_gif_from_memory(stbi_uc const *buffer, int len, int **delays, int *x,stbi_load_gif_from_memory1444,52118
+static float *stbi__loadf_main(stbi__context *s, int *x, int *y, int *comp, int req_comp)stbi__loadf_main1460,52587
+STBIDEF float *stbi_loadf_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp,stbi_loadf_from_memory1478,53214
+STBIDEF float *stbi_loadf_from_callbacks(stbi_io_callbacks const *clbk, void *user, int *x, int stbi_loadf_from_callbacks1485,53435
+STBIDEF float *stbi_loadf(char const *filename, int *x, int *y, int *comp, int req_comp)stbi_loadf1493,53721
+STBIDEF float *stbi_loadf_from_file(FILE *f, int *x, int *y, int *comp, int req_comp)stbi_loadf_from_file1503,54031
+STBIDEF int stbi_is_hdr_from_memory(stbi_uc const *buffer, int len)stbi_is_hdr_from_memory1517,54437
+STBIDEF int      stbi_is_hdr          (char const *filename)stbi_is_hdr1531,54719
+STBIDEF int stbi_is_hdr_from_file(FILE *f)stbi_is_hdr_from_file1542,54937
+STBIDEF int      stbi_is_hdr_from_callbacks(stbi_io_callbacks const *clbk, void *user)stbi_is_hdr_from_callbacks1559,55240
+static float stbi__l2h_gamma=2.2f, stbi__l2h_scale=1.0f;stbi__l2h_gamma1573,55570
+static float stbi__l2h_gamma=2.2f, stbi__l2h_scale=1.0f;stbi__l2h_scale1573,55570
+STBIDEF void   stbi_ldr_to_hdr_gamma(float gamma) { stbi__l2h_gamma = gamma; }stbi_ldr_to_hdr_gamma1575,55628
+STBIDEF void   stbi_ldr_to_hdr_scale(float scale) { stbi__l2h_scale = scale; }stbi_ldr_to_hdr_scale1576,55707
+static float stbi__h2l_gamma_i=1.0f/2.2f, stbi__h2l_scale_i=1.0f;stbi__h2l_gamma_i1579,55794
+static float stbi__h2l_gamma_i=1.0f/2.2f, stbi__h2l_scale_i=1.0f;stbi__h2l_scale_i1579,55794
+STBIDEF void   stbi_hdr_to_ldr_gamma(float gamma) { stbi__h2l_gamma_i = 1/gamma; }stbi_hdr_to_ldr_gamma1581,55861
+STBIDEF void   stbi_hdr_to_ldr_scale(float scale) { stbi__h2l_scale_i = 1/scale; }stbi_hdr_to_ldr_scale1582,55944
+{__anon38d662c006031591,56161
+   STBI__SCAN_load=0,STBI__SCAN_load1592,56163
+   STBI__SCAN_type,STBI__SCAN_type1593,56185
+   STBI__SCAN_headerSTBI__SCAN_header1594,56205
+static void stbi__refill_buffer(stbi__context *s)stbi__refill_buffer1597,56230
+stbi_inline static stbi_uc stbi__get8(stbi__context *s)stbi__get81614,56859
+stbi_inline static int stbi__at_eof(stbi__context *s)stbi__at_eof1628,57220
+static void stbi__skip(stbi__context *s, int n)stbi__skip1644,57769
+static int stbi__getn(stbi__context *s, stbi_uc *buffer, int n)stbi__getn1666,58311
+static int stbi__get16be(stbi__context *s)stbi__get16be1694,59029
+static stbi__uint32 stbi__get32be(stbi__context *s)stbi__get32be1704,59236
+static int stbi__get16le(stbi__context *s)stbi__get16le1714,59468
+static stbi__uint32 stbi__get32le(stbi__context *s)stbi__get32le1722,59605
+#define STBI__BYTECAST(STBI__BYTECAST1730,59766
+static stbi_uc stbi__compute_y(int r, int g, int b)stbi__compute_y1746,60629
+static unsigned char *stbi__convert_format(unsigned char *data, int img_n, int req_comp, unsignestbi__convert_format1755,60936
+      #define STBI__COMBO(STBI__COMBO1773,61498
+      #define STBI__CASE(STBI__CASE1774,61542
+static stbi__uint16 stbi__compute_y_16(int r, int g, int b)stbi__compute_y_161803,63351
+static stbi__uint16 *stbi__convert_format16(stbi__uint16 *data, int img_n, int req_comp, unsignestbi__convert_format161812,63551
+      #define STBI__COMBO(STBI__COMBO1830,64124
+      #define STBI__CASE(STBI__CASE1831,64168
+static float   *stbi__ldr_to_hdr(stbi_uc *data, int x, int y, int comp)stbi__ldr_to_hdr1858,65986
+#define stbi__float2int(stbi__float2int1883,66734
+static stbi_uc *stbi__hdr_to_ldr(float   *data, int x, int y, int comp)stbi__hdr_to_ldr1884,66775
+#define FAST_BITS FAST_BITS1936,68736
+{__anon38d662c007081939,68831
+   stbi_uc  fast[1 << FAST_BITS];fast1940,68833
+   stbi__uint16 code[256];code1942,68944
+   stbi_uc  values[256];values1943,68971
+   stbi_uc  size[257];size1944,68996
+   unsigned int maxcode[18];maxcode1945,69019
+   int    delta[17];   // old 'firstsymbol' - old 'firstcode'delta1946,69048
+} stbi__huffman;stbi__huffman1947,69110
+{__anon38d662c008081950,69143
+   stbi__context *s;s1951,69145
+   stbi__huffman huff_dc[4];huff_dc1952,69166
+   stbi__huffman huff_ac[4];huff_ac1953,69195
+   stbi__uint16 dequant[4][64];dequant1954,69224
+   stbi__int16 fast_ac[4][1 << FAST_BITS];fast_ac1955,69256
+   int img_h_max, img_v_max;img_h_max1958,69342
+   int img_h_max, img_v_max;img_v_max1958,69342
+   int img_mcu_x, img_mcu_y;img_mcu_x1959,69371
+   int img_mcu_x, img_mcu_y;img_mcu_y1959,69371
+   int img_mcu_w, img_mcu_h;img_mcu_w1960,69400
+   int img_mcu_w, img_mcu_h;img_mcu_h1960,69400
+   {__anon38d662c009081964,69478
+      int id;id1965,69483
+      int h,v;h1966,69497
+      int h,v;v1966,69497
+      int tq;tq1967,69512
+      int hd,ha;hd1968,69526
+      int hd,ha;ha1968,69526
+      int dc_pred;dc_pred1969,69543
+      int x,y,w2,h2;x1971,69563
+      int x,y,w2,h2;y1971,69563
+      int x,y,w2,h2;w21971,69563
+      int x,y,w2,h2;h21971,69563
+      stbi_uc *data;data1972,69584
+      void *raw_data, *raw_coeff;raw_data1973,69605
+      void *raw_data, *raw_coeff;raw_coeff1973,69605
+      stbi_uc *linebuf;linebuf1974,69639
+      short   *coeff;   // progressive onlycoeff1975,69663
+      int      coeff_w, coeff_h; // number of 8x8 coefficient blockscoeff_w1976,69707
+      int      coeff_w, coeff_h; // number of 8x8 coefficient blockscoeff_h1976,69707
+   } img_comp[4];img_comp1977,69776
+   stbi__uint32   code_buffer; // jpeg entropy-coded buffercode_buffer1979,69795
+   int            code_bits;   // number of valid bitscode_bits1980,69855
+   unsigned char  marker;      // marker seen while filling entropy buffermarker1981,69910
+   int            nomore;      // flag if we saw a marker so must stopnomore1982,69985
+   int            progressive;progressive1984,70057
+   int            spec_start;spec_start1985,70088
+   int            spec_end;spec_end1986,70118
+   int            succ_high;succ_high1987,70146
+   int            succ_low;succ_low1988,70175
+   int            eob_run;eob_run1989,70203
+   int            jfif;jfif1990,70230
+   int            app14_color_transform; // Adobe APP14 tagapp14_color_transform1991,70254
+   int            rgb;rgb1992,70314
+   int scan_n, order[4];scan_n1994,70338
+   int scan_n, order[4];order1994,70338
+   int restart_interval, todo;restart_interval1995,70363
+   int restart_interval, todo;todo1995,70363
+   void (*idct_block_kernel)(stbi_uc *out, int out_stride, short data[64]);idct_block_kernel1998,70406
+   void (*YCbCr_to_RGB_kernel)(stbi_uc *out, const stbi_uc *y, const stbi_uc *pcb, const stbi_ucYCbCr_to_RGB_kernel1999,70482
+   stbi_uc *(*resample_row_hv_2_kernel)(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int w, resample_row_hv_2_kernel2000,70607
+} stbi__jpeg;stbi__jpeg2001,70712
+static int stbi__build_huffman(stbi__huffman *h, int *count)stbi__build_huffman2003,70727
+static void stbi__build_fast_ac(stbi__int16 *fast_ac, stbi__huffman *h)stbi__build_fast_ac2050,72131
+static void stbi__grow_buffer_unsafe(stbi__jpeg *j)stbi__grow_buffer_unsafe2075,72992
+static const stbi__uint32 stbi__bmask[17]={0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,1638stbi__bmask2094,73499
+stbi_inline static int stbi__jpeg_huff_decode(stbi__jpeg *j, stbi__huffman *h)stbi__jpeg_huff_decode2097,73662
+static const int stbi__jbias[16] = {0,-1,-3,-7,-15,-31,-63,-127,-255,-511,-1023,-2047,-4095,-819stbi__jbias2149,75248
+stbi_inline static int stbi__extend_receive(stbi__jpeg *j, int n)stbi__extend_receive2153,75466
+stbi_inline static int stbi__jpeg_get_bits(stbi__jpeg *j, int n)stbi__jpeg_get_bits2169,76024
+stbi_inline static int stbi__jpeg_get_bit(stbi__jpeg *j)stbi__jpeg_get_bit2181,76402
+static const stbi_uc stbi__jpeg_dezigzag[64+15] =stbi__jpeg_dezigzag2194,76850
+static int stbi__jpeg_decode_block(stbi__jpeg *j, short data[64], stbi__huffman *hdc, stbi__huffstbi__jpeg_decode_block2210,77322
+static int stbi__jpeg_decode_block_prog_dc(stbi__jpeg *j, short data[64], stbi__huffman *hdc, instbi__jpeg_decode_block_prog_dc2265,79363
+static int stbi__jpeg_decode_block_prog_ac(stbi__jpeg *j, short data[64], stbi__huffman *hac, ststbi__jpeg_decode_block_prog_ac2295,80572
+stbi_inline static stbi_uc stbi__clamp(int x)stbi__clamp2416,84614
+#define stbi__f2f(stbi__f2f2426,84837
+#define stbi__fsh(stbi__fsh2427,84888
+#define STBI__IDCT_1D(STBI__IDCT_1D2430,84962
+static void stbi__idct_block(stbi_uc *out, int out_stride, short data[64])stbi__idct_block2467,86694
+static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])stbi__idct_simd2530,89322
+   #define dct_const(dct_const2537,89607
+   #define dct_rot(dct_rot2541,89791
+   #define dct_widen(dct_widen2550,90206
+   #define dct_wadd(dct_wadd2555,90435
+   #define dct_wsub(dct_wsub2560,90591
+   #define dct_bfly32o(dct_bfly32o2565,90790
+   #define dct_interleave8(dct_interleave82576,91271
+   #define dct_interleave16(dct_interleave162582,91443
+   #define dct_pass(dct_pass2587,91572
+static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])stbi__idct_simd2711,96333
+#define dct_long_mul(dct_long_mul2728,97189
+#define dct_long_mac(dct_long_mac2732,97352
+#define dct_widen(dct_widen2736,97538
+#define dct_wadd(dct_wadd2741,97701
+#define dct_wsub(dct_wsub2746,97841
+#define dct_bfly32o(dct_bfly32o2751,98030
+#define dct_pass(dct_pass2759,98283
+#define dct_trn16(dct_trn162819,100455
+#define dct_trn32(dct_trn322820,100544
+#define dct_trn64(dct_trn642821,100725
+#define dct_trn8_8(dct_trn8_82864,102091
+#define dct_trn8_16(dct_trn8_162865,102179
+#define dct_trn8_32(dct_trn8_322866,102354
+#define STBI__MARKER_none STBI__MARKER_none2915,103578
+static stbi_uc stbi__get_marker(stbi__jpeg *j)stbi__get_marker2919,103806
+#define STBI__RESTART(STBI__RESTART2932,104244
+static void stbi__jpeg_reset(stbi__jpeg *j)stbi__jpeg_reset2936,104394
+static int stbi__parse_entropy_coded_data(stbi__jpeg *z)stbi__parse_entropy_coded_data2949,104851
+static void stbi__jpeg_dequantize(short *data, stbi__uint16 *dequant)stbi__jpeg_dequantize3073,110617
+static void stbi__jpeg_finish(stbi__jpeg *z)stbi__jpeg_finish3080,110757
+static int stbi__process_marker(stbi__jpeg *z, int m)stbi__process_marker3099,111397
+static int stbi__process_scan_header(stbi__jpeg *z)stbi__process_scan_header3203,114869
+static int stbi__free_jpeg_components(stbi__jpeg *z, int ncomp, int why)stbi__free_jpeg_components3242,116432
+static int stbi__process_frame_header(stbi__jpeg *z, int scan)stbi__process_frame_header3264,117033
+#define stbi__DNL(stbi__DNL3357,121800
+#define stbi__SOI(stbi__SOI3358,121843
+#define stbi__EOI(stbi__EOI3359,121886
+#define stbi__SOF(stbi__SOF3360,121929
+#define stbi__SOS(stbi__SOS3361,122002
+#define stbi__SOF_progressive(stbi__SOF_progressive3363,122046
+static int stbi__decode_jpeg_header(stbi__jpeg *z, int scan)stbi__decode_jpeg_header3365,122096
+static stbi_uc stbi__skip_jpeg_junk_at_end(stbi__jpeg *j)stbi__skip_jpeg_junk_at_end3389,122945
+static int stbi__decode_jpeg_image(stbi__jpeg *j)stbi__decode_jpeg_image3412,123779
+typedef stbi_uc *(*resample_row_func)(stbi_uc *out, stbi_uc *in0, stbi_uc *in1,resample_row_func3451,125126
+#define stbi__div4(stbi__div43454,125259
+static stbi_uc *resample_row_1(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int w, int hs)resample_row_13456,125305
+static stbi_uc* stbi__resample_row_v_2(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int w, istbi__resample_row_v_23465,125512
+static stbi_uc*  stbi__resample_row_h_2(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int w, stbi__resample_row_h_23475,125817
+#define stbi__div16(stbi__div163503,126543
+static stbi_uc *stbi__resample_row_hv_2(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int w, stbi__resample_row_hv_23505,126590
+static stbi_uc *stbi__resample_row_hv_2_simd(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, instbi__resample_row_hv_2_simd3530,127237
+static stbi_uc *stbi__resample_row_generic(stbi_uc *out, stbi_uc *in_near, stbi_uc *in_far, int stbi__resample_row_generic3646,131910
+#define stbi__float2fixed(stbi__float2fixed3659,132345
+static void stbi__YCbCr_to_RGB_row(stbi_uc *out, const stbi_uc *y, const stbi_uc *pcb, const stbstbi__YCbCr_to_RGB_row3660,132413
+static void stbi__YCbCr_to_RGB_simd(stbi_uc *out, stbi_uc const *y, stbi_uc const *pcb, stbi_uc stbi__YCbCr_to_RGB_simd3686,133385
+static void stbi__setup_jpeg(stbi__jpeg *j)stbi__setup_jpeg3821,138879
+static void stbi__cleanup_jpeg(stbi__jpeg *j)stbi__cleanup_jpeg3843,139541
+{__anon38d662c00a083849,139657
+   resample_row_func resample;resample3850,139659
+   stbi_uc *line0,*line1;line03851,139690
+   stbi_uc *line0,*line1;line13851,139690
+   int hs,vs;   // expansion factor in each axishs3852,139716
+   int hs,vs;   // expansion factor in each axisvs3852,139716
+   int w_lores; // horizontal pixels pre-expansionw_lores3853,139765
+   int ystep;   // how far through vertical expansion we areystep3854,139816
+   int ypos;    // which pre-expansion row we're onypos3855,139877
+} stbi__resample;stbi__resample3856,139929
+static stbi_uc stbi__blinn_8x8(stbi_uc x, stbi_uc y)stbi__blinn_8x83859,140005
+static stbi_uc *load_jpeg_image(stbi__jpeg *z, int *out_x, int *out_y, int *comp, int req_comp)load_jpeg_image3865,140136
+static void *stbi__jpeg_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__restbi__jpeg_load4028,146952
+static int stbi__jpeg_test(stbi__context *s)stbi__jpeg_test4042,147403
+static int stbi__jpeg_info_raw(stbi__jpeg *j, int *x, int *y, int *comp)stbi__jpeg_info_raw4056,147764
+static int stbi__jpeg_info(stbi__context *s, int *x, int *y, int *comp)stbi__jpeg_info4068,148065
+#define STBI__ZFAST_BITS STBI__ZFAST_BITS4091,148788
+#define STBI__ZFAST_MASK STBI__ZFAST_MASK4092,148858
+#define STBI__ZNSYMS STBI__ZNSYMS4093,148914
+{__anon38d662c00b084098,149099
+   stbi__uint16 fast[1 << STBI__ZFAST_BITS];fast4099,149101
+   stbi__uint16 firstcode[16];firstcode4100,149146
+   int maxcode[17];maxcode4101,149177
+   stbi__uint16 firstsymbol[16];firstsymbol4102,149197
+   stbi_uc  size[STBI__ZNSYMS];size4103,149230
+   stbi__uint16 value[STBI__ZNSYMS];value4104,149262
+} stbi__zhuffman;stbi__zhuffman4105,149299
+stbi_inline static int stbi__bitreverse16(int n)stbi__bitreverse164107,149318
+stbi_inline static int stbi__bit_reverse(int v, int bits)stbi__bit_reverse4116,149584
+static int stbi__zbuild_huffman(stbi__zhuffman *z, const stbi_uc *sizelist, int num)stbi__zbuild_huffman4124,149820
+{__anon38d662c00c084178,151565
+   stbi_uc *zbuffer, *zbuffer_end;zbuffer4179,151567
+   stbi_uc *zbuffer, *zbuffer_end;zbuffer_end4179,151567
+   int num_bits;num_bits4180,151602
+   int hit_zeof_once;hit_zeof_once4181,151619
+   stbi__uint32 code_buffer;code_buffer4182,151641
+   char *zout;zout4184,151671
+   char *zout_start;zout_start4185,151686
+   char *zout_end;zout_end4186,151707
+   int   z_expandable;z_expandable4187,151726
+   stbi__zhuffman z_length, z_distance;z_length4189,151750
+   stbi__zhuffman z_length, z_distance;z_distance4189,151750
+} stbi__zbuf;stbi__zbuf4190,151790
+stbi_inline static int stbi__zeof(stbi__zbuf *z)stbi__zeof4192,151805
+stbi_inline static stbi_uc stbi__zget8(stbi__zbuf *z)stbi__zget84197,151901
+static void stbi__fill_bits(stbi__zbuf *z)stbi__fill_bits4202,152005
+stbi_inline static unsigned int stbi__zreceive(stbi__zbuf *z, int n)stbi__zreceive4214,152336
+static int stbi__zhuffman_decode_slowpath(stbi__zbuf *a, stbi__zhuffman *z)stbi__zhuffman_decode_slowpath4224,152572
+stbi_inline static int stbi__zhuffman_decode(stbi__zbuf *a, stbi__zhuffman *z)stbi__zhuffman_decode4243,153275
+static int stbi__zexpand(stbi__zbuf *z, char *zout, int n)  // need to make room for n bytesstbi__zexpand4273,154236
+static const int stbi__zlength_base[31] = {stbi__zlength_base4295,155072
+static const int stbi__zlength_extra[31]=stbi__zlength_extra4300,155221
+static const int stbi__zdist_base[32] = { 1,2,3,4,5,7,9,13,17,25,33,49,65,97,129,193,stbi__zdist_base4303,155331
+static const int stbi__zdist_extra[32] =stbi__zdist_extra4306,155493
+static int stbi__parse_huffman_block(stbi__zbuf *a)stbi__parse_huffman_block4309,155607
+static int stbi__compute_huffman_codes(stbi__zbuf *a)stbi__compute_huffman_codes4359,157802
+static int stbi__parse_uncompressed_block(stbi__zbuf *a)stbi__parse_uncompressed_block4409,159565
+static int stbi__parse_zlib_header(stbi__zbuf *a)stbi__parse_zlib_header4438,160564
+static const stbi_uc stbi__zdefault_length[STBI__ZNSYMS] =stbi__zdefault_length4452,161207
+static const stbi_uc stbi__zdefault_distance[32] =stbi__zdefault_distance4464,161891
+static int stbi__parse_zlib(stbi__zbuf *a, int parse_header)stbi__parse_zlib4481,162411
+static int stbi__do_zlib(stbi__zbuf *a, char *obuf, int olen, int exp, int parse_header)stbi__do_zlib4510,163305
+STBIDEF char *stbi_zlib_decode_malloc_guesssize(const char *buffer, int len, int initial_size, istbi_zlib_decode_malloc_guesssize4520,163553
+STBIDEF char *stbi_zlib_decode_malloc(char const *buffer, int len, int *outlen)stbi_zlib_decode_malloc4536,164048
+STBIDEF char *stbi_zlib_decode_malloc_guesssize_headerflag(const char *buffer, int len, int initstbi_zlib_decode_malloc_guesssize_headerflag4541,164206
+STBIDEF int stbi_zlib_decode_buffer(char *obuffer, int olen, char const *ibuffer, int ilen)stbi_zlib_decode_buffer4557,164741
+STBIDEF char *stbi_zlib_decode_noheader_malloc(char const *buffer, int len, int *outlen)stbi_zlib_decode_noheader_malloc4568,165054
+STBIDEF int stbi_zlib_decode_noheader_buffer(char *obuffer, int olen, const char *ibuffer, int istbi_zlib_decode_noheader_buffer4584,165514
+{__anon38d662c00d084608,166288
+   stbi__uint32 length;length4609,166290
+   stbi__uint32 type;type4610,166314
+} stbi__pngchunk;stbi__pngchunk4611,166336
+static stbi__pngchunk stbi__get_chunk_header(stbi__context *s)stbi__get_chunk_header4613,166355
+static int stbi__check_png_header(stbi__context *s)stbi__check_png_header4621,166521
+{__anon38d662c00e084631,166792
+   stbi__context *s;s4632,166794
+   stbi_uc *idata, *expanded, *out;idata4633,166815
+   stbi_uc *idata, *expanded, *out;expanded4633,166815
+   stbi_uc *idata, *expanded, *out;out4633,166815
+   int depth;depth4634,166851
+} stbi__png;stbi__png4635,166865
+enum {__anon38d662c00f034638,166880
+   STBI__F_none=0,STBI__F_none4639,166887
+   STBI__F_sub=1,STBI__F_sub4640,166906
+   STBI__F_up=2,STBI__F_up4641,166924
+   STBI__F_avg=3,STBI__F_avg4642,166941
+   STBI__F_paeth=4,STBI__F_paeth4643,166959
+   STBI__F_avg_firstSTBI__F_avg_first4645,167061
+static stbi_uc first_row_filter[5] =first_row_filter4648,167086
+static int stbi__paeth(int a, int b, int c)stbi__paeth4657,167270
+static const stbi_uc stbi__depth_scale_table[9] = { 0, 0xff, 0x55, 0, 0x11, 0,0,0, 0x01 };stbi__depth_scale_table4670,167746
+static void stbi__create_png_alpha_expand8(stbi_uc *dest, stbi_uc *src, stbi__uint32 x, int img_stbi__create_png_alpha_expand84675,167925
+static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 raw_len, int out_stbi__create_png_image_raw4696,168488
+static int stbi__create_png_image(stbi__png *a, stbi_uc *image_data, stbi__uint32 image_data_lenstbi__create_png_image4861,174546
+static int stbi__compute_transparency(stbi__png *z, stbi_uc tc[3], int out_n)stbi__compute_transparency4906,176215
+static int stbi__compute_transparency16(stbi__png *z, stbi__uint16 tc[3], int out_n)stbi__compute_transparency164931,176866
+static int stbi__expand_png_palette(stbi__png *a, stbi_uc *palette, int len, int pal_img_n)stbi__expand_png_palette4956,177553
+static int stbi__unpremultiply_on_load_global = 0;stbi__unpremultiply_on_load_global4993,178481
+static int stbi__de_iphone_flag_global = 0;stbi__de_iphone_flag_global4994,178532
+STBIDEF void stbi_set_unpremultiply_on_load(int flag_true_if_should_unpremultiply)stbi_set_unpremultiply_on_load4996,178577
+STBIDEF void stbi_convert_iphone_png_to_rgb(int flag_true_if_should_convert)stbi_convert_iphone_png_to_rgb5001,178740
+#define stbi__unpremultiply_on_load stbi__unpremultiply_on_load5007,178910
+#define stbi__de_iphone_flag stbi__de_iphone_flag5008,178982
+static STBI_THREAD_LOCAL int stbi__unpremultiply_on_load_local, stbi__unpremultiply_on_load_set;stbi__unpremultiply_on_load_local5010,179046
+static STBI_THREAD_LOCAL int stbi__unpremultiply_on_load_local, stbi__unpremultiply_on_load_set;stbi__unpremultiply_on_load_set5010,179046
+static STBI_THREAD_LOCAL int stbi__de_iphone_flag_local, stbi__de_iphone_flag_set;stbi__de_iphone_flag_local5011,179143
+static STBI_THREAD_LOCAL int stbi__de_iphone_flag_local, stbi__de_iphone_flag_set;stbi__de_iphone_flag_set5011,179143
+STBIDEF void stbi_set_unpremultiply_on_load_thread(int flag_true_if_should_unpremultiply)stbi_set_unpremultiply_on_load_thread5013,179227
+STBIDEF void stbi_convert_iphone_png_to_rgb_thread(int flag_true_if_should_convert)stbi_convert_iphone_png_to_rgb_thread5019,179436
+#define stbi__unpremultiply_on_load stbi__unpremultiply_on_load5025,179619
+#define stbi__de_iphone_flag stbi__de_iphone_flag5028,179860
+static void stbi__de_iphone(stbi__png *z)stbi__de_iphone5033,180116
+#define STBI__PNG_TYPE(STBI__PNG_TYPE5076,181225
+static int stbi__parse_png_file(stbi__png *z, int scan, int req_comp)stbi__parse_png_file5078,181350
+static void *stbi__do_png(stbi__png *p, int *x, int *y, int *n, int req_comp, stbi__result_info stbi__do_png5263,190614
+static void *stbi__png_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__png_load5295,191862
+static int stbi__png_test(stbi__context *s)stbi__png_test5302,192056
+static int stbi__png_info_raw(stbi__png *p, int *x, int *y, int *comp)stbi__png_info_raw5310,192182
+static int stbi__png_info(stbi__context *s, int *x, int *y, int *comp)stbi__png_info5322,192467
+static int stbi__png_is16(stbi__context *s)stbi__png_is165329,192617
+static int stbi__bmp_test_raw(stbi__context *s)stbi__bmp_test_raw5346,192900
+static int stbi__bmp_test(stbi__context *s)stbi__bmp_test5361,193327
+static int stbi__high_bit(unsigned int z)stbi__high_bit5370,193485
+static int stbi__bitcount(unsigned int a)stbi__bitcount5382,193805
+static int stbi__shiftsigned(unsigned int v, int shift, int bits)stbi__shiftsigned5395,194291
+{__anon38d662c010085416,194898
+   int bpp, offset, hsz;bpp5417,194900
+   int bpp, offset, hsz;offset5417,194900
+   int bpp, offset, hsz;hsz5417,194900
+   unsigned int mr,mg,mb,ma, all_a;mr5418,194925
+   unsigned int mr,mg,mb,ma, all_a;mg5418,194925
+   unsigned int mr,mg,mb,ma, all_a;mb5418,194925
+   unsigned int mr,mg,mb,ma, all_a;ma5418,194925
+   unsigned int mr,mg,mb,ma, all_a;all_a5418,194925
+   int extra_read;extra_read5419,194961
+} stbi__bmp_data;stbi__bmp_data5420,194980
+static int stbi__bmp_set_mask_defaults(stbi__bmp_data *info, int compress)stbi__bmp_set_mask_defaults5422,194999
+static void *stbi__bmp_parse_header(stbi__context *s, stbi__bmp_data *info)stbi__bmp_parse_header5448,195765
+static void *stbi__bmp_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__bmp_load5531,199197
+static int stbi__tga_get_comp(int bits_per_pixel, int is_grey, int* is_rgb16)stbi__tga_get_comp5739,207329
+static int stbi__tga_info(stbi__context *s, int *x, int *y, int *comp)stbi__tga_info5755,207814
+static int stbi__tga_test(stbi__context *s)stbi__tga_test5820,210341
+static void stbi__tga_read_rgb16(stbi__context *s, stbi_uc* out)stbi__tga_read_rgb165852,211922
+static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__tga_load5871,212708
+static int stbi__psd_test(stbi__context *s)stbi__psd_test6081,220165
+static int stbi__psd_decode_rle(stbi__context *s, stbi_uc *p, int pixelCount)stbi__psd_decode_rle6088,220292
+static void *stbi__psd_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__psd_load6126,221243
+static int stbi__pic_is4(stbi__context *s,const char *str)stbi__pic_is46336,228563
+static int stbi__pic_test_core(stbi__context *s)stbi__pic_test_core6346,228737
+{__anon38d662c011086363,228985
+   stbi_uc size,type,channel;size6364,228987
+   stbi_uc size,type,channel;type6364,228987
+   stbi_uc size,type,channel;channel6364,228987
+} stbi__pic_packet;stbi__pic_packet6365,229017
+static stbi_uc *stbi__readval(stbi__context *s, int channel, stbi_uc *dest)stbi__readval6367,229038
+static void stbi__copyval(int channel,stbi_uc *dest,const stbi_uc *src)stbi__copyval6381,229350
+static stbi_uc *stbi__pic_load_core(stbi__context *s,int width,int height,int *comp, stbi_uc *restbi__pic_load_core6390,229529
+static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_comp, stbi__resulstbi__pic_load6500,233088
+static int stbi__pic_test(stbi__context *s)stbi__pic_test6541,234331
+{__anon38d662c012086554,234672
+   stbi__int16 prefix;prefix6555,234674
+   stbi_uc first;first6556,234697
+   stbi_uc suffix;suffix6557,234715
+} stbi__gif_lzw;stbi__gif_lzw6558,234734
+{__anon38d662c013086561,234767
+   int w,h;w6562,234769
+   int w,h;h6562,234769
+   stbi_uc *out;                 // output buffer (always 4 components)out6563,234781
+   stbi_uc *background;          // The current "background" as far as a gif is concernedbackground6564,234853
+   stbi_uc *history;history6565,234943
+   int flags, bgindex, ratio, transparent, eflags;flags6566,234964
+   int flags, bgindex, ratio, transparent, eflags;bgindex6566,234964
+   int flags, bgindex, ratio, transparent, eflags;ratio6566,234964
+   int flags, bgindex, ratio, transparent, eflags;transparent6566,234964
+   int flags, bgindex, ratio, transparent, eflags;eflags6566,234964
+   stbi_uc  pal[256][4];pal6567,235015
+   stbi_uc lpal[256][4];lpal6568,235040
+   stbi__gif_lzw codes[8192];codes6569,235065
+   stbi_uc *color_table;color_table6570,235095
+   int parse, step;parse6571,235120
+   int parse, step;step6571,235120
+   int lflags;lflags6572,235140
+   int start_x, start_y;start_x6573,235155
+   int start_x, start_y;start_y6573,235155
+   int max_x, max_y;max_x6574,235180
+   int max_x, max_y;max_y6574,235180
+   int cur_x, cur_y;cur_x6575,235201
+   int cur_x, cur_y;cur_y6575,235201
+   int line_size;line_size6576,235222
+   int delay;delay6577,235240
+} stbi__gif;stbi__gif6578,235254
+static int stbi__gif_test_raw(stbi__context *s)stbi__gif_test_raw6580,235268
+static int stbi__gif_test(stbi__context *s)stbi__gif_test6590,235559
+static void stbi__gif_parse_colortable(stbi__context *s, stbi_uc pal[256][4], int num_entries, istbi__gif_parse_colortable6597,235675
+static int stbi__gif_header(stbi__context *s, stbi__gif *g, int *comp, int is_info)stbi__gif_header6608,235979
+static int stbi__gif_info_raw(stbi__context *s, int *x, int *y, int *comp)stbi__gif_info_raw6639,237076
+static void stbi__out_gif_code(stbi__gif *g, stbi__uint16 code)stbi__out_gif_code6654,237459
+static stbi_uc *stbi__process_gif_raster(stbi__context *s, stbi__gif *g)stbi__process_gif_raster6691,238395
+static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, int req_comp, stbstbi__gif_load_next6778,241203
+static void *stbi__load_gif_main_outofmem(stbi__gif *g, stbi_uc *out, int **delays)stbi__load_gif_main_outofmem6952,247737
+static void *stbi__load_gif_main(stbi__context *s, int **delays, int *x, int *y, int *z, int *costbi__load_gif_main6963,248031
+static void *stbi__gif_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__gif_load7048,250685
+static int stbi__gif_info(stbi__context *s, int *x, int *y, int *comp)stbi__gif_info7077,251506
+static int stbi__hdr_test_core(stbi__context *s, const char *signature)stbi__hdr_test_core7087,251812
+static int stbi__hdr_test(stbi__context* s)stbi__hdr_test7097,252025
+#define STBI__HDR_BUFLEN STBI__HDR_BUFLEN7108,252246
+static char *stbi__hdr_gettoken(stbi__context *z, char *buffer)stbi__hdr_gettoken7109,252277
+static void stbi__hdr_convert(float *output, stbi_uc *input, int req_comp)stbi__hdr_convert7131,252722
+static float *stbi__hdr_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__restbi__hdr_load7158,253506
+static int stbi__hdr_info(stbi__context *s, int *x, int *y, int *comp)stbi__hdr_info7289,258224
+static int stbi__bmp_info(stbi__context *s, int *x, int *y, int *comp)stbi__bmp_info7335,259188
+static int stbi__psd_info(stbi__context *s, int *x, int *y, int *comp)stbi__psd_info7359,259655
+static int stbi__psd_is16(stbi__context *s)stbi__psd_is167394,260435
+static int stbi__pic_info(stbi__context *s, int *x, int *y, int *comp)stbi__pic_info7423,261043
+static int      stbi__pnm_test(stbi__context *s)stbi__pnm_test7494,262666
+static void *stbi__pnm_load(stbi__context *s, int *x, int *y, int *comp, int req_comp, stbi__resstbi__pnm_load7506,262898
+static int      stbi__pnm_isspace(char c)stbi__pnm_isspace7543,264369
+static void     stbi__pnm_skip_whitespace(stbi__context *s, char *c)stbi__pnm_skip_whitespace7548,264501
+static int      stbi__pnm_isdigit(char c)stbi__pnm_isdigit7562,264840
+static int      stbi__pnm_getinteger(stbi__context *s, char *c)stbi__pnm_getinteger7567,264919
+static int      stbi__pnm_info(stbi__context *s, int *x, int *y, int *comp)stbi__pnm_info7581,265339
+static int stbi__pnm_is16(stbi__context *s)stbi__pnm_is167624,266512
+static int stbi__info_main(stbi__context *s, int *x, int *y, int *comp)stbi__info_main7632,266645
+static int stbi__is_16_main(stbi__context *s)stbi__is_16_main7674,267609
+STBIDEF int stbi_info(char const *filename, int *x, int *y, int *comp)stbi_info7691,267907
+STBIDEF int stbi_info_from_file(FILE *f, int *x, int *y, int *comp)stbi_info_from_file7701,268193
+STBIDEF int stbi_is_16_bit(char const *filename)stbi_is_16_bit7712,268424
+STBIDEF int stbi_is_16_bit_from_file(FILE *f)stbi_is_16_bit_from_file7722,268681
+STBIDEF int stbi_info_from_memory(stbi_uc const *buffer, int len, int *x, int *y, int *comp)stbi_info_from_memory7734,268907
+STBIDEF int stbi_info_from_callbacks(stbi_io_callbacks const *c, void *user, int *x, int *y, intstbi_info_from_callbacks7741,269100
+STBIDEF int stbi_is_16_bit_from_memory(stbi_uc const *buffer, int len)stbi_is_16_bit_from_memory7748,269330
+STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user)stbi_is_16_bit_from_callbacks7755,269493
+
+thirdparty/stb_image_write.h,8835
+#define INCLUDE_STB_IMAGE_WRITE_HINCLUDE_STB_IMAGE_WRITE_H152,6700
+#define STBIWDEF STBIWDEF159,6902
+#define STBIWDEF STBIWDEF162,6952
+#define STBIWDEF STBIWDEF164,6987
+STBIWDEF int stbi_write_tga_with_rle;stbi_write_tga_with_rle170,7109
+STBIWDEF int stbi_write_png_compression_level;stbi_write_png_compression_level171,7147
+STBIWDEF int stbi_write_force_png_filter;stbi_write_force_png_filter172,7194
+typedef void stbi_write_func(void *context, void *data, int size);stbi_write_func187,7914
+   #define _CRT_SECURE_NO_WARNINGS_CRT_SECURE_NO_WARNINGS203,8794
+   #define _CRT_NONSTDC_NO_DEPRECATE_CRT_NONSTDC_NO_DEPRECATE206,8876
+#define STBIW_MALLOC(STBIW_MALLOC228,9463
+#define STBIW_REALLOC(STBIW_REALLOC229,9506
+#define STBIW_FREE(STBIW_FREE230,9555
+#define STBIW_REALLOC_SIZED(STBIW_REALLOC_SIZED234,9631
+#define STBIW_MEMMOVE(STBIW_MEMMOVE239,9728
+#define STBIW_ASSERT(STBIW_ASSERT245,9824
+#define STBIW_UCHAR(STBIW_UCHAR248,9866
+static int stbi_write_png_compression_level = 8;stbi_write_png_compression_level251,9949
+static int stbi_write_tga_with_rle = 1;stbi_write_tga_with_rle252,9998
+static int stbi_write_force_png_filter = -1;stbi_write_force_png_filter253,10038
+int stbi_write_png_compression_level = 8;stbi_write_png_compression_level255,10089
+int stbi_write_tga_with_rle = 1;stbi_write_tga_with_rle256,10131
+int stbi_write_force_png_filter = -1;stbi_write_force_png_filter257,10164
+static int stbi__flip_vertically_on_write = 0;stbi__flip_vertically_on_write260,10210
+STBIWDEF void stbi_flip_vertically_on_write(int flag)stbi_flip_vertically_on_write262,10258
+{__anon552235aa0108268,10374
+   stbi_write_func *func;func269,10376
+   void *context;context270,10402
+   unsigned char buffer[64];buffer271,10420
+   int buf_used;buf_used272,10449
+} stbi__write_context;stbi__write_context273,10466
+static void stbi__start_write_callbacks(stbi__write_context *s, stbi_write_func *c, void *contexstbi__start_write_callbacks276,10529
+static void stbi__stdio_write(void *context, void *data, int size)stbi__stdio_write284,10706
+#define STBIW_EXTERN STBIW_EXTERN291,10888
+#define STBIW_EXTERN STBIW_EXTERN293,10926
+STBIWDEF int stbiw_convert_wchar_to_utf8(char *buffer, size_t bufferlen, const wchar_t* input)stbiw_convert_wchar_to_utf8298,11334
+static FILE *stbiw__fopen(char const *filename, char const *mode)stbiw__fopen304,11541
+static int stbi__start_write_file(stbi__write_context *s, const char *filename)stbi__start_write_file332,12277
+static void stbi__end_write_file(stbi__write_context *s)stbi__end_write_file339,12492
+typedef unsigned int stbiw_uint32;stbiw_uint32346,12617
+typedef int stb_image_write_test[sizeof(stbiw_uint32)==4 ? 1 : -1];stb_image_write_test347,12652
+static void stbiw__writefv(stbi__write_context *s, const char *fmt, va_list v)stbiw__writefv349,12721
+static void stbiw__writef(stbi__write_context *s, const char *fmt, ...)stbiw__writef378,13699
+static void stbiw__write_flush(stbi__write_context *s)stbiw__write_flush386,13855
+static void stbiw__putc(stbi__write_context *s, unsigned char c)stbiw__putc394,14017
+static void stbiw__write1(stbi__write_context *s, unsigned char a)stbiw__write1399,14118
+static void stbiw__write3(stbi__write_context *s, unsigned char a, unsigned char b, unsigned chastbiw__write3406,14304
+static void stbiw__write_pixel(stbi__write_context *s, int rgb_dir, int comp, int write_alpha, istbiw__write_pixel418,14612
+static void stbiw__write_pixels(stbi__write_context *s, int rgb_dir, int vdir, int x, int y, intstbiw__write_pixels451,15654
+static int stbiw__outfile(stbi__write_context *s, int rgb_dir, int vdir, int x, int y, int comp,stbiw__outfile478,16347
+static int stbi_write_bmp_core(stbi__write_context *s, int x, int y, int comp, const void *data)stbi_write_bmp_core492,16765
+STBIWDEF int stbi_write_bmp_to_func(stbi_write_func *func, void *context, int x, int y, int compstbi_write_bmp_to_func512,17695
+STBIWDEF int stbi_write_bmp(char const *filename, int x, int y, int comp, const void *data)stbi_write_bmp520,17982
+static int stbi_write_tga_core(stbi__write_context *s, int x, int y, int comp, void *data)stbi_write_tga_core532,18320
+STBIWDEF int stbi_write_tga_to_func(stbi_write_func *func, void *context, int x, int y, int compstbi_write_tga_to_func611,20875
+STBIWDEF int stbi_write_tga(char const *filename, int x, int y, int comp, const void *data)stbi_write_tga619,21171
+#define stbiw__max(stbiw__max635,21647
+static void stbiw__linear_to_rgbe(unsigned char *rgbe, float *linear)stbiw__linear_to_rgbe639,21727
+static void stbiw__write_run_data(stbi__write_context *s, int length, unsigned char databyte)stbiw__write_run_data656,22283
+static void stbiw__write_dump_data(stbi__write_context *s, int length, unsigned char *data)stbiw__write_dump_data664,22551
+static void stbiw__write_hdr_scanline(stbi__write_context *s, int width, int ncomp, unsigned chastbiw__write_hdr_scanline672,22869
+static int stbi_write_hdr_core(stbi__write_context *s, int x, int y, int comp, float *data)stbi_write_hdr_core761,25780
+STBIWDEF int stbi_write_hdr_to_func(stbi_write_func *func, void *context, int x, int y, int compstbi_write_hdr_to_func787,26766
+STBIWDEF int stbi_write_hdr(char const *filename, int x, int y, int comp, const float *data)stbi_write_hdr794,27036
+#define stbiw__sbraw(stbiw__sbraw814,27615
+#define stbiw__sbm(stbiw__sbm815,27666
+#define stbiw__sbn(stbiw__sbn816,27709
+#define stbiw__sbneedgrow(stbiw__sbneedgrow818,27753
+#define stbiw__sbmaybegrow(stbiw__sbmaybegrow819,27830
+#define stbiw__sbgrow(stbiw__sbgrow820,27914
+#define stbiw__sbpush(stbiw__sbpush822,27993
+#define stbiw__sbcount(stbiw__sbcount823,28080
+#define stbiw__sbfree(stbiw__sbfree824,28139
+static void *stbiw__sbgrowf(void **arr, int increment, int itemsize)stbiw__sbgrowf826,28215
+static unsigned char *stbiw__zlib_flushf(unsigned char *data, unsigned int *bitbuffer, int *bitcstbiw__zlib_flushf839,28659
+static int stbiw__zlib_bitrev(int code, int codebits)stbiw__zlib_bitrev849,28913
+static unsigned int stbiw__zlib_countm(unsigned char *a, unsigned char *b, int limit)stbiw__zlib_countm859,29085
+static unsigned int stbiw__zhash(unsigned char *data)stbiw__zhash867,29270
+#define stbiw__zlib_flush(stbiw__zlib_flush879,29546
+#define stbiw__zlib_add(stbiw__zlib_add880,29626
+#define stbiw__zlib_huffa(stbiw__zlib_huffa882,29749
+#define stbiw__zlib_huff1(stbiw__zlib_huff1884,29850
+#define stbiw__zlib_huff2(stbiw__zlib_huff2885,29913
+#define stbiw__zlib_huff3(stbiw__zlib_huff3886,29981
+#define stbiw__zlib_huff4(stbiw__zlib_huff4887,30044
+#define stbiw__zlib_huff(stbiw__zlib_huff888,30110
+#define stbiw__zlib_huffb(stbiw__zlib_huffb889,30270
+#define stbiw__ZHASH stbiw__ZHASH891,30359
+STBIWDEF unsigned char * stbi_zlib_compress(unsigned char *data, int data_len, int *out_len, intstbi_zlib_compress895,30420
+static unsigned int stbiw__crc32(unsigned char *buffer, int len)stbiw__crc321024,35564
+#define stbiw__wpng4(stbiw__wpng41073,39160
+#define stbiw__wp32(stbiw__wp321074,39289
+#define stbiw__wptag(stbiw__wptag1075,39365
+static void stbiw__wpcrc(unsigned char **data, int len)stbiw__wpcrc1077,39435
+static unsigned char stbiw__paeth(int a, int b, int c)stbiw__paeth1083,39584
+static void stbiw__encode_png_line(unsigned char *pixels, int stride_bytes, int width, int heighstbiw__encode_png_line1092,39910
+STBIWDEF unsigned char *stbi_write_png_to_mem(const unsigned char *pixels, int stride_bytes, intstbi_write_png_to_mem1128,41643
+STBIWDEF int stbi_write_png(char const *filename, int x, int y, int comp, const void *data, int stbi_write_png1215,44630
+STBIWDEF int stbi_write_png_to_func(stbi_write_func *func, void *context, int x, int y, int compstbi_write_png_to_func1231,45069
+static const unsigned char stbiw__jpg_ZigZag[] = { 0,1,5,6,14,15,27,28,2,4,7,13,16,26,29,42,3,8,stbiw__jpg_ZigZag1250,45657
+static void stbiw__jpg_writeBits(stbi__write_context *s, int *bitBufP, int *bitCntP, const unsigstbiw__jpg_writeBits1253,45901
+static void stbiw__jpg_DCT(float *d0p, float *d1p, float *d2p, float *d3p, float *d4p, float *d5stbiw__jpg_DCT1270,46359
+static void stbiw__jpg_calcBits(int val, unsigned short bits[2]) {stbiw__jpg_calcBits1318,47695
+static int stbiw__jpg_processDU(stbi__write_context *s, int *bitBuf, int *bitCnt, float *CDU, instbiw__jpg_processDU1328,47931
+static int stbi_write_jpg_core(stbi__write_context *s, int width, int height, int comp, const vostbi_write_jpg_core1398,50610
+STBIWDEF int stbi_write_jpg_to_func(stbi_write_func *func, void *context, int x, int y, int compstbi_write_jpg_to_func1607,65935
+STBIWDEF int stbi_write_jpg(char const *filename, int x, int y, int comp, const void *data, int stbi_write_jpg1616,66254
+
+font/iosevka-regular.ttf,0
+
+nn_explained.md,8837
+# nn.h - Neural Network Library Explainednn.h - Neural Network Library Explained1,0
+## Table of ContentsTable of Contents3,43
+## OverviewOverview17,560
+### Key FeaturesKey Features21,751
+## Interactive Learning GuideInteractive Learning Guide29,963
+### Learning PathLearning Path34,1146
+### Step 1: Understanding the MatrixStep 1: Understanding the Matrix46,1662
+#### 🤔 Think About It🤔 Think About It47,1699
+#### ✍️ Your Turn: Write the Matrix Structure✍️ Your Turn: Write the Matrix Structure88,2507
+#### 🤔 What is `stride` and why do we need it?🤔 What is `stride` and why do we need it?118,3138
+### Step 2: Matrix Access MacroStep 2: Matrix Access Macro153,3874
+#### 🤔 Think About It🤔 Think About It155,3907
+#### ✍️ Practice: Trace Through an Example✍️ Practice: Trace Through an Example173,4325
+### Step 3: Matrix OperationsStep 3: Matrix Operations208,4840
+#### ✍️ Exercise: Implement mat_alloc()✍️ Exercise: Implement mat_alloc()210,4871
+#### ✍️ Exercise: Implement mat_fill()✍️ Exercise: Implement mat_fill()245,5553
+#### 🎯 Challenge: Matrix Multiplication🎯 Challenge: Matrix Multiplication271,6003
+#### ✍️ Exercise: Implement mat_dot()✍️ Exercise: Implement mat_dot()312,6702
+### Step 4: Activation FunctionsStep 4: Activation Functions351,7504
+#### 🤔 What is an activation function?🤔 What is an activation function?353,7538
+#### The Sigmoid FunctionThe Sigmoid Function366,7998
+#### ✍️ Exercise: Implement sigmoidf()✍️ Exercise: Implement sigmoidf()377,8189
+#### ✍️ Exercise: Apply sigmoid to a matrix✍️ Exercise: Apply sigmoid to a matrix398,8478
+### Step 5: Neural NetworkStep 5: Neural Network424,8870
+#### 🤔 What is a neural network?🤔 What is a neural network?426,8898
+#### Understanding the NN StructureUnderstanding the NN Structure446,9375
+#### ✍️ Exercise: Implement the Forward Pass✍️ Exercise: Implement the Forward Pass481,10109
+### Step 6: Training - The Cost FunctionStep 6: Training - The Cost Function512,10712
+#### 🤔 How do we know if the network is good?🤔 How do we know if the network is good?514,10754
+#### ✍️ Exercise: Implement nn_cost()✍️ Exercise: Implement nn_cost()529,11059
+### Step 7: BackpropagationStep 7: Backpropagation575,11905
+#### 🤔 How do we improve the network?🤔 How do we improve the network?577,11934
+#### Key Gradients for Sigmoid:Key Gradients for Sigmoid:595,12411
+#### ✍️ Exercise: Implement Gradient Descent Update✍️ Exercise: Implement Gradient Descent Update606,12657
+### Step 8: Putting It All TogetherStep 8: Putting It All Together642,13496
+#### ✍️ Complete Exercise: Train XOR✍️ Complete Exercise: Train XOR644,13533
+### 🎓 Congratulations!🎓 Congratulations!711,14850
+### 📚 Quick Reference📚 Quick Reference730,15329
+## Header GuardsHeader Guards745,15856
+### What are header guards?What are header guards?754,15932
+### How they work:How they work:757,16116
+## Includes and DependenciesIncludes and Dependencies763,16302
+## Configurable MacrosConfigurable Macros785,17005
+### Memory Allocation CustomizationMemory Allocation Customization787,17029
+### Why this is useful:Why this is useful:796,17159
+### Assertion CustomizationAssertion Customization801,17353
+### Array Length MacroArray Length Macro812,17539
+## Data StructuresData Structures828,17782
+### 1. Gym_Batch - Batch Processing State1. Gym_Batch - Batch Processing State830,17802
+### 2. Mat - Matrix Structure2. Mat - Matrix Structure842,18137
+#### Understanding `stride`:Understanding `stride`:853,18409
+### Matrix Access MacroMatrix Access Macro866,18776
+## Matrix OperationsMatrix Operations893,19141
+### 1. mat_alloc() - Create a Matrix1. mat_alloc() - Create a Matrix895,19163
+### What it does:What it does:910,19455
+### 2. mat_fill() - Fill Matrix with Value2. mat_fill() - Fill Matrix with Value915,19571
+### 3. mat_dot() - Matrix Multiplication3. mat_dot() - Matrix Multiplication928,19794
+### Understanding Matrix Multiplication:Understanding Matrix Multiplication:948,20266
+### 4. mat_row() - Create a Row View4. mat_row() - Create a Row View970,20669
+### 5. mat_sig() - Apply Sigmoid Activation5. mat_sig() - Apply Sigmoid Activation986,21042
+### The Sigmoid Function:The Sigmoid Function:1004,21344
+### 6. mat_sum() - Element-wise Addition6. mat_sum() - Element-wise Addition1026,21721
+### 7. mat_copy() - Copy Matrix Data7. mat_copy() - Copy Matrix Data1043,22085
+### 8. mat_rand() - Random Initialization8. mat_rand() - Random Initialization1058,22400
+### 9. mat_save() and mat_load() - Persistence9. mat_save() and mat_load() - Persistence1078,22785
+### 10. mat_print() - Debug Output10. mat_print() - Debug Output1099,23370
+### 11. mat_shuffle_rows() - Random Row Shuffling11. mat_shuffle_rows() - Random Row Shuffling1120,23925
+## Neural Network StructureNeural Network Structure1142,24439
+### The NN StructureThe NN Structure1144,24468
+### Understanding the Structure:Understanding the Structure:1155,24739
+### Helper MacrosHelper Macros1167,25218
+### nn_alloc() - Create Networknn_alloc() - Create Network1176,25382
+### How it works:How it works:1201,26023
+### nn_forward() - Forward Passnn_forward() - Forward Pass1206,26189
+### The Forward Pass:The Forward Pass:1219,26515
+### nn_cost() - Calculate Lossnn_cost() - Calculate Loss1231,26733
+### Understanding Cost Function:Understanding Cost Function:1259,27370
+## Training AlgorithmTraining Algorithm1270,27559
+### nn_backprop() - Backpropagationnn_backprop() - Backpropagation1272,27582
+### Understanding Backpropagation:Understanding Backpropagation:1336,29557
+### nn_learn() - Update Weightsnn_learn() - Update Weights1356,30023
+### Gradient Descent:Gradient Descent:1377,30567
+### nn_rand() - Random Initializationnn_rand() - Random Initialization1394,30937
+## Visualization System (Gym)Visualization System (Gym)1410,31221
+### Plot StructurePlot Structure1414,31344
+### Dynamic Array MacroDynamic Array Macro1424,31537
+### gym_render_nn() - Visualize Networkgym_render_nn() - Visualize Network1442,32190
+### gym_plot() - Draw Cost Graphgym_plot() - Draw Cost Graph1454,32433
+### gym_process_batch() - Batch Traininggym_process_batch() - Batch Training1465,32617
+## Complete Usage ExampleComplete Usage Example1480,32917
+## Learning ChecklistLearning Checklist1547,34360
+### 🟢 Foundation Skills🟢 Foundation Skills1551,34461
+### 🟡 Matrix Operations🟡 Matrix Operations1557,34728
+### 🔴 Neural Network🔴 Neural Network1564,35048
+### 🏆 Complete Project🏆 Complete Project1573,35448
+## Common Pitfalls & Debugging TipsCommon Pitfalls & Debugging Tips1581,35732
+### ⚠️ Common Mistakes Beginners Make⚠️ Common Mistakes Beginners Make1583,35769
+#### 1. Confusing Row-Major vs Column-Major Order1. Confusing Row-Major vs Column-Major Order1585,35812
+#### 2. Forgetting to Initialize stride2. Forgetting to Initialize stride1595,36002
+#### 3. Not Checking Matrix Dimensions Before Operations3. Not Checking Matrix Dimensions Before Operations1606,36206
+#### 4. Modifying Row Views Affects Parent Matrix4. Modifying Row Views Affects Parent Matrix1617,36462
+#### 5. Learning Rate Too High or Too Low5. Learning Rate Too High or Too Low1624,36656
+#### 6. Forgetting to Seed Random Number Generator6. Forgetting to Seed Random Number Generator1636,36865
+### 🔍 Debugging Techniques🔍 Debugging Techniques1646,37073
+#### Print Matrix ContentsPrint Matrix Contents1648,37104
+#### Check for NaN or InfinityCheck for NaN or Infinity1656,37242
+#### Verify Gradients with Finite DifferencesVerify Gradients with Finite Differences1665,37378
+#### Track Cost During TrainingTrack Cost During Training1679,37766
+## Key TakeawaysKey Takeaways1697,38127
+## Practice ProblemsPractice Problems1710,38644
+### 📝 Beginner Problems📝 Beginner Problems1714,38713
+#### Problem 1: Matrix TransposeProblem 1: Matrix Transpose1716,38741
+#### Problem 2: Element-wise MultiplyProblem 2: Element-wise Multiply1751,39485
+### 📝 Intermediate Problems📝 Intermediate Problems1781,40117
+#### Problem 3: ReLU ActivationProblem 3: ReLU Activation1783,40149
+#### Problem 4: Add a New Layer FunctionProblem 4: Add a New Layer Function1819,40713
+### 📝 Advanced Problems📝 Advanced Problems1839,41161
+#### Problem 5: Implement MomentumProblem 5: Implement Momentum1841,41189
+#### Problem 6: Implement DropoutProblem 6: Implement Dropout1857,41639
+#### Problem 7: Save/Load Neural NetworkProblem 7: Save/Load Neural Network1868,41900
+## Further LearningFurther Learning1885,42182
+## Summary TableSummary Table1895,42534
+## ReferencesReferences1917,43150
+
+upscaled.png,0
+
+README.md,113
+# neuralnetworkneuralnetwork1,0
+## Quick StartQuick Start4,135
+## GymGym12,263
+## ControlsControls16,352
+
+img2nn.c,486
+#define NN_IMPLEMENTATIONNN_IMPLEMENTATION13,230
+#define NN_ENABLE_GYMNN_ENABLE_GYM14,256
+size_t arch[] = {3, 11, 11, 9, 1};arch17,295
+size_t epoch = 0;epoch18,330
+size_t max_epoch = 100*1000;max_epoch19,348
+size_t batches_per_frame = 200;batches_per_frame20,377
+size_t batch_size = 28;batch_size21,409
+float rate = 1.0f;rate22,433
+bool paused = true;paused23,452
+char *args_shift(int *argc, char ***argv)args_shift25,473
+int main(int argc, char **argv)main35,626
+
+adder_explanation.md.temp,0
+
+nn_explained.md.temp,0
+
+doc.org,0
+
+adder,0
+
+README.md.temp,0
+
+nn.h,2583
+#define NN_H_NN_H_3,15
+#define NN_MALLOC NN_MALLOC14,222
+#define NN_ASSERT NN_ASSERT19,306
+#define ARRAY_LEN(ARRAY_LEN22,352
+typedef struct {__anon7c9b3b77010824,406
+    size_t begin;begin25,423
+    float cost;cost26,441
+    bool finished;finished27,457
+} Gym_Batch;Gym_Batch28,476
+typedef struct {__anon7c9b3b77020830,490
+    size_t rows;rows31,507
+    size_t cols;cols32,524
+    size_t stride;stride33,541
+    float *es;es34,560
+} Mat;Mat35,575
+#define MAT_AT(MAT_AT37,583
+#define MAT_PRINT(MAT_PRINT51,1051
+typedef struct {__anon7c9b3b77030855,1113
+    size_t count;count56,1130
+    Mat *ws; // parameter of the model ws57,1148
+    Mat *bs; // bias of the neural layerbs58,1188
+    Mat *as; // the result of each neural layeras59,1229
+} NN;NN60,1277
+#define NN_INPUT(NN_INPUT62,1284
+#define NN_OUTPUT(NN_OUTPUT63,1316
+#define NN_PRINT(NN_PRINT69,1513
+typedef struct {__anon7c9b3b77040881,1823
+    float *items;items82,1840
+    size_t count;count83,1858
+    size_t capacity;capacity84,1876
+} Plot;Plot85,1897
+#define DA_INIT_CAP DA_INIT_CAP87,1906
+#define da_append(da_append89,1931
+float sigmoidf(float x)sigmoidf111,2619
+float rand_float(void)rand_float116,2683
+Mat mat_alloc(size_t rows, size_t cols)mat_alloc122,2754
+void mat_print(Mat m, const char *name, size_t padding)mat_print134,2960
+void mat_fill(Mat m, float x)mat_fill147,3289
+void mat_dot(Mat dst, Mat a, Mat b)mat_dot156,3438
+Mat mat_row(Mat m, size_t row)mat_row173,3857
+void mat_copy(Mat dst, Mat src)mat_copy183,3996
+void mat_sum(Mat dst, Mat a)mat_sum193,4243
+void mat_sig(Mat m)mat_sig204,4483
+void mat_rand(Mat m, float low, float high)mat_rand213,4646
+void mat_save(FILE *out, Mat m)mat_save222,4841
+Mat mat_load(FILE *in) {mat_load238,5356
+NN nn_alloc(size_t *arch, size_t arch_count)nn_alloc258,5829
+void nn_zero(NN nn)nn_zero284,6455
+void nn_backprop(NN nn, NN g, Mat ti, Mat to)nn_backprop295,6636
+void nn_rand(NN nn, float low, float high)nn_rand356,8354
+void nn_forward(NN nn)nn_forward364,8515
+void nn_learn(NN nn, NN g, float rate)nn_learn374,8689
+float nn_cost(NN nn, Mat ti, Mat to)nn_cost391,9111
+void nn_print(NN nn, const char *name)nn_print414,9567
+void mat_shuffle_rows(Mat m)mat_shuffle_rows428,9871
+void gym_render_nn(NN nn, float rx, float ry, float rw, float rh)gym_render_nn445,10169
+void gym_plot(Plot plot, int rx, int ry, int rw, int rh)gym_plot493,12078
+void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, float rate)gym_process_batch520,12959
+
+.claude/settings.local.json,589
+      "Bash(cp -r ../nn-origin/fonts . && ls -la fonts/)",04,36
+      "Bash(command -v glow)",15,95
+      "Bash(snap remove:*)",26,126
+      "Bash(wget https://go.dev/dl/go1.21.6.linux-amd64.tar.gz -O /tmp/go1.21.6.linux-amd64.tar.37,155
+      "Bash(export PATH=$PATH:/usr/local/go/bin && go version)",48,379
+      "Bash(export PATH=$PATH:/usr/local/go/bin && go install github.com/charmbracelet/glow@late59,444
+      "Bash(export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin && which glow && glow --version)"610,546
+    "allow": [allow3,21
+  "permissions": {permissions2,2

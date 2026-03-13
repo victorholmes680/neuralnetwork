@@ -65,6 +65,7 @@ typedef struct {
 NN nn_alloc(size_t *arch, size_t arch_count);
 void nn_zero(NN nn);
 void nn_backprop(NN nn, NN g, Mat ti, Mat to);
+void nn_backprop_traditional(NN nn, NN g, Mat ti, Mat to);
 void nn_print(NN nn, const char *name);
 #define NN_PRINT(nn) nn_print(nn, #nn);
 void nn_rand(NN nn, float low, float high);
@@ -291,6 +292,42 @@ void nn_zero(NN nn)
     mat_fill(nn.as[nn.count], 0);
 }
 
+void nn_backprop_traditional(NN nn, NN g, Mat ti, Mat to) {
+    // make sure input rows is equal to output rows which mainly means the number of samples
+    NN_ASSERT(ti.rows == to.rows);
+    size_t n = ti.rows;
+
+    // make sure the number of computed value is equal to the training data
+    NN_ASSERT(NN_OUTPUT(nn).cols == to.cols);
+
+    // initialize the gradient matrix as zero
+    nn_zero(g);
+
+    // i - current sample
+    // l - current layer
+    // j - current activation
+    // k - previous activation
+
+    for(size_t i = 0; i < n; ++i) {
+	// extract the input row from matrix ti and then copy the value to nn input
+	mat_copy(NN_INPUT(nn), mat_row(ti, i));
+	// predict the result by current parameters
+	nn_forward(nn);
+
+	// nn.count is arch.count - 1 (minus the input row which represent 1)
+	for(size_t j = 0; j <= nn.count; ++j) {
+	    // initialize the parameters in gradient matrix as zero
+	    mat_fill(g.as[j], 0);
+	}
+
+	for(size_t j = 0; j < to.cols; ++j) {
+	    MAT_AT(NN_OUTPUT(g), 0, j) = (MAT_AT(NN_OUTPUT(NN), 0, j) - MAT_AT(to, i, j))*2/n;
+	}
+    }
+    
+
+    
+}
 
 void nn_backprop(NN nn, NN g, Mat ti, Mat to)
 {

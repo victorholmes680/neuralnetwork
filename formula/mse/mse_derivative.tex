@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Derivation of MSE Gradient for Backpropagation}
+\author{Neural Network Library}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This document derives the gradient of the Mean Squared Error (MSE) loss function, which is used to initialize the backpropagation algorithm in the neural network library.
+
+\section{Mean Squared Error Definition}
+
+For a single training sample with output $y$ and target $t$, the squared error is:
+
+\begin{equation}
+E = (y - t)^2
+\end{equation}
+
+For $n$ training samples, the Mean Squared Error is:
+
+\begin{equation}
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - t_i)^2
+\end{equation}
+
+\section{Derivative with Respect to Output}
+
+To perform backpropagation, we need the gradient of the MSE with respect to the network output. For a single sample:
+
+\begin{align}
+E &= (y - t)^2 \\
+\frac{\partial E}{\partial y} &= \frac{\partial}{\partial y} (y - t)^2
+\end{align}
+
+Using the chain rule, let $u = y - t$:
+
+\begin{align}
+\frac{\partial}{\partial y} u^2 &= 2u \cdot \frac{\partial u}{\partial y} \\
+&= 2(y - t) \cdot \frac{\partial}{\partial y}(y - t) \\
+&= 2(y - t) \cdot 1 \\
+&= 2(y - t)
+\end{align}
+
+\section{Scaling Factor for Mean Squared Error}
+
+For the mean squared error averaged over $n$ samples:
+
+\begin{align}
+MSE &= \frac{1}{n} (y - t)^2 \\
+\frac{\partial MSE}{\partial y} &= \frac{\partial}{\partial y} \left[ \frac{1}{n} (y - t)^2 \right] \\
+&= \frac{1}{n} \cdot 2(y - t) \\
+&= \frac{2}{n}(y - t)
+\end{align}
+
+\section{Connection to Code}
+
+In \texttt{nn.h} at line 420 of \texttt{nn\_backprop\_traditional}:
+
+\begin{verbatim}
+MAT_AT(NN_OUTPUT(g), 0, j) = (MAT_AT(NN_OUTPUT(nn), 0, j) - MAT_AT(to, i, j))*2/n;
+\end{verbatim}
+
+This directly implements the derived formula:
+
+\begin{equation}
+\frac{\partial MSE}{\partial y_j^{(i)}} = \frac{2}{n} \cdot (y_j^{(i)} - t_j^{(i)})
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $y_j^{(i)}$ = \texttt{MAT\_AT(NN\_OUTPUT(nn), 0, j)} — network output
+    \item $t_j^{(i)}$ = \texttt{MAT\_AT(to, i, j)} — target value
+    \item The result is stored in the gradient structure \texttt{NN\_OUTPUT(g)}
+\end{itemize}
+
+\section{Summary}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Mathematical Notation} & \textbf{Code Implementation} \\
+\hline
+$\frac{\partial MSE}{\partial y}$ & \texttt{NN\_OUTPUT(g)} \\
+\hline
+$y$ (output) & \texttt{NN\_OUTPUT(nn)} \\
+\hline
+$t$ (target) & \texttt{to} \\
+\hline
+$n$ (samples) & \texttt{n} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
