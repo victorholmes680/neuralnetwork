@@ -519,6 +519,7 @@ void gym_plot(Plot plot, int rx, int ry, int rw, int rh)
 
 void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, float rate)
 {
+    // Once epoch is finished
     if(gb->finished) {
 	gb->finished = false;
 	gb->begin = 0;
@@ -526,10 +527,15 @@ void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, flo
     }
 
     size_t size = batch_size;
+
+    // deal with the last epoch in one epoch
     if(gb->begin + batch_size >= t.rows) {
 	size = t.rows - gb->begin;
     }
 
+    // create views into training data
+    // extract input and output training views from matrix
+    // The advantage of this operation is that it does not copy data which will allocate new memory but use the pointer which will share the memory
     Mat batch_ti = {
 	.rows = size,
 	.cols = NN_INPUT(nn).cols,
@@ -544,9 +550,12 @@ void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, flo
 	.es = &MAT_AT(t, gb->begin, batch_ti.cols),
     };
 
+    // compute gradients
     nn_backprop(nn, g, batch_ti, batch_to);
+    // Updae weights
     nn_learn(nn, g, rate);
 
+    // Track the cost value(loss value)
     gb->cost += nn_cost(nn, batch_ti, batch_to);
     gb->begin += batch_size;
 
@@ -556,8 +565,6 @@ void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, flo
 	gb->finished = true;
     }
 }
-
-
 
 #endif // NN_ENBALE_GYM
 
