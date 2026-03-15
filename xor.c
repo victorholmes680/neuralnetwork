@@ -69,7 +69,7 @@ int main()
     Font font = LoadFontEx("./font/iosevka-regular.ttf", 72, NULL, 0);
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
 
-    Plot plot = {0};
+    Gym_Plot plot = {0};
 
     size_t epoch = 0;
 

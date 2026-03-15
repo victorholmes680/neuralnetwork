@@ -17,12 +17,12 @@
 #define NN_ENABLE_GYM
 #include "nn.h"
 
-size_t arch[] = {3, 11, 11, 9, 1};
-size_t epoch = 0;
+size_t arch[] = {3, 11, 11, 11, 11, 11, 1};
 size_t max_epoch = 100*1000;
 size_t batches_per_frame = 200;
 size_t batch_size = 28;
 float rate = 1.0f;
+float scroll = 0.f;
 bool paused = true;
 
 char *args_shift(int *argc, char ***argv)
@@ -128,7 +128,7 @@ int main(int argc, char **argv)
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT,"img2mat");
     SetTargetFPS(60);
 
-    Plot plot = {0};
+    Gym_Plot plot = {0};
     Font font = LoadFontEx("./font/iosevka-regular.ttf", 72, NULL, 0);
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
     
@@ -174,8 +174,9 @@ int main(int argc, char **argv)
 
 
     Gym_Batch gb = {0};
-    float scroll = 0.5f;
+    bool rate_dragging = false;
     bool scroll_dragging = false;
+    size_t epoch = 0;
 
     while(!WindowShouldClose()) {
 	if(IsKeyPressed(KEY_SPACE)) {
@@ -290,36 +291,17 @@ int main(int argc, char **argv)
 
 	    // draw scroll button and implement the function to update the scroll variable
 	    {
-		float pad = rh*0.05;
-		Vector2 size = { img1_width*scale*2, rh*0.02 }; // the scroll region width and height
-		Vector2 position = { rx, ry + img2_height*scale*4 + pad }; // the scroll region start position
-		DrawRectangleV( position, size, WHITE);
-		float knob_radius = rh*0.03;
-		Vector2 knob_position = { rx + size.x*scroll, position.y + size.y*0.5f };
-		DrawCircleV(knob_position, knob_radius, RED);
-
-		if(scroll_dragging) {
-		    float x = GetMousePosition().x;
-		    if(x < position.x) x = position.x;
-		    if(x > position.x + size.x) x = position.x + size.x;
-		    scroll = (x - position.x)/size.x;
-		}
-
-		if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-		    Vector2 mouse_position = GetMousePosition();
-		    if(Vector2Distance(mouse_position, knob_position) <= knob_radius) {
-			scroll_dragging = true;
-		    }
-		}
-
-		if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) {
-		    scroll_dragging = false;
-		}
+		    float pad = rh*0.05;
+		    ry = ry + img2_height*scale*4 + pad;
+            rw = img1_width*scale*2;
+            rh = rh*0.02;
+            gym_slider(&scroll, &scroll_dragging, rx, ry, rw, rh);
 	    }
 
 	    char buffer[256];
 	    snprintf(buffer, sizeof(buffer), "Epoch: %zu/%zu, Rate: %f, Cost: %f", epoch, max_epoch, rate, plot.count > 0 ? plot.items[plot.count - 1] : 0);
 	    DrawTextEx(font, buffer, CLITERAL(Vector2){}, h*0.04, 0, WHITE);
+        gym_slider(&rate, &rate_dragging, 0, h*0.08, w, h*0.02);
 	}
 	EndDrawing();
     }

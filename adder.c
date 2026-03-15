@@ -135,7 +135,7 @@ int main(void)
     SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
 
     // this is the cost plot
-    Plot plot = {0};
+    Gym_Plot plot = {0};
 
     Gym_Batch gb = {0};
     

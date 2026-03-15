@@ -78,12 +78,13 @@ void nn_learn(NN nn, NN g, float rate);
 #ifdef NN_ENABLE_GYM
 #include <float.h>
 #include "raylib.h"
+#include <raymath.h>
 
 typedef struct {
     float *items;
     size_t count;
     size_t capacity;
-} Plot;
+} Gym_Plot;
 
 #define DA_INIT_CAP 256
 
@@ -98,7 +99,8 @@ do {											\
 } while(0)										\
 
 void gym_render_nn(NN nn, float rx, float ry, float rw, float rh);
-void gym_plot(Plot plot, int rx, int ry, int rw, int rh);
+void gym_plot(Gym_Plot plot, int rx, int ry, int rw, int rh);
+void gym_slider(float *value, bool *dragging, float rx, float ry, float rw, float rh);
 void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, float rate);
 
 #endif // NN_ENABLE_GYM
@@ -542,7 +544,7 @@ void gym_render_nn(NN nn, float rx, float ry, float rw, float rh)
 }
 
 
-void gym_plot(Plot plot, int rx, int ry, int rw, int rh)
+void gym_plot(Gym_Plot plot, int rx, int ry, int rw, int rh)
 {
     float min = FLT_MAX, max = FLT_MIN;
 
@@ -568,6 +570,48 @@ void gym_plot(Plot plot, int rx, int ry, int rw, int rh)
     DrawLineEx((Vector2){rx + 0, y0}, (Vector2){rx + rw - 1, y0}, rh*0.005, WHITE);
     DrawText("0", rx + 0, y0 -rh*0.04, rh*0.04, WHITE);
 }
+
+void gym_slider(float *value, bool *dragging, float rx, float ry, float rw, float rh)
+{
+    float knob_radius = rh;
+    Vector2 bar_size = {
+        .x = rw - 2*knob_radius,
+        .y = rh*0.25,
+    };
+
+    Vector2 bar_position = {
+        .x = rx + knob_radius,
+        .y = ry + rh/2 - bar_size.y/2,
+    };
+
+
+    DrawRectangleV(bar_position, bar_size, WHITE);
+
+    Vector2 knob_position = {
+        .x = bar_position.x + bar_size.x*(*value);
+        .y = ry + rh/2,
+    };
+    DrawCircle(knob_position, knob_radius, RED);
+
+    if(*dragging) {
+        float x = GetMousePosition().x;
+        if(x < bar_position.x) x = bar_position.x;
+        if(x > bar_position + bar_size) x = bar_position + bar_size;
+        *value = (x - bar_position.x)/bar_size.x;
+    }
+
+    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+        Vector2 mouse_position = GetMousePosition();
+        if(Vector2Distance(mouse_position, knob_position <= knob_radius)) {
+            *dragging = true;
+        }
+    }
+
+    if(IsMouseButtonReleased(MOUSE_BUTTONG_LEFT)) {
+        *dragging = false;
+    }
+}
+
 
 void gym_process_batch(Gym_Batch *gb, size_t batch_size, NN nn, NN g, Mat t, float rate)
 {
