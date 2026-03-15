@@ -5,9 +5,12 @@
 #include <raylib.h>
 #include <raymath.h>
 
-//#define STB_IMAGE_IMPLEMENTATION
+// Only define IMPLEMENTATION on macOS (Apple platform)
+#if defined(__APPLE__)
+    #define STB_IMAGE_IMPLEMENTATION
+    #define STB_IMAGE_WRITE_IMPLEMENTATION
+#endif
 #include "stb_image.h"
-//#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
 #define NN_IMPLEMENTATION
