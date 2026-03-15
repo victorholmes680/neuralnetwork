@@ -588,26 +588,26 @@ void gym_slider(float *value, bool *dragging, float rx, float ry, float rw, floa
     DrawRectangleV(bar_position, bar_size, WHITE);
 
     Vector2 knob_position = {
-        .x = bar_position.x + bar_size.x*(*value);
+        .x = bar_position.x + bar_size.x*(*value),
         .y = ry + rh/2,
     };
-    DrawCircle(knob_position, knob_radius, RED);
+    DrawCircleV(knob_position, knob_radius, RED);
 
     if(*dragging) {
         float x = GetMousePosition().x;
         if(x < bar_position.x) x = bar_position.x;
-        if(x > bar_position + bar_size) x = bar_position + bar_size;
+        if(x > bar_position.x + bar_size.x) x = bar_position.x + bar_size.x;
         *value = (x - bar_position.x)/bar_size.x;
     }
 
     if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
         Vector2 mouse_position = GetMousePosition();
-        if(Vector2Distance(mouse_position, knob_position <= knob_radius)) {
+        if(Vector2Distance(mouse_position, knob_position) <= knob_radius) {
             *dragging = true;
         }
     }
 
-    if(IsMouseButtonReleased(MOUSE_BUTTONG_LEFT)) {
+    if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) {
         *dragging = false;
     }
 }
